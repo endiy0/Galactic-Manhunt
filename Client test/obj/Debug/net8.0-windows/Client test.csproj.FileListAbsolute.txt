@@ -1,0 +1,41 @@
+C:\Users\endiy\source\repos\Server test\Client test\bin\Debug\net8.0-windows\Client test.exe
+C:\Users\endiy\source\repos\Server test\Client test\bin\Debug\net8.0-windows\Client test.deps.json
+C:\Users\endiy\source\repos\Server test\Client test\bin\Debug\net8.0-windows\Client test.runtimeconfig.json
+C:\Users\endiy\source\repos\Server test\Client test\bin\Debug\net8.0-windows\Client test.dll
+C:\Users\endiy\source\repos\Server test\Client test\bin\Debug\net8.0-windows\Client test.pdb
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client_test.Form1.resources
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.csproj.GenerateResource.cache
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.AssemblyInfoInputs.cache
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.AssemblyInfo.cs
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.csproj.CoreCompileInputs.cache
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.dll
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\refint\Client test.dll
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.pdb
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\Client test.genruntimeconfig.cache
+C:\Users\endiy\source\repos\Server test\Client test\obj\Debug\net8.0-windows\ref\Client test.dll
+C:\Users\endiy\Source\Repos\planet-cops\Client test\bin\Debug\net8.0-windows\Client test.exe
+C:\Users\endiy\Source\Repos\planet-cops\Client test\bin\Debug\net8.0-windows\Client test.deps.json
+C:\Users\endiy\Source\Repos\planet-cops\Client test\bin\Debug\net8.0-windows\Client test.runtimeconfig.json
+C:\Users\endiy\Source\Repos\planet-cops\Client test\bin\Debug\net8.0-windows\Client test.dll
+C:\Users\endiy\Source\Repos\planet-cops\Client test\bin\Debug\net8.0-windows\Client test.pdb
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form1.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form2.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form3.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form4.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form5.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form6.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form7.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form8.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client_test.Form9.resources
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.csproj.GenerateResource.cache
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.AssemblyInfoInputs.cache
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.AssemblyInfo.cs
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.csproj.CoreCompileInputs.cache
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.sourcelink.json
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.dll
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\refint\Client test.dll
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.pdb
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\Client test.genruntimeconfig.cache
+C:\Users\endiy\Source\Repos\planet-cops\Client test\obj\Debug\net8.0-windows\ref\Client test.dll
