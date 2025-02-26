@@ -47,17 +47,17 @@ namespace Server_test
                 MessageBox.Show("포트는 1에서 99999 사이의 정수를 입력해 주세요");
             }
         }
-        /*
-        입력 코드
-        0:채팅
-        1:연결종료
-        2:번호 지정(서버=>클라이언트)
-        3:닉네임 전송(클라이언트=>서버)
-        4:접속한 클라이언트 이름
-        5:접속 종료한 클라이언트 이름
-         */
-        //Split 문자 : ⧫
-        //송신 Check 문자 : ◊
+
+        // 입력 코드
+        // 0: 채팅
+        // 1: 연결종료
+        // 2: 번호 지정(서버=>클라이언트)
+        // 3: 닉네임 전송(클라이언트=>서버)
+        // 4: 접속한 클라이언트 이름
+        // 5: 접속 종료한 클라이언트 이름
+
+        // Split 문자 : ⧫
+        // 송신 Check 문자 : ◊
 
         public void Delay(int ms)
         {
@@ -72,7 +72,7 @@ namespace Server_test
             return;
         }
 
-        //Thread func
+        // Thread func
         void ServerLoop(int port)
         {
             server = new TcpListener(IPAddress.Any, port);
@@ -245,7 +245,7 @@ namespace Server_test
                 clients.Remove(client);
             }
         }
-        //TODO: 현재 접속자명 listbox 만들기
+        // TODO: 현재 접속자명 listbox 만들기
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -367,14 +367,14 @@ namespace Server_test
 
         int CopsCount(int players)
         {
-            //TODO:인원수당 프로그래밍 정하기
+            // TODO: 인원수당 프로그래밍 정하기
             return players / 2;
         }
 
         void Game()
         {
-            //TODO:게임 구현하기
-            //TODO:서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘다 있는 은하는 보라색
+            // TODO: 게임 구현하기
+            // TODO: 서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘다 있는 은하는 보라색
         }
     }
 }

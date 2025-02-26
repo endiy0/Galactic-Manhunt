@@ -21,6 +21,7 @@ namespace Server_test
         {
             return new Vector2(vec.x + vector.x, vec.y + vector.y);
         }
+
         public static Vector2 operator -(Vector2 vector, Vector2 vec)
         {
             return new Vector2(vector.x - vec.x, vector.y - vec.y);
