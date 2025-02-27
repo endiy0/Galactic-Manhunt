@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Server_test
 {
+    // Ability 클래스
     class Ability
     {
 
@@ -13,6 +14,6 @@ namespace Server_test
 
     enum AbilityType
     {
-        //TODO:상점에서 살 수 있는 능력 적기
+        //TODO: 상점에서 살 수 있는 능력 적기
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Server_test
 {
-    //클라이언트 클래스
+    // 클라이언트 클래스
     class Client
     {
         public TcpClient client;
@@ -18,6 +18,7 @@ namespace Server_test
             this.client = client;
             nickname = "Client" + n.ToString();
         }
+
         public Client(TcpClient client, string str)
         {
             this.client = client;

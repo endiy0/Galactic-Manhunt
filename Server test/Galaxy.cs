@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Server_test
 {
-    //은하 클래스
+    // 은하 클래스
     class Galaxy
     {
         public List<PlanetSystem> systems;
