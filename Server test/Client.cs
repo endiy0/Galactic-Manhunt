@@ -24,5 +24,10 @@ namespace Server_test
             this.client = client;
             nickname = str;
         }
+
+        public void Send(string msg)
+        {
+            client.GetStream().Write(Encoding.UTF8.GetBytes(msg));
+        }
     }
 }

@@ -35,15 +35,15 @@ namespace Server_test
                 resource = (Resource)random.Next(0, Item.AirCount);
                 if(resource == Resource.Hydrogen)
                 {
-                    resources.items.Add(new Item(resource, HydrogenMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, HydrogenMax * random.NextDouble()));
                 }
                 else if (resource == Resource.Nitrogen)
                 {
-                    resources.items.Add(new Item(resource, NitrogenMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, NitrogenMax * random.NextDouble()));
                 }
                 else if (resource == Resource.Oxygen)
                 {
-                    resources.items.Add(new Item(resource, OxygenMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, OxygenMax * random.NextDouble()));
                 }
             }
             for (int i = 0; i < MineralCount; i++)
@@ -52,11 +52,11 @@ namespace Server_test
                 resource = (Resource)random.Next(Item.AirCount + Item.CompountCount, Item.AirCount + Item.CompountCount + Item.MineralCount);
                 if (resource == Resource.Epsilon_crystal)
                 {
-                    resources.items.Add(new Item(resource, EpsilonCrystalMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, EpsilonCrystalMax * random.NextDouble()));
                 }
                 else if (resource == Resource.Water)
                 {
-                    resources.items.Add(new Item(resource, WaterMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, WaterMax * random.NextDouble()));
                 }
             }
             for (int i = 0; i < OrganicMatterCount; i++)
@@ -65,7 +65,7 @@ namespace Server_test
                 resource = (Resource)random.Next(Item.AirCount + Item.CompountCount + Item.MineralCount, Item.AirCount + Item.CompountCount + Item.MineralCount + Item.OrganicMatterCount);
                 if (resource == Resource.Seed)
                 {
-                    resources.items.Add(new Item(resource, EpsilonCrystalMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, SeedMax * random.NextDouble()));
                 }
             }
         }

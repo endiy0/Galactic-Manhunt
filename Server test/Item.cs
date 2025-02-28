@@ -17,7 +17,6 @@ namespace Server_test
         public static int CompountCount = 3;
         public static int MineralCount = 2;
         public static int OrganicMatterCount = 1;
-        // TODO: Resource종류를 바꿀때마다 이름도 바꾸는 생성자 구현
 
         public Item(Resource ITEMTYPE, double MASS)
         {
