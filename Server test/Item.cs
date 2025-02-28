@@ -11,7 +11,7 @@ namespace Server_test
     {
         Resource Itemtype;
         string Name;
-        public double mass; // 단위: kg
+        public double mass; // 질량, 단위: kg
 
         // TODO: Resource종류를 바꿀때마다 이름도 바꾸는 생성자 구현
 
@@ -26,9 +26,7 @@ namespace Server_test
         }
     }
 
-    /// <summary>
-    /// 자원 종류
-    /// </summary>
+    // 자원 종류
     enum Resource
     {
         Hydrogen,         // 수소

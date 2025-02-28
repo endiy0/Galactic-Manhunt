@@ -18,8 +18,14 @@ namespace Client_test
             InitializeComponent();
             form = Form;
             this.Text = title;
-            if (isreservation) button1.Text = "예약";
-            else button1.Text = "결정";
+            if (isreservation)
+            {
+                button1.Text = "예약";
+            }
+            else
+            {
+                button1.Text = "결정";
+            }
         }
     }
 }

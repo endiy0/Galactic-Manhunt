@@ -27,7 +27,7 @@ namespace Server_test
             label2.Text = "로컬 IP주소:\n" + GetLocalIPAddress() + "\n외부 IP주소:\n" + GetExternalIPAddress();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // 서버 시작
         {
             if (int.TryParse(textBox1.Text, out int port) && 0 < port && port < 100000)
             {
@@ -247,7 +247,7 @@ namespace Server_test
         }
         // TODO: 현재 접속자명 listbox 만들기
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) // 프로그램 종료
         {
             isClosing = true;
             foreach (var c in clients)
@@ -258,7 +258,7 @@ namespace Server_test
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // 서버 종료
         {
             foreach (var c in clients)
             {
@@ -274,7 +274,7 @@ namespace Server_test
             listBox2.Items.Clear();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // 전송
         {
             if (!textBox1.Text.Contains('⧫') && !textBox1.Text.Contains('◊'))
             {
@@ -349,7 +349,7 @@ namespace Server_test
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // 게임 시작
         {
             if(clients.Count >= 2)
             {

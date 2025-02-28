@@ -21,7 +21,7 @@ namespace Client_test
             isconnected = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // 연결
         {
             try
             {
@@ -46,6 +46,7 @@ namespace Client_test
             }
 
         }
+
         private void ReceiveMessages()
         {
             byte[] buffer = new byte[102400];
@@ -55,7 +56,6 @@ namespace Client_test
             {
                 try
                 {
-
                     buffer = new byte[102400];
                     if (msg != "")
                     {
@@ -68,15 +68,29 @@ namespace Client_test
                         if (bytesRead == 0)
                             break;
                         data = data.Where(x => x != 0).ToArray();
-                        if (buffer.Length == 102400) buffer = data;
-                        else buffer = buffer.Concat(data).ToArray();
+                        if (buffer.Length == 102400)
+                        {
+                            buffer = data;
+                        }
+                        else
+                        {
+                            buffer = buffer.Concat(data).ToArray();
+                        }
 
                         msg = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
-                        if (msg.Contains('◊')) break;
+                        if (msg.Contains('◊'))
+                        {
+                            break;
+                        }
                     }
                     if (Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊").Length == 1)
+                    {
                         msg = "";
-                    else msg = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊")[1];
+                    }
+                    else
+                    {
+                        msg = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊")[1];
+                    }
                     string[] message = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊")[0].Split('⧫');
 
                     if (message[0] == "0")
@@ -85,10 +99,11 @@ namespace Client_test
                     }
                     else if (message[0] == "1")
                     {
-                        
                         client.Close();
                         if (message[1] != "")
+                        {
                             MessageBox.Show(message[1]);
+                        }
 
                         Invoke(new Action(() =>
                         {
@@ -139,12 +154,10 @@ namespace Client_test
                 {
                     break;
                 }
-
-
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // 연결 해제
         {
             stream.Write(Encoding.UTF8.GetBytes("1⧫◊"));
             stream.Flush();
@@ -159,7 +172,7 @@ namespace Client_test
             listBox2.Items.Clear();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) // 프로그램 종료
         {
             if (isconnected)
             {
@@ -176,7 +189,7 @@ namespace Client_test
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // 전송
         {
             if (!textBox1.Text.Contains('⧫') && !textBox1.Text.Contains('◊'))
             {
@@ -201,7 +214,7 @@ namespace Client_test
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && isconnected)
+            if (e.KeyCode == Keys.Enter && isconnected) // 엔터 누르면 전송
             {
                 if (!textBox1.Text.Contains('⧫') && !textBox1.Text.Contains('◊'))
                 {
