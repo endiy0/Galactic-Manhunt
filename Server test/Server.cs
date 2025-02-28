@@ -225,19 +225,6 @@ namespace Server_test
                     break;
                 }
             }
-            //if (!isClosing && !error)
-            //{
-            //    foreach (var c in clients)
-            //    {
-            //        if (c != clients[clientrealnumber])
-            //        {
-            //            NetworkStream cStream = c.client.GetStream();
-            //            byte[] responseBytes = buffer;
-            //            cStream.Write(Encoding.UTF8.GetBytes($"{clients[clientrealnumber].nickname} disconnected..."));
-            //        }
-            //    }
-            //    Invoke(new Action(() => listBox1.Items.Add($"{clients[clientrealnumber].nickname} disconnected...")));
-            //}
             client.client.Close();
             if (!isClosing)
             {
@@ -245,7 +232,6 @@ namespace Server_test
                 clients.Remove(client);
             }
         }
-        // TODO: 현재 접속자명 listbox 만들기
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) // 프로그램 종료
         {
