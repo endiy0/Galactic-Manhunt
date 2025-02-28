@@ -27,6 +27,7 @@ namespace Server_test
         }
     }
 
+    // 선원 타입
     enum SailorType
     {
         Normal,
