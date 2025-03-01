@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -32,8 +32,8 @@ namespace Server_test
         // 스킬 가격은 아래 바로바로 구현함 - 저장소 제외
 
         Dictionary<Ability, double> abilities;     // 상점 종류당 판매하는 능력
-        Dictionary<Item,double> items;             // 상점 종류당 판매하는 아이템
-        Dictionary<Sailor,double> sailors;         // 인력사무소에서 판매하는 노예들
+        Dictionary<Item, double> items;             // 상점 종류당 판매하는 아이템
+        Dictionary<Sailor, double> sailors;         // 인력사무소에서 판매하는 노예들
 
         public StoreServer(StoreType store)           // 일단 상점 종류만 받기 - 수정할거면 ㄱㄱ
         {
@@ -59,14 +59,14 @@ namespace Server_test
             }
 
 
-            else if(storeType == StoreType.Slave_store)  // 인력사무소
+            else if (storeType == StoreType.Slave_store)  // 인력사무소
             {
-                sailors.Add(new Sailor(SailorType.Normal, 1, 140, new Work(WorkType.None)),sailor_cost);           // 선원
-                sailors.Add(new Sailor(SailorType.Advanced, 1, 200, new Work(WorkType.None)),advanced_cost);       // 고급 선원
+                sailors.Add(new Sailor(SailorType.Normal, 1, 140, new Work(WorkType.None)), sailor_cost);           // 선원
+                sailors.Add(new Sailor(SailorType.Advanced, 1, 200, new Work(WorkType.None)), advanced_cost);       // 고급 선원
             }
 
 
-            else if(storeType == StoreType.Black_market)  // 암시장
+            else if (storeType == StoreType.Black_market)  // 암시장
             {
                 int luck = rand.Next(20, 141);      // 암시장 랜덤 능력 저하 or 능력 상승 변수
 
@@ -76,14 +76,14 @@ namespace Server_test
 
                 abilities.Add(new Ability(AbilityType.get_fuel), 5000);               // 겟 퓨얼
                 abilities.Add(new Ability(AbilityType.fuel_compressor), 10000);       // 연료 압축기  
-                abilities.Add(new Ability(AbilityType.fuel_changing),5000);           // 연료 교환권
+                abilities.Add(new Ability(AbilityType.fuel_changing), 5000);           // 연료 교환권
                 abilities.Add(new Ability(AbilityType.stun_remover), 5000);           // 스턴 제거기
                 abilities.Add(new Ability(AbilityType.store_growing), storage_cost + storage_cost / 5);    // 저장량 증가 + 20%
 
 
             }
 
-            else if(storeType == StoreType.public_store)
+            else if (storeType == StoreType.public_store)
             {
 
                 items.Add(new Item(Resource.Food, MaxFood), food_cost);           // 음식, 뒤에 가격은 5KG당 가격
@@ -94,33 +94,42 @@ namespace Server_test
             }
 
         }
-        
+
         public int Exchange_place(Resource Re, int count)       // 판매 자원 종류, 판매 자원 kg - 소수점 사용 불가
         {
-            if(Re == Resource.Oxygen)           // 산소
+
+            // 반환한거는 개인 크로노 추가
+
+
+            if (Re == Resource.Oxygen)           // 산소
             {
                 return count * 100;
             }
 
-            if(Re == Resource.Hydrogen)         // 수소
+            if (Re == Resource.Hydrogen)         // 수소
             {
                 return count * 400;
             }
 
-            if(Re == Resource.Nitrogen)         // 질소
+            if (Re == Resource.Nitrogen)         // 질소
             {
                 return count * 120;
             }
 
-            if(Re == Resource.Epsilon_crystal)      // 엑실론 크리스탈
+            if (Re == Resource.Epsilon_crystal)      // 엑실론 크리스탈
             {
                 return count * 1000;
             }
 
+
             return 0;
         }
-    }
 
+        public StoreType tp
+        {
+            get { return storeType; }
+        }
+    }
     enum StoreType
     {
         Cops_store,
@@ -128,4 +137,5 @@ namespace Server_test
         Slave_store,
         public_store
     }
+
 }
