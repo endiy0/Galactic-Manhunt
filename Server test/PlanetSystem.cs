@@ -44,6 +44,7 @@ namespace Server_test
                 
             }
         }
+
         public List<Planet> Planets
         {
             get
@@ -60,10 +61,12 @@ namespace Server_test
         {
             planets.Add(P);
         }
+
         public void RemovePlanets(Planet P)
         {
             planets.Remove(P);
         }
+
         public void ClearPlanets()
         {
             planets.Clear();
