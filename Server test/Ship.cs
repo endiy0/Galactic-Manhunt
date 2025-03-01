@@ -22,6 +22,5 @@ namespace Server_test
         sailor_ship,             // 선원 함선
         galaxy_moving_ship,      // 초 은하 이동 함선
         thief_ship               // 도적 함선
-                   
     }
 }

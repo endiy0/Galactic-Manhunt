@@ -28,7 +28,7 @@ namespace Client_test
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // 선택
         {
             int selectecIndex = listBox1.SelectedIndex;
             switch(selectecIndex)
@@ -36,30 +36,37 @@ namespace Client_test
                 case -1:
                     MessageBox.Show("선택된 항목이 없습니다.");
                     break;
+
                 case 0:
                     ShipControl shipControl = new ShipControl(this);
                     shipControl.Show();
                     break;
+
                 case 1:
                     Farming farming = new Farming(this);
                     farming.Show();
                     break;
+
                 case 2:
                     ItemUse itemUse = new ItemUse(this);
                     itemUse.Show();
+
                     break;
                 case 3:
                     ItemSynthesis itemSynthesis = new ItemSynthesis(this);
                     itemSynthesis.Show();
                     break;
+
                 case 4:
                     Collection collecting = new Collection(this);
                     collecting.Show();
                     break;
+
                 case 5:
                     Store store = new Store(this);
                     store.Show();
                     break;
+
                 default:
                     break;
             }
