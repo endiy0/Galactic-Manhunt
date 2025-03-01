@@ -57,9 +57,7 @@ namespace Server_test
         }
     }
 
-    /// <summary>
-    /// 자원 종류
-    /// </summary>
+    // 자원 종류
     // 자원 추가할때마다 Item의 전역변수 Count 수정하기
     enum Resource
     {
