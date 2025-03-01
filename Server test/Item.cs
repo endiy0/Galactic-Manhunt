@@ -70,7 +70,7 @@ namespace Server_test
         Peroxide,         // 퍼옥사이드
         Hydrazine,        // 하이드라진
         Epsilon,          // 엑실론
-        Food,             // 씨앗
+        Food,             // 음식
 
         Epsilon_crystal,  // 엑실론-크리스탈
         Water,            // 물
