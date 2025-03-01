@@ -117,12 +117,10 @@ namespace Server_test
                 return count * 1000;
             }
 
-
             return 0;
         }
-        
-        
     }
+
     enum StoreType
     {
         Cops_store,
