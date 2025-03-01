@@ -28,14 +28,9 @@ namespace Server_test
             ship = new Ship();
         }
 
-        public void Send(string msg)
+        public void Send(string type, string msg)
         {
-            client.GetStream().Write(Encoding.UTF8.GetBytes(msg));
-        }
-
-        public void Send(string msg)
-        {
-            client.GetStream().Write(Encoding.UTF8.GetBytes(msg));
+            client.GetStream().Write(Encoding.UTF8.GetBytes(type + "⧫" + msg + "◊"));
         }
     }
 }
