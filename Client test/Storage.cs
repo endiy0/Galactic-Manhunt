@@ -12,9 +12,11 @@ namespace Client_test
 {
     public partial class Storage : Form
     {
-        public Storage()
+        ChatClient form;
+        public Storage(ChatClient form)
         {
             InitializeComponent();
+            this.form = form;
         }
     }
 }
