@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // Ability 클래스
-    class Ability
+    class Ability(AbilityType ABILITYTYPE)
     {
 
     }
