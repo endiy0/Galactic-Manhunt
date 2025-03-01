@@ -39,8 +39,9 @@
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(160, 94);
+            dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(360, 225);
             dataGridView1.TabIndex = 0;
@@ -59,14 +60,14 @@
             Column2.Name = "Column2";
             Column2.Width = 150;
             // 
-            // Store
+            // StoreClient
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(615, 352);
             Controls.Add(dataGridView1);
-            Margin = new Padding(2, 2, 2, 2);
-            Name = "Store";
+            Margin = new Padding(2);
+            Name = "StoreClient";
             Text = "상점";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
