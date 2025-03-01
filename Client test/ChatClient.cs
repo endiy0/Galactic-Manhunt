@@ -127,7 +127,7 @@ namespace Client_test
                             nickname = "Client" + mynum.ToString();
                             Invoke(new Action(() => textBox4.Text = nickname));
                         }
-                        else if(!str.Contains('⧫'))
+                        else if (!str.Contains('⧫'))
                         {
                             nickname = str;
                         }
@@ -144,7 +144,7 @@ namespace Client_test
                     {
                         Invoke(new Action(() => listBox2.Items.Add(message[1])));
                     }
-                    else if(message[0] == "5")
+                    else if (message[0] == "5")
                     {
                         Invoke(new Action(() => listBox2.Items.Remove(message[1])));
                     }
@@ -236,6 +236,12 @@ namespace Client_test
                     MessageBox.Show("다음 문자는 포함되어서는 안됩니다: ⧫, ◊");
                 }
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Storage storage = new Storage(this);
+            storage.Show();
         }
     }
 }
