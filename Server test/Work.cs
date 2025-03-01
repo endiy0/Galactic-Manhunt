@@ -18,12 +18,12 @@ namespace Server_test
 
     enum WorkType
     {
-        None,       //없음
-        Ship_Move,  //함선 조종
-        Farm_Work,  //농사
-        Mine_Work,  //채집
-        Item_Make,  //아이템 사용
-        Item_Use,   //아이템 제작
-        Store_Use   //상점 이용
+        None,       // 없음
+        Ship_Move,  // 함선 조종
+        Farm_Work,  // 농사
+        Mine_Work,  // 채집
+        Item_Make,  // 아이템 사용
+        Item_Use,   // 아이템 제작
+        Store_Use   // 상점 이용
     }
 }
