@@ -25,7 +25,7 @@
     <Compile Update="Collection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Store.cs">
+    <Compile Update="StoreClient.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

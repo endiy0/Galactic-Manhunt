@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Client_test
 {
-    public partial class Store : Form
+    public partial class StoreClient : Form
     {
         TaskSelection form;
-        public Store(TaskSelection form)
+        public StoreClient(TaskSelection form)
         {
             InitializeComponent();
             this.form = form;

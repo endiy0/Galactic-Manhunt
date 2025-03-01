@@ -63,7 +63,7 @@ namespace Client_test
                     break;
 
                 case 5: // 상점
-                    Store store = new Store(this);
+                    StoreClient store = new StoreClient(this);
                     store.Show();
                     break;
 

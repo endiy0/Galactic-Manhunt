@@ -1,6 +1,6 @@
 ﻿namespace Client_test
 {
-    partial class Store
+    partial class StoreClient
     {
         /// <summary>
         /// Required designer variable.
