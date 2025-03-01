@@ -26,7 +26,7 @@ namespace Server_test
 
         List<(Ability, int)> abilities;     // 상점 종류당 판매하는 능력
         List<(Item,int)> items;             // 상점 종류당 판매하는 아이템
-        List<(Sailor,int)> sailors;         // 인력사무소에서 판매하는 노예들
+        List<(Sailor,int)> sailors;         // 인력사무소에서 판매하는 선원들
 
         public Store(StoreType store)           // 일단 상점 종류만 받기 - 수정할거면 ㄱㄱ
         {
