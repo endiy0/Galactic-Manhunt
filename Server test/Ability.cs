@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // Ability 클래스
-    class Ability(AbilityType ABILITYTYPE)
-    {
 
+    
+    class Ability
+    {
+        AbilityType type;
+        public Ability(AbilityType ABILITYTYPE)
+        {
+            type = ABILITYTYPE;
+        }
     }
 
     enum AbilityType
