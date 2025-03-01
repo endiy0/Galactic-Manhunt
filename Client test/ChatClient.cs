@@ -238,6 +238,8 @@ namespace Client_test
             }
         }
 
+        // TODO: 게임이 시작되지 않았으면 버튼 비활성화
+
         private void button5_Click(object sender, EventArgs e)
         {
             Storage storage = new Storage(this);
