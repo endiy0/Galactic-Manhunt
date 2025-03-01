@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Text;
 
 namespace Client_test
@@ -240,10 +239,24 @@ namespace Client_test
 
         // TODO: 게임이 시작되지 않았으면 버튼 비활성화
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) // 저장고 확인
         {
             Storage storage = new Storage(this);
             storage.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e) // 할 일 선택
+        {
+            // TODO: TaskSelection 본인 턴 확인 후 실행
+            // if (본인 턴)
+            // {
+                   TaskSelection taskSelection = new TaskSelection(this, false);
+                   taskSelection.Show();
+            // }
+            // else
+            // {
+            //     TaskSelection taskSelection = new TaskSelection(this, true);
+            //     taskSelection.Show();
+            // }
     }
 }

@@ -53,7 +53,7 @@
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 25;
             listBox1.Location = new Point(9, 59);
-            listBox1.Margin = new Padding(2, 2, 2, 2);
+            listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(530, 504);
             listBox1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // button1
             // 
             button1.Location = new Point(702, 34);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(154, 36);
             button1.TabIndex = 1;
@@ -72,7 +72,7 @@
             // button2
             // 
             button2.Location = new Point(702, 94);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(154, 36);
             button2.TabIndex = 2;
@@ -83,7 +83,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(135, 575);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(284, 31);
             textBox1.TabIndex = 3;
@@ -101,7 +101,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(543, 37);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(155, 31);
             textBox2.TabIndex = 5;
@@ -119,7 +119,7 @@
             // textBox3
             // 
             textBox3.Location = new Point(543, 97);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
+            textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(155, 31);
             textBox3.TabIndex = 7;
@@ -127,7 +127,7 @@
             // button3
             // 
             button3.Location = new Point(423, 570);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(115, 36);
             button3.TabIndex = 8;
@@ -148,7 +148,7 @@
             // textBox4
             // 
             textBox4.Location = new Point(543, 157);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
+            textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(155, 31);
             textBox4.TabIndex = 10;
@@ -157,9 +157,9 @@
             // 
             groupBox1.Controls.Add(listBox2);
             groupBox1.Location = new Point(543, 192);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(312, 363);
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
@@ -170,7 +170,7 @@
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 25;
             listBox2.Location = new Point(5, 30);
-            listBox2.Margin = new Padding(2, 2, 2, 2);
+            listBox2.Margin = new Padding(2);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(304, 329);
             listBox2.TabIndex = 0;
@@ -188,19 +188,20 @@
             // button4
             // 
             button4.Location = new Point(543, 563);
-            button4.Margin = new Padding(2, 2, 2, 2);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(154, 42);
             button4.TabIndex = 13;
             button4.Text = "할 일 선택";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "전체", "팀" });
             comboBox1.Location = new Point(9, 574);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
+            comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(122, 33);
             comboBox1.TabIndex = 14;
@@ -208,7 +209,7 @@
             // button5
             // 
             button5.Location = new Point(702, 563);
-            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(154, 42);
             button5.TabIndex = 15;
@@ -238,7 +239,7 @@
             Controls.Add(button1);
             Controls.Add(listBox1);
             KeyPreview = true;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ChatClient";
             Text = "Chat Client";
             FormClosing += Form1_FormClosing;
