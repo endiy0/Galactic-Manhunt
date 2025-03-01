@@ -14,11 +14,10 @@ namespace Client_test
     public partial class TaskSelection : Form
     {
         ChatClient form;
-        public TaskSelection(ChatClient Form, string title, bool isreservation)
+        public TaskSelection(ChatClient Form, bool isreservation)
         {
             InitializeComponent();
             form = Form;
-            this.Text = title;
             if (isreservation)
             {
                 button1.Text = "예약";
