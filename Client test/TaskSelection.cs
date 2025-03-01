@@ -31,13 +31,11 @@ namespace Client_test
         private void button1_Click(object sender, EventArgs e)
         {
             int selectecIndex = listBox1.SelectedIndex;
-            if (selectecIndex == -1)
-            {
-                MessageBox.Show("선택된 항목이 없습니다.");
-                return;
-            }
             switch(selectecIndex)
             {
+                case -1:
+                    MessageBox.Show("선택된 항목이 없습니다.");
+                    break;
                 case 0:
                     ShipControl shipControl = new ShipControl(this);
                     shipControl.Show();
