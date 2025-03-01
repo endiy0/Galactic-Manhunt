@@ -18,5 +18,9 @@ namespace Client_test
             InitializeComponent();
             this.form = form;
         }
+
+        // TODO: 채집 구현
+        // TODO: Enter 누르면 선택
+
     }
 }

@@ -28,6 +28,8 @@ namespace Client_test
             }
         }
 
+        // TODO: Enter 누르면 선택
+
         private void button1_Click(object sender, EventArgs e) // 선택
         {
             int selectecIndex = listBox1.SelectedIndex;

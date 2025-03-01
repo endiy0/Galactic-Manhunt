@@ -18,5 +18,9 @@ namespace Client_test
             InitializeComponent();
             this.form = form;
         }
+
+        // TODO: 상점 구현
+        // TODO: Enter 누르면 구매, 구매 전 구매하시겠습니까? 확인창
+
     }
 }
