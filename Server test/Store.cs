@@ -92,8 +92,34 @@ namespace Server_test
 
                 abilities.Add(new Ability(AbilityType.store_growing), storage_cost);   // 저장량 증가
             }
+
         }
         
+        public int Exchange_place(Resource Re, int count)       // 판매 자원 종류, 판매 자원 kg - 소수점 사용 불가
+        {
+            if(Re == Resource.Oxygen)           // 산소
+            {
+                return count * 100;
+            }
+
+            if(Re == Resource.Hydrogen)         // 수소
+            {
+                return count * 400;
+            }
+
+            if(Re == Resource.Nitrogen)         // 질소
+            {
+                return count * 120;
+            }
+
+            if(Re == Resource.Epsilon_crystal)      // 엑실론 크리스탈
+            {
+                return count * 1000;
+            }
+
+
+            return 0;
+        }
         
         
     }
