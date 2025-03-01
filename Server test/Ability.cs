@@ -26,6 +26,8 @@ namespace Server_test
         planet_travel,         // 행성 탐방
         stun,                  // 스턴
         handcuffs,             // 수갑
+        team_identifying,       // 팀 식별
+
                                
         // 도둑                  
         get_fuel,              // 겟퓨얼
