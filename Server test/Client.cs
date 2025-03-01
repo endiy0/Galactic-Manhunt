@@ -32,10 +32,5 @@ namespace Server_test
         {
             client.GetStream().Write(Encoding.UTF8.GetBytes(msg));
         }
-
-        public void Send(string msg)
-        {
-            client.GetStream().Write(Encoding.UTF8.GetBytes(msg));
-        }
     }
 }
