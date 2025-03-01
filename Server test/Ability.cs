@@ -14,6 +14,20 @@ namespace Server_test
 
     enum AbilityType
     {
-        //TODO: 상점에서 살 수 있는 능력 적기
+        //경찰
+        dark_under_the_lamp,   // 등잔 밑이 어둡다
+        galaxy_travel,         // 은하 탐방
+        planet_travel,         // 행성 탐방
+        stun,                  // 스턴
+        handcuffs,             // 수갑
+                               
+        //도둑                  
+        get_fuel,              // 겟퓨얼
+        fuel_changing,         // 연료 교환권
+        fuel_zipper,           // 연료 압축기
+        stun_remover,          // 스턴 제거기
+                               
+        //공통                  
+        store_growing          // 저장량 증가
     }
 }

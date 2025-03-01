@@ -17,5 +17,6 @@ namespace Server_test
             Slave_store,
         }
         // TODO: 물건 정보, 아이템 정보, 환전소 만들기
+
     }
 }
