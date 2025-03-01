@@ -15,24 +15,24 @@ namespace Server_test
         
         // TODO: 생성자 만들기
 
-        public PlanetSystem(Vector2 L)//Galaxy class에서 받아올것
+        public PlanetSystem(Vector2 L) // Galaxy class에서 받아올것
         {
             Random rand = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
-            int size = rand.Next(3, 11);//한 항성계 최대 행성
-            const int MaxEarth = 4;//최대 지구형 행성 개수
-            int EarthCount = 0;//지구형 행성 카운트
+            int size = rand.Next(3, 11); // 한 항성계 최대 행성
+            const int MaxEarth = 4; // 최대 지구형 행성 개수
+            int EarthCount = 0; // 지구형 행성 카운트
 
 
-            location = L;//항성계 위치
+            location = L; // 항성계 위치
 
-            for(int i = 0; i < size; i++)// planets List채우기
+            for(int i = 0; i < size; i++) // planets List채우기
             {
                 PlanetType type = (rand.Next(0, 2) == 1) ? PlanetType.Jupitor : PlanetType.Earth; // 1이면 목성형 0이면 지구형 - PlanetType 결정
-                if (type == PlanetType.Earth)//지구형 행성 최대 4개 검사
+                if (type == PlanetType.Earth) // 지구형 행성 최대 4개 검사
                 {
                     if (EarthCount == MaxEarth)
                     {
-                        type = PlanetType.Jupitor;//최대 안넘게 목성형으로 교체
+                        type = PlanetType.Jupitor; // 최대 안넘게 목성형으로 교체
                     }
                     else
                     {
@@ -40,7 +40,7 @@ namespace Server_test
                     }
                 }
                 
-                planets.Add(new Planet(type));//행성 생성
+                planets.Add(new Planet(type)); // 행성 생성
                 
             }
         }
