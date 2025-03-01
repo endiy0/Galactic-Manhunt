@@ -34,6 +34,8 @@ namespace Server_test
                 Name = "하이드라진";
             else if (Itemtype == Resource.Epsilon)
                 Name = "엑실론";
+            else if (Itemtype == Resource.Food)
+                Name = "식량";
             else if (Itemtype == Resource.Epsilon_crystal)
                 Name = "엑실론 크리스탈";
             else if (Itemtype == Resource.Water)
@@ -68,6 +70,7 @@ namespace Server_test
         Peroxide,         // 퍼옥사이드
         Hydrazine,        // 하이드라진
         Epsilon,          // 엑실론
+        Food,             // 씨앗
 
         Epsilon_crystal,  // 엑실론-크리스탈
         Water,            // 물
