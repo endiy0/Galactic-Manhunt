@@ -14,7 +14,7 @@ namespace Server_test
         public double mass; //질량, 단위: kg
         public static int ResourceCount = 10;
         public static int AirCount = 3;
-        public static int CompountCount = 3;
+        public static int CompountCount = 4;
         public static int MineralCount = 2;
         public static int OrganicMatterCount = 1;
 
