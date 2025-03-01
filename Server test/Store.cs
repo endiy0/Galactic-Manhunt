@@ -10,13 +10,23 @@ namespace Server_test
     class Store
     {
         StoreType storeType;
-        enum StoreType
-        {
-            Cops_store,
-            Black_market,
-            Slave_store,
-        }
+        
         // TODO: 물건 정보, 아이템 정보, 환전소 만들기
 
+        List<Item> items;
+
+        public Store()
+        {
+            
+        }
+        
+
+        
+    }
+    enum StoreType
+    {
+        Cops_store,
+        Black_market,
+        Slave_store,
     }
 }
