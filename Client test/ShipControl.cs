@@ -12,9 +12,11 @@ namespace Client_test
 {
     public partial class ShipControl : Form
     {
-        public ShipControl()
+        TaskSelection form;
+        public ShipControl(TaskSelection form)
         {
             InitializeComponent();
+            this.form = form;
         }
     }
 }

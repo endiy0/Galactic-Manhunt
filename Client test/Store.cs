@@ -12,9 +12,11 @@ namespace Client_test
 {
     public partial class Store : Form
     {
-        public Store()
+        TaskSelection form;
+        public Store(TaskSelection form)
         {
             InitializeComponent();
+            this.form = form;
         }
     }
 }

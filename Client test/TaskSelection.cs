@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Client_test
 {
@@ -25,6 +26,45 @@ namespace Client_test
             else
             {
                 button1.Text = "결정";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int selectecIndex = listBox1.SelectedIndex;
+            if (selectecIndex == -1)
+            {
+                MessageBox.Show("선택된 항목이 없습니다.");
+                return;
+            }
+            switch(selectecIndex)
+            {
+                case 0:
+                    ShipControl shipControl = new ShipControl(this);
+                    shipControl.Show();
+                    break;
+                case 1:
+                    Farming farming = new Farming(this);
+                    farming.Show();
+                    break;
+                case 2:
+                    ItemUse itemUse = new ItemUse(this);
+                    itemUse.Show();
+                    break;
+                case 3:
+                    ItemSynthesis itemSynthesis = new ItemSynthesis(this);
+                    itemSynthesis.Show();
+                    break;
+                case 4:
+                    Collection collecting = new Collection(this);
+                    collecting.Show();
+                    break;
+                case 5:
+                    Store store = new Store(this);
+                    store.Show();
+                    break;
+                default:
+                    break;
             }
         }
     }

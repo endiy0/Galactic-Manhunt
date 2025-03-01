@@ -12,9 +12,11 @@ namespace Client_test
 {
     public partial class ItemSynthesis : Form
     {
-        public ItemSynthesis()
+        TaskSelection form;
+        public ItemSynthesis(TaskSelection form)
         {
             InitializeComponent();
+            this.form = form;
         }
     }
 }

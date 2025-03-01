@@ -12,9 +12,11 @@ namespace Client_test
 {
     public partial class Farming : Form
     {
-        public Farming()
+        TaskSelection form;
+        public Farming(TaskSelection form)
         {
             InitializeComponent();
+            this.form = form;
         }
     }
 }
