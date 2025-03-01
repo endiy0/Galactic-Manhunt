@@ -36,7 +36,9 @@ namespace Server_test
                         }
                     }
                     if (cmp)
+                    {
                         break; // cmp변화하면 중복이죠 아니면 그냥 ㄱㄱ
+                    }
                 }
                 systems.Add(new PlanetSystem(Location));
             }

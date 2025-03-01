@@ -24,24 +24,34 @@ namespace Server_test
             mass = MASS;
             if (Itemtype == Resource.Hydrogen)
                 Name = "수소";
+
             else if (Itemtype == Resource.Nitrogen)
                 Name = "질소";
+
             else if (Itemtype == Resource.Oxygen)
                 Name = "산소";
+
             else if (Itemtype == Resource.Peroxide)
                 Name = "퍼옥사이드";
+
             else if (Itemtype == Resource.Hydrazine)
                 Name = "하이드라진";
+
             else if (Itemtype == Resource.Epsilon)
                 Name = "엑실론";
+
             else if (Itemtype == Resource.Food)
                 Name = "식량";
+
             else if (Itemtype == Resource.Epsilon_crystal)
                 Name = "엑실론 크리스탈";
+
             else if (Itemtype == Resource.Water)
                 Name = "물";
+
             else if (Itemtype == Resource.Seed)
                 Name = "씨앗";
+
             else if (Itemtype == Resource.Chrono)
                 Name = "크로노";
         }
@@ -57,9 +67,7 @@ namespace Server_test
         }
     }
 
-    /// <summary>
-    /// 자원 종류
-    /// </summary>
+    // 자원 종류
     // 자원 추가할때마다 Item의 전역변수 Count 수정하기
     enum Resource
     {
@@ -70,7 +78,7 @@ namespace Server_test
         Peroxide,         // 퍼옥사이드
         Hydrazine,        // 하이드라진
         Epsilon,          // 엑실론
-        Food,             // 씨앗
+        Food,             // 음식
 
         Epsilon_crystal,  // 엑실론-크리스탈
         Water,            // 물

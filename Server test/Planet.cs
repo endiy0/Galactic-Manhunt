@@ -28,6 +28,7 @@ namespace Server_test
             int AirCount = (T == PlanetType.Earth) ? random.Next(0, Item.AirCount + 1) : random.Next(Item.AirCount / 2, Item.AirCount + 1);
             int MineralCount = (T == PlanetType.Earth) ? random.Next(0, Item.MineralCount + 1) : 0;
             int OrganicMatterCount = (T == PlanetType.Earth) ? random.Next(0, Item.OrganicMatterCount + 1) : 0;
+
             for(int i = 0; i < AirCount; i++)
             {
                 Resource resource = new Resource();
@@ -45,6 +46,7 @@ namespace Server_test
                     resources.AddItem(new Item(resource, OxygenMax * random.NextDouble()));
                 }
             }
+
             for (int i = 0; i < MineralCount; i++)
             {
                 Resource resource = new Resource();
@@ -58,6 +60,7 @@ namespace Server_test
                     resources.AddItem(new Item(resource, WaterMax * random.NextDouble()));
                 }
             }
+
             for (int i = 0; i < OrganicMatterCount; i++)
             {
                 Resource resource = new Resource();
