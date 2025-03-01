@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             dataGridView2 = new DataGridView();
-            Item = new DataGridViewTextBoxColumn();
-            Mass = new DataGridViewTextBoxColumn();
             Abilities = new DataGridViewTextBoxColumn();
             Number = new DataGridViewTextBoxColumn();
+            Item = new DataGridViewTextBoxColumn();
+            Mass = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -64,6 +64,26 @@
             dataGridView2.Size = new Size(503, 538);
             dataGridView2.TabIndex = 2;
             // 
+            // Abilities
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Abilities.DefaultCellStyle = dataGridViewCellStyle3;
+            Abilities.HeaderText = "능력";
+            Abilities.MinimumWidth = 8;
+            Abilities.Name = "Abilities";
+            Abilities.ReadOnly = true;
+            Abilities.Width = 250;
+            // 
+            // Number
+            // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Number.DefaultCellStyle = dataGridViewCellStyle4;
+            Number.HeaderText = "개수";
+            Number.MinimumWidth = 8;
+            Number.Name = "Number";
+            Number.ReadOnly = true;
+            Number.Width = 250;
+            // 
             // Item
             // 
             Item.HeaderText = "아이템";
@@ -74,31 +94,11 @@
             // 
             // Mass
             // 
-            Mass.HeaderText = "질량";
+            Mass.HeaderText = "질량(kg)";
             Mass.MinimumWidth = 8;
             Mass.Name = "Mass";
             Mass.ReadOnly = true;
             Mass.Width = 250;
-            // 
-            // Abilities
-            // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Abilities.DefaultCellStyle = dataGridViewCellStyle1;
-            Abilities.HeaderText = "능력";
-            Abilities.MinimumWidth = 8;
-            Abilities.Name = "Abilities";
-            Abilities.ReadOnly = true;
-            Abilities.Width = 250;
-            // 
-            // Number
-            // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Number.DefaultCellStyle = dataGridViewCellStyle2;
-            Number.HeaderText = "개수";
-            Number.MinimumWidth = 8;
-            Number.Name = "Number";
-            Number.ReadOnly = true;
-            Number.Width = 250;
             // 
             // Storage
             // 
@@ -119,9 +119,9 @@
 
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn Item;
-        private DataGridViewTextBoxColumn Mass;
         private DataGridViewTextBoxColumn Abilities;
         private DataGridViewTextBoxColumn Number;
+        private DataGridViewTextBoxColumn Item;
+        private DataGridViewTextBoxColumn Mass;
     }
 }
