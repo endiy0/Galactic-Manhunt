@@ -24,7 +24,7 @@ namespace Server_test
         //도둑                  
         get_fuel,              // 겟퓨얼
         fuel_changing,         // 연료 교환권
-        fuel_zipper,           // 연료 압축기
+        fuel_compressor,       // 연료 압축기
         stun_remover,          // 스턴 제거기
                                
         //공통                  
