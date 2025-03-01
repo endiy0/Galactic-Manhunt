@@ -11,7 +11,7 @@ namespace Server_test
     {
         Resource Itemtype;
         string Name;
-        public double mass; //질량, 단위: kg
+        public double mass; // 질량, 단위: kg
         public static int ResourceCount = 10;
         public static int AirCount = 3;
         public static int CompountCount = 4;
