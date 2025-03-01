@@ -36,7 +36,7 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 25;
-            listBox1.Items.AddRange(new object[] { "함선 조종", "농사", "아이템 사용", "아이템 합성", "채집", "상점 방문" });
+            listBox1.Items.AddRange(new object[] { "함선 조종", "농사", "아이템 사용", "아이템 합성", "채집", "상점" });
             listBox1.Location = new Point(9, 9);
             listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
