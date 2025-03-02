@@ -119,6 +119,6 @@ namespace Server_test
         Cops_store,
         Black_market,
         Sailor_store,
-        public_store
+        Public_store
     }
 }
