@@ -74,14 +74,14 @@ namespace Server_test
         Hydrogen,         // 수소
         Nitrogen,         // 질소
         Oxygen,           // 산소
-        Epsilon,          // 엑실론
+        Epsilon_crystal,  // 엑실론-크리스탈
 
         Peroxide,         // 퍼옥사이드
         Hydrazine,        // 하이드라진
-        Epsilon_crystal,  // 엑실론-크리스탈
+        Epsilon,          // 엑실론
 
         Water,            // 물
-        Food,             // 음식
+        Food,             // 식량
 
         Seed,             // 씨앗
                              
