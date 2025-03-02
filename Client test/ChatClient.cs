@@ -220,6 +220,7 @@ namespace Client_test
             }
         }
 
+        // TODO: 게임 시작, 종료 여부 받아오기
         // TODO: 게임이 시작되지 않았으면 버튼 비활성화
 
         private void button5_Click(object sender, EventArgs e) // 저장고 확인
