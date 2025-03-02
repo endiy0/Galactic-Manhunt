@@ -76,7 +76,7 @@
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(listBox1);
             groupBox1.Font = new Font("맑은 고딕", 10F);
-            groupBox1.Location = new Point(377, 12);
+            groupBox1.Location = new Point(395, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(313, 448);
             groupBox1.TabIndex = 3;
@@ -231,7 +231,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(704, 470);
+            ClientSize = new Size(720, 470);
             Controls.Add(dataGridView3);
             Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
