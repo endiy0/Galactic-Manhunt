@@ -4,6 +4,9 @@
     <Compile Update="ChatClient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ShipSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TaskSelection.cs">
       <SubType>Form</SubType>
     </Compile>
