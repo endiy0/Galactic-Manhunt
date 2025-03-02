@@ -31,7 +31,7 @@ namespace Client_test
             dataGridView1.Rows.Add("물", 100, 0);
             dataGridView1.Rows.Add("식량", 600, 0);
             dataGridView1.Rows.Add("씨앗", 400, 0);
-
+            
             // 역할에 따라 능력 목록 다르게
             // 경찰 능력 목록
             dataGridView2.Rows.Add("등잔 밑이 어둡다", 10000, 0);
