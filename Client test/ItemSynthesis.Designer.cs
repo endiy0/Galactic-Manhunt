@@ -169,7 +169,7 @@
             button1.Location = new Point(5, 304);
             button1.Name = "button1";
             button1.Size = new Size(327, 47);
-            button1.TabIndex = 4;
+            button1.TabIndex = 7;
             button1.Text = "합성";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -198,7 +198,7 @@
             textBox3.Location = new Point(143, 88);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(134, 34);
-            textBox3.TabIndex = 5;
+            textBox3.TabIndex = 6;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox2
