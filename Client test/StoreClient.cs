@@ -37,7 +37,7 @@ namespace Client_test
             dataGridView2.Rows.Add("등잔 밑이 어둡다", 10000, 0);
             dataGridView2.Rows.Add("은하 탐방", 50000, 0);
             dataGridView2.Rows.Add("행성 탐방", 12000, 0);
-            //dataGridView2.Rows.Add("스턴", "∞"); // 스턴은 기본 스킬로 무한정 사용할 수 있음
+            //dataGridView2.Rows.Add("스턴", "∞"); // 스턴은 기본 스킬로 개수 제한 없이 사용할 수 있음
             dataGridView2.Rows.Add("수갑", 2000, 0);
             dataGridView2.Rows.Add("팀 식별", 2000, 0);
             dataGridView2.Rows.Add("저장량 증가", 16000, 0);
@@ -55,8 +55,8 @@ namespace Client_test
             // TODO: TaskSelection 본인 턴 확인 후 실행
             //if (본인 턴)
             //{
-            TaskSelection taskSelection = new TaskSelection(chatClient, false);
-            taskSelection.Show();
+                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
+                  taskSelection.Show();
             //}
             //else
             //{
@@ -66,7 +66,9 @@ namespace Client_test
         }
 
         // TODO: 상점 구현
+        // 한번에 여러개 상품 선택가능하므로 여러개 한번에 구매할 수 있도록 구현해주세요
         // TODO: Enter 누르면 구매, 구매 전 구매하시겠습니까? 확인창
         // TODO: 구매할 때 구매할 질량 입력
+        // TODO: 선택 안되어 있으면 구매버튼 비활성화, Enter 눌러도 안되도록
     }
 }

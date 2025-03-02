@@ -232,6 +232,8 @@ namespace Client_test
         private void button4_Click(object sender, EventArgs e) // 할 일 선택
         {
             // TODO: TaskSelection 본인 턴 확인 후 실행
+            // TODO: TaskSelection 혹은 다른 Task창이 열러있는지 확인 후 아무것도 열려있지 않을 때만 열기
+
             //if (본인 턴)
             //{
                   TaskSelection taskSelection = new TaskSelection(this, false);
