@@ -66,7 +66,6 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(498, 365);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellEnter += dataGridView1_CellEnter;
             // 
             // Column1
             // 
@@ -158,7 +157,6 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(498, 365);
             dataGridView2.TabIndex = 6;
-            dataGridView2.CellEnter += dataGridView2_CellEnter;
             // 
             // dataGridViewTextBoxColumn1
             // 

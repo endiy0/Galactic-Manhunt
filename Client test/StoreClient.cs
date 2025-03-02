@@ -65,19 +65,8 @@ namespace Client_test
             //}
         }
 
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridView1.ClearSelection(); // 셀이 선택되지 않도록
-        }
-
-        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridView2.ClearSelection(); // 셀이 선택되지 않도록
-        }
-
         // TODO: 상점 구현
         // TODO: Enter 누르면 구매, 구매 전 구매하시겠습니까? 확인창
         // TODO: 구매할 때 구매할 질량 입력
-
     }
 }
