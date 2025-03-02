@@ -25,7 +25,7 @@ namespace Client_test
             }
             else
             {
-                button1.Text = "선택";
+                button1.Text = "열기";
             }
         }
 
