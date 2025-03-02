@@ -243,7 +243,7 @@
             KeyPreview = true;
             Margin = new Padding(2);
             Name = "ChatClient";
-            Text = "Chat Client";
+            Text = "Client";
             FormClosing += Form1_FormClosing;
             KeyDown += Form1_KeyDown;
             groupBox1.ResumeLayout(false);
