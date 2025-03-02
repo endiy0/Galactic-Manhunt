@@ -99,7 +99,7 @@
             groupBox1.Font = new Font("맑은 고딕", 10F);
             groupBox1.Location = new Point(395, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(313, 358);
+            groupBox1.Size = new Size(339, 358);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "합성 선택";
@@ -118,7 +118,7 @@
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(303, 170);
+            dataGridView2.Size = new Size(327, 170);
             dataGridView2.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -127,7 +127,7 @@
             dataGridViewTextBoxColumn1.MinimumWidth = 8;
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 150;
+            dataGridViewTextBoxColumn1.Width = 162;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -135,7 +135,7 @@
             dataGridViewTextBoxColumn2.MinimumWidth = 8;
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 150;
+            dataGridViewTextBoxColumn2.Width = 162;
             // 
             // label3
             // 
@@ -150,7 +150,7 @@
             // 
             button1.Location = new Point(5, 304);
             button1.Name = "button1";
-            button1.Size = new Size(303, 47);
+            button1.Size = new Size(327, 47);
             button1.TabIndex = 4;
             button1.Text = "합성";
             button1.UseVisualStyleBackColor = true;
@@ -222,7 +222,7 @@
             dataGridView3.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView3.Location = new Point(12, 229);
+            dataGridView3.Location = new Point(12, 236);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.ReadOnly = true;
             dataGridView3.RowHeadersVisible = false;
@@ -250,7 +250,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(720, 384);
+            ClientSize = new Size(744, 384);
             Controls.Add(dataGridView3);
             Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
@@ -279,12 +279,12 @@
         private Label label2;
         private Label label1;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Item;
         private DataGridViewTextBoxColumn Mass;
         private DataGridView dataGridView3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
