@@ -65,10 +65,12 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Item, Mass });
             dataGridView1.Location = new Point(12, 12);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(359, 167);
             dataGridView1.TabIndex = 2;
             // 
@@ -124,6 +126,7 @@
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 62;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(327, 170);
             dataGridView2.TabIndex = 4;
             // 
@@ -236,6 +239,7 @@
             dataGridView3.ReadOnly = true;
             dataGridView3.RowHeadersVisible = false;
             dataGridView3.RowHeadersWidth = 62;
+            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView3.Size = new Size(359, 134);
             dataGridView3.TabIndex = 4;
             // 
