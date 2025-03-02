@@ -80,5 +80,7 @@ namespace Client_test
         {
             label1.Text = "";
         }
+
+        // TODO: 작업 선택 시 Enter로 실행 안되는 경우가 있음 => 오류 해결 필요
     }
 }
