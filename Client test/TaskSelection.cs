@@ -71,6 +71,7 @@ namespace Client_test
                     break;
 
                 default:
+                    label1.Text = "선택된 작업이 없습니다";
                     break;
             }
         }
