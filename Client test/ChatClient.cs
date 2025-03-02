@@ -31,7 +31,7 @@ namespace Client_test
                     receiveThread = new Thread(ReceiveMessages);
                     receiveThread.IsBackground = true;
                     receiveThread.Start();
-                    listBox1.Items.Add("Connected to server...");
+                    listBox1.Items.Add("Connected to Server...");
                     isConnected = true;
                     button2.Enabled = true;
                     button3.Enabled = true;
