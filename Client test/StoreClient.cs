@@ -155,6 +155,8 @@ namespace Client_test
         #region item_textBox_TextChanged
         private void textBox1_TextChanged(object sender, EventArgs e) // 수소
         {
+            double mass = Convert.ToDouble(textBox1.Text);
+            if(mass > dataGridView1.Rows[0].)
             itemPrice["hydrogen"] = Convert.ToDouble(textBox1.Text) * 400;
             showTotalItemPrice();
         }
