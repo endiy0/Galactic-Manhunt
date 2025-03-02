@@ -12,12 +12,16 @@ namespace Client_test
         bool isConnected;
         string nickname;
         static string str;
+        static bool isGameStarted;
+        static Job job;
+        
         public ChatClient()
         {
             InitializeComponent();
             button2.Enabled = false;
             button3.Enabled = false;
             isConnected = false;
+            isGameStarted = false;
             comboBox1.SelectedIndex = 0; // default = 전체
         }
 
@@ -148,6 +152,18 @@ namespace Client_test
                     {
                         Invoke(new Action(() => listBox2.Items.Remove(message[1])));
                     }
+                    else if (message[0] == "6")
+                    {
+                        isGameStarted = true;
+                    }
+                    else if (message[0] == "7")
+                    {
+                        isGameStarted = false;
+                    }
+                    else if (message[0] == "8")
+                    {
+                        job = (Job)int.Parse(message[1]);
+                    }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
                 catch (Exception ex)
@@ -245,5 +261,10 @@ namespace Client_test
             //    taskSelection.Show();
             //}
         }
+    }
+    enum Job
+    {
+        Robber,
+        Cops
     }
 }

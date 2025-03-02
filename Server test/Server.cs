@@ -55,7 +55,9 @@ namespace Server_test
         // 3: 닉네임 전송(클라이언트=>서버)
         // 4: 접속한 클라이언트 이름
         // 5: 접속 종료한 클라이언트 이름
-
+        // 6: 게임 시작
+        // 7: 게임 종료
+        // 8: 역할 전송 (ex: 8⧫0◊, 0이면 도둑, 1이면 경찰)
         // Split 문자 : ⧫
         // 송신 Check 문자 : ◊
 
@@ -341,6 +343,49 @@ namespace Server_test
         {
             // TODO: 게임 구현하기
             // TODO: 서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘다 있는 은하는 보라색
+            foreach (var c in clients)
+            {
+                c.Send("6", "");
+                Delay(10);
+            }
+
+            int copsCount = CopsCount(clients.Count);
+            List<Client> cops = new List<Client>();
+            List<Client> robbers = new List<Client>();
+            Random random = new Random();
+
+            List<int> selectedIndices = new List<int>();
+
+            while (cops.Count < copsCount)
+            {
+                int index = random.Next(clients.Count);
+                if (!selectedIndices.Contains(index))
+                {
+                    selectedIndices.Add(index);
+                    cops.Add(clients[index]);
+                }
+            }
+
+            for (int i = 0; i < clients.Count; i++)
+            {
+                if (!selectedIndices.Contains(i))
+                {
+                    robbers.Add(clients[i]);
+                }
+            }
+
+            foreach (var c in cops)
+            {
+                c.Send("8", "1");
+                Delay(10);
+            }
+
+            foreach (var r in robbers)
+            {
+                r.Send("8", "0");
+                Delay(10);
+            }
+
         }
     }
 }
