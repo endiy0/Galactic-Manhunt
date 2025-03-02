@@ -30,12 +30,13 @@
         {
             SuspendLayout();
             // 
-            // Form7
+            // ItemSynthesis
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "Form7";
+            ClientSize = new Size(716, 469);
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "ItemSynthesis";
             Text = "아이템 합성";
             ResumeLayout(false);
         }
