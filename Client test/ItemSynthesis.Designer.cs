@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            Item = new DataGridViewTextBoxColumn();
+            Mass = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
-            listBox1 = new ListBox();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             dataGridView2 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            label3 = new Label();
+            button1 = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            listBox1 = new ListBox();
             dataGridView3 = new DataGridView();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            Item = new DataGridViewTextBoxColumn();
-            Mass = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -54,15 +54,36 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Item, Mass });
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(359, 221);
+            dataGridView1.Size = new Size(359, 167);
             dataGridView1.TabIndex = 2;
+            // 
+            // Item
+            // 
+            Item.HeaderText = "보유 자원";
+            Item.MinimumWidth = 8;
+            Item.Name = "Item";
+            Item.ReadOnly = true;
+            Item.Width = 178;
+            // 
+            // Mass
+            // 
+            Mass.HeaderText = "질량(kg)";
+            Mass.MinimumWidth = 8;
+            Mass.Name = "Mass";
+            Mass.ReadOnly = true;
+            Mass.Width = 178;
             // 
             // groupBox1
             // 
@@ -82,78 +103,6 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "합성 선택";
-            // 
-            // listBox1
-            // 
-            listBox1.BorderStyle = BorderStyle.FixedSingle;
-            listBox1.Font = new Font("맑은 고딕", 11F);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 30;
-            listBox1.Items.AddRange(new object[] { "엑실론", "하이드라진", "퍼옥사이드" });
-            listBox1.Location = new Point(5, 30);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(158, 92);
-            listBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(5, 395);
-            button1.Name = "button1";
-            button1.Size = new Size(303, 47);
-            button1.TabIndex = 4;
-            button1.Text = "합성";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(143, 30);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(134, 34);
-            textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(143, 59);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(134, 34);
-            textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Location = new Point(143, 88);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(134, 34);
-            textBox3.TabIndex = 5;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(278, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(34, 28);
-            label1.TabIndex = 6;
-            label1.Text = "kg";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(278, 61);
-            label2.Name = "label2";
-            label2.Size = new Size(34, 28);
-            label2.TabIndex = 7;
-            label2.Text = "kg";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(278, 88);
-            label3.Name = "label3";
-            label3.Size = new Size(34, 28);
-            label3.TabIndex = 7;
-            label3.Text = "kg";
             // 
             // dataGridView2
             // 
@@ -183,16 +132,93 @@
             dataGridViewTextBoxColumn2.ReadOnly = true;
             dataGridViewTextBoxColumn2.Width = 150;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(278, 88);
+            label3.Name = "label3";
+            label3.Size = new Size(34, 28);
+            label3.TabIndex = 7;
+            label3.Text = "kg";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(5, 395);
+            button1.Name = "button1";
+            button1.Size = new Size(303, 47);
+            button1.TabIndex = 4;
+            button1.Text = "합성";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(278, 61);
+            label2.Name = "label2";
+            label2.Size = new Size(34, 28);
+            label2.TabIndex = 7;
+            label2.Text = "kg";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(278, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(34, 28);
+            label1.TabIndex = 6;
+            label1.Text = "kg";
+            // 
+            // textBox3
+            // 
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Location = new Point(143, 88);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(134, 34);
+            textBox3.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Location = new Point(143, 59);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(134, 34);
+            textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Location = new Point(143, 30);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(134, 34);
+            textBox1.TabIndex = 4;
+            // 
+            // listBox1
+            // 
+            listBox1.BorderStyle = BorderStyle.FixedSingle;
+            listBox1.Font = new Font("맑은 고딕", 11F);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 30;
+            listBox1.Items.AddRange(new object[] { "엑실론", "하이드라진", "퍼옥사이드" });
+            listBox1.Location = new Point(5, 30);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(158, 92);
+            listBox1.TabIndex = 0;
+            // 
             // dataGridView3
             // 
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.AllowUserToResizeColumns = false;
+            dataGridView3.AllowUserToResizeRows = false;
             dataGridView3.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView3.Location = new Point(12, 239);
+            dataGridView3.Location = new Point(12, 250);
             dataGridView3.Name = "dataGridView3";
+            dataGridView3.ReadOnly = true;
             dataGridView3.RowHeadersVisible = false;
             dataGridView3.RowHeadersWidth = 62;
-            dataGridView3.Size = new Size(359, 221);
+            dataGridView3.Size = new Size(359, 134);
             dataGridView3.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn3
@@ -211,22 +237,6 @@
             dataGridViewTextBoxColumn4.ReadOnly = true;
             dataGridViewTextBoxColumn4.Width = 178;
             // 
-            // Item
-            // 
-            Item.HeaderText = "보유 자원";
-            Item.MinimumWidth = 8;
-            Item.Name = "Item";
-            Item.ReadOnly = true;
-            Item.Width = 178;
-            // 
-            // Mass
-            // 
-            Mass.HeaderText = "질량(kg)";
-            Mass.MinimumWidth = 8;
-            Mass.Name = "Mass";
-            Mass.ReadOnly = true;
-            Mass.Width = 178;
-            // 
             // ItemSynthesis
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -235,7 +245,7 @@
             Controls.Add(dataGridView3);
             Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ItemSynthesis";
             Text = "아이템 합성";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

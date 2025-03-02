@@ -17,6 +17,17 @@ namespace Client_test
         {
             InitializeComponent();
             this.form = form;
+
+            // 보유 자원 목록
+            dataGridView1.Rows.Add("수소", 0);
+            dataGridView1.Rows.Add("질소", 0);
+            dataGridView1.Rows.Add("산소", 0);
+            dataGridView1.Rows.Add("엑실론-크리스탈", 0);
+
+            // 아이템 목록, 질량비
+            dataGridView3.Rows.Add("퍼옥사이드", "수소 : 산소 = 1 : 8");
+            dataGridView3.Rows.Add("하이드라진", "수소 : 질소 = 1 : 7");
+            dataGridView3.Rows.Add("엑실론", "엑실론-크리스탈");
         }
 
         // TODO: 아이템 합성 구현
