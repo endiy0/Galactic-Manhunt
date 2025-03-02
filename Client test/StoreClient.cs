@@ -156,62 +156,100 @@ namespace Client_test
         private void textBox1_TextChanged(object sender, EventArgs e) // 수소
         {
             double mass = Convert.ToDouble(textBox1.Text);
-            if(mass > dataGridView1.Rows[0].)
-            itemPrice["hydrogen"] = Convert.ToDouble(textBox1.Text) * 400;
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["hydrogen"] = mass * 400;
             showTotalItemPrice();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) // 질소
         {
-            itemPrice["nitrogen"] = Convert.ToDouble(textBox2.Text) * 120;
+            double mass = Convert.ToDouble(textBox2.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["nitrogen"] = mass * 120;
             showTotalItemPrice();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e) // 산소 
         {
-            itemPrice["oxygen"] = Convert.ToDouble(textBox4.Text) * 100;
+            double mass = Convert.ToDouble(textBox4.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[2].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["oxygen"] = mass * 100;
             showTotalItemPrice();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e) // 엑실론-크리스탈
         {
-            itemPrice["epsilonCrystal"] = Convert.ToDouble(textBox3.Text) * 1000;
+            double mass = Convert.ToDouble(textBox3.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[3].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["epsilonCrystal"] = mass * 1000;
             showTotalItemPrice();
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e) // 퍼옥사이드
         {
-            itemPrice["peroxide"] = Convert.ToDouble(textBox8.Text) * 0; // TODO: 가격 정하기
+            double mass = Convert.ToDouble(textBox8.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[4].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["peroxide"] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e) // 하이드라진
         {
-            itemPrice["hydrazine"] = Convert.ToDouble(textBox7.Text) * 0; // TODO: 가격 정하기
+            double mass = Convert.ToDouble(textBox7.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[5].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["hydrazine"] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e) // 엑실론
         {
-            itemPrice["epsilon"] = Convert.ToDouble(textBox6.Text) * 0; // TODO: 가격 정하기
+            double mass = Convert.ToDouble(textBox6.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[6].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["epsilon"] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e) // 물
         {
-            itemPrice["water"] = Convert.ToDouble(textBox5.Text) * 100;
+            double mass = Convert.ToDouble(textBox5.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[7].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["water"] = mass * 100;
             showTotalItemPrice();
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e) // 식량
         {
-            itemPrice["food"] = Convert.ToDouble(textBox10.Text) * 600;
+            double mass = Convert.ToDouble(textBox10.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[8].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["food"] = mass * 600;
             showTotalItemPrice();
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e) // 씨앗
         {
-            itemPrice["seed"] = Convert.ToDouble(textBox9.Text) * 400;
+            double mass = Convert.ToDouble(textBox9.Text);
+            double maxinum = Convert.ToDouble(dataGridView1.Rows[9].Cells[2].Value);
+            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+
+            itemPrice["seed"] = mass * 400;
             showTotalItemPrice();
         }
         #endregion
