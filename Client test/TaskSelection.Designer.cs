@@ -34,21 +34,22 @@
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("맑은 고딕", 11F);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
+            listBox1.ItemHeight = 30;
             listBox1.Items.AddRange(new object[] { "함선 조종", "농사", "아이템 사용", "아이템 합성", "채집", "상점" });
             listBox1.Location = new Point(9, 9);
             listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(447, 554);
+            listBox1.Size = new Size(272, 304);
             listBox1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(9, 567);
+            button1.Location = new Point(9, 317);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(446, 36);
+            button1.Size = new Size(272, 55);
             button1.TabIndex = 1;
             button1.Text = "선택";
             button1.UseVisualStyleBackColor = true;
@@ -58,7 +59,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(467, 608);
+            ClientSize = new Size(292, 383);
             Controls.Add(button1);
             Controls.Add(listBox1);
             Margin = new Padding(2);
