@@ -18,5 +18,11 @@ namespace Client_test
             InitializeComponent();
             this.form = form;
         }
+
+        private void Storage_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ClearSelection(); // 셀이 선택되지 않도록
+            dataGridView2.ClearSelection();
+        }
     }
 }
