@@ -18,6 +18,7 @@ namespace Client_test
             button2.Enabled = false;
             button3.Enabled = false;
             isConnected = false;
+            comboBox1.SelectedIndex = 0; // default = 전체
         }
 
         private void button1_Click(object sender, EventArgs e) // 연결
