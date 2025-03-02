@@ -65,7 +65,7 @@ namespace Server_test
                     multiply = 1.2;   // 가격 1.2배 // 도둑은 시세보다 비싸게
 
                     abilities.Add(new Ability(AbilityType.get_fuel), 5000);         // 겟 퓨얼
-                    abilities.Add(new Ability(AbilityType.fuel_compressor), 10000); // 연료 압축기  
+                    abilities.Add(new Ability(AbilityType.fuel_compressor), 10000); // 연료 압축기
                     abilities.Add(new Ability(AbilityType.fuel_changer), 5000);     // 연료 교환권
                     abilities.Add(new Ability(AbilityType.stun_remover), 5000);     // 스턴 제거기
                 }
