@@ -155,6 +155,8 @@ namespace Client_test
                     else if (message[0] == "6")
                     {
                         isGameStarted = true;
+                        ShipSelection shipSelection = new ShipSelection();
+                        shipSelection.Show();
                     }
                     else if (message[0] == "7")
                     {
@@ -163,6 +165,8 @@ namespace Client_test
                     else if (message[0] == "8")
                     {
                         job = (Job)int.Parse(message[1]);
+                        label4.Text = "직업: " + job.ToString() + "\n"
+                                    + "함선: ";
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
