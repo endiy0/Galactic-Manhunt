@@ -34,33 +34,39 @@ namespace Client_test
             switch (selectecIndex)
             {
                 case 0: // 함선 조종
-                    ShipControl shipControl = new ShipControl(this);
+                    ShipControl shipControl = new ShipControl(this, form);
                     shipControl.Show();
+                    this.Close(); // 종료
                     break;
 
                 case 1: // 농사
-                    Farming farming = new Farming(this);
+                    Farming farming = new Farming(this, form);
                     farming.Show();
+                    this.Close(); // 종료
                     break;
 
                 case 2: // 아이템 사용
-                    ItemUse itemUse = new ItemUse(this);
+                    ItemUse itemUse = new ItemUse(this, form);
                     itemUse.Show();
+                    this.Close(); // 종료
                     break;
 
                 case 3: // 아이템 합성
-                    ItemSynthesis itemSynthesis = new ItemSynthesis(this);
+                    ItemSynthesis itemSynthesis = new ItemSynthesis(this, form);
                     itemSynthesis.Show();
+                    this.Close(); // 종료
                     break;
 
                 case 4: // 채집
-                    Collection collecting = new Collection(this);
+                    Collection collecting = new Collection(this, form);
                     collecting.Show();
+                    this.Close(); // 종료
                     break;
 
                 case 5: // 상점
-                    StoreClient store = new StoreClient(this);
+                    StoreClient store = new StoreClient(this, form);
                     store.Show();
+                    this.Close(); // 종료
                     break;
 
                 default:

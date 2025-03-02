@@ -13,10 +13,12 @@ namespace Client_test
     public partial class StoreClient : Form
     {
         TaskSelection form;
-        public StoreClient(TaskSelection form)
+        ChatClient chatClient;
+        public StoreClient(TaskSelection form, ChatClient chatClient)
         {
             InitializeComponent();
             this.form = form;
+            this.chatClient = chatClient;
 
             // 아이템 목록
             dataGridView1.Rows.Add("수소", 400, 0);
@@ -46,6 +48,21 @@ namespace Client_test
             //dataGridView2.Rows.Add("연료 압축기", 10000, 0);
             //dataGridView2.Rows.Add("스턴 제거기", 5000, 0);
             //dataGridView2.Rows.Add("저장량 증가", 16000, 0);
+        }
+
+        private void StoreClient_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // TODO: TaskSelection 본인 턴 확인 후 실행
+            //if (본인 턴)
+            //{
+                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
+                  taskSelection.Show();
+            //}
+            //else
+            //{
+            //    TaskSelection taskSelection = new TaskSelection(chatClient, true);
+            //    taskSelection.Show();
+            //}
         }
 
         // TODO: 상점 구현

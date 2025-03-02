@@ -13,15 +13,18 @@ namespace Client_test
     public partial class ItemSynthesis : Form
     {
         TaskSelection form;
+        ChatClient chatClient;
         private double hydrogen1 = 0;
         private double hydrogen2 = 0;
         private double nitrogen = 0;
         private double oxygen = 0;
         private double epsilonCrystal = 0;
-        public ItemSynthesis(TaskSelection form)
+
+        public ItemSynthesis(TaskSelection form, ChatClient chatClient)
         {
             InitializeComponent();
             this.form = form;
+            this.chatClient = chatClient;
 
             // 보유 자원 목록
             dataGridView1.Rows.Add("수소", 0);
@@ -62,7 +65,7 @@ namespace Client_test
             dataGridView2.Rows[0].Cells[1].Value = hydrogen1 + hydrogen2; // 수소 양
             dataGridView2.Rows[2].Cells[1].Value = oxygen;   // 산소 양
         }
-        
+
         private void textBox2_TextChanged(object sender, EventArgs e) // 하이드라진
         {
             double mass = double.Parse(textBox2.Text);
@@ -77,6 +80,21 @@ namespace Client_test
             double mass = double.Parse(textBox3.Text);
             epsilonCrystal = mass * 2; // 엑실론-크리스탈 2로 엑실론 1 합성
             dataGridView2.Rows[3].Cells[1].Value = epsilonCrystal; // 엑실론-크리스탈 양
+        }
+
+        private void ItemSynthesis_FormClosing(object sender, FormClosingEventArgs e) // 종료
+        {
+            // TODO: TaskSelection 본인 턴 확인 후 실행
+            //if (본인 턴)
+            //{
+                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
+                  taskSelection.Show();
+            //}
+            //else
+            //{
+            //    TaskSelection taskSelection = new TaskSelection(chatClient, true);
+            //    taskSelection.Show();
+            //}
         }
 
         // TODO: 아이템 합성 구현

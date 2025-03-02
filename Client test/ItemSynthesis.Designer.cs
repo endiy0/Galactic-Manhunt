@@ -268,6 +268,7 @@
             Margin = new Padding(2);
             Name = "ItemSynthesis";
             Text = "아이템 합성";
+            FormClosing += ItemSynthesis_FormClosing;
             KeyDown += ItemSynthesis_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);

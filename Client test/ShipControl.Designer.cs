@@ -30,13 +30,15 @@
         {
             SuspendLayout();
             // 
-            // Form4
+            // ShipControl
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "Form4";
+            ClientSize = new Size(615, 352);
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "ShipControl";
             Text = "함선 조종";
+            FormClosing += ShipControl_FormClosing;
             ResumeLayout(false);
         }
 

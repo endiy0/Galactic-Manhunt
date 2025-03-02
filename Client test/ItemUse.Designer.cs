@@ -88,6 +88,7 @@
             Margin = new Padding(2);
             Name = "ItemUse";
             Text = "아이템 사용";
+            FormClosing += ItemUse_FormClosing;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }

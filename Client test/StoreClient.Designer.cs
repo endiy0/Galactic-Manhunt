@@ -199,6 +199,7 @@
             Margin = new Padding(2);
             Name = "StoreClient";
             Text = "상점";
+            FormClosing += StoreClient_FormClosing;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);

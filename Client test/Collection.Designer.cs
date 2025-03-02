@@ -131,9 +131,10 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(button1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Collection";
             Text = "채집";
+            FormClosing += Collection_FormClosing;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);

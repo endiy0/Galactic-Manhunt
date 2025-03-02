@@ -13,10 +13,27 @@ namespace Client_test
     public partial class Farming : Form
     {
         TaskSelection form;
-        public Farming(TaskSelection form)
+        ChatClient chatClient;
+        public Farming(TaskSelection form, ChatClient chatClient)
         {
             InitializeComponent();
             this.form = form;
+            this.chatClient = chatClient;
+        }
+
+        private void Farming_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // TODO: TaskSelection 본인 턴 확인 후 실행
+            //if (본인 턴)
+            //{
+                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
+                  taskSelection.Show();
+            //}
+            //else
+            //{
+            //    TaskSelection taskSelection = new TaskSelection(chatClient, true);
+            //    taskSelection.Show();
+            //}
         }
     }
 }

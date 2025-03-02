@@ -232,16 +232,16 @@ namespace Client_test
         private void button4_Click(object sender, EventArgs e) // 할 일 선택
         {
             // TODO: TaskSelection 본인 턴 확인 후 실행
-            // if (본인 턴)
-            // {
-                   TaskSelection taskSelection = new TaskSelection(this, false);
-                   taskSelection.Show();
-            // }
-            // else
-            // {
-            //     TaskSelection taskSelection = new TaskSelection(this, true);
-            //     taskSelection.Show();
-            // }
+            //if (본인 턴)
+            //{
+                  TaskSelection taskSelection = new TaskSelection(this, false);
+                  taskSelection.Show();
+            //}
+            //else
+            //{
+            //    TaskSelection taskSelection = new TaskSelection(this, true);
+            //    taskSelection.Show();
+            //}
         }
     }
 }
