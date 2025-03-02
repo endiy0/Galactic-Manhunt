@@ -64,7 +64,7 @@
             Controls.Add(listBox1);
             Margin = new Padding(2);
             Name = "TaskSelection";
-            Text = "할 일 선택창:";
+            Text = "할 일 선택창";
             ResumeLayout(false);
         }
 
