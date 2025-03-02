@@ -20,7 +20,7 @@ namespace Server_test
     enum WorkType
     {
         Null,           // 없음
-        Ship_Move,      // 함선 조종
+        Ship_Control,   // 함선 조종
         Farming,        // 농사
         Collecting,     // 채집
         Item_Use,       // 아이템 사용
