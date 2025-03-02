@@ -62,7 +62,7 @@ namespace Client_test
             dataGridView2.Rows[0].Cells[1].Value = hydrogen1 + hydrogen2; // 수소 양
             dataGridView2.Rows[2].Cells[1].Value = oxygen;   // 산소 양
         }
-
+        
         private void textBox2_TextChanged(object sender, EventArgs e) // 하이드라진
         {
             double mass = double.Parse(textBox2.Text);
