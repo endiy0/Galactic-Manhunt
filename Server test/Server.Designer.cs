@@ -57,7 +57,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(452, 34);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(155, 31);
             textBox1.TabIndex = 1;
@@ -65,7 +65,7 @@
             // button1
             // 
             button1.Location = new Point(611, 31);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(154, 36);
             button1.TabIndex = 2;
@@ -76,7 +76,7 @@
             // button2
             // 
             button2.Location = new Point(611, 72);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(154, 36);
             button2.TabIndex = 3;
@@ -89,7 +89,7 @@
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 25;
             listBox1.Location = new Point(9, 9);
-            listBox1.Margin = new Padding(2, 2, 2, 2);
+            listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(439, 479);
             listBox1.TabIndex = 4;
@@ -97,7 +97,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(9, 495);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(319, 31);
             textBox2.TabIndex = 5;
@@ -105,7 +105,7 @@
             // button3
             // 
             button3.Location = new Point(332, 492);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(115, 36);
             button3.TabIndex = 6;
@@ -127,9 +127,9 @@
             // 
             groupBox1.Controls.Add(listBox2);
             groupBox1.Location = new Point(457, 180);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(308, 348);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
@@ -140,7 +140,7 @@
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 25;
             listBox2.Location = new Point(5, 30);
-            listBox2.Margin = new Padding(2, 2, 2, 2);
+            listBox2.Margin = new Padding(2);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(299, 304);
             listBox2.TabIndex = 0;
@@ -148,7 +148,7 @@
             // button4
             // 
             button4.Location = new Point(611, 112);
-            button4.Margin = new Padding(2, 2, 2, 2);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(154, 36);
             button4.TabIndex = 9;
@@ -159,7 +159,7 @@
             // button5
             // 
             button5.Location = new Point(611, 153);
-            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(154, 36);
             button5.TabIndex = 10;
@@ -184,9 +184,9 @@
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Server";
-            Text = "Chat Server";
+            Text = "Server";
             FormClosing += Form1_FormClosing;
             KeyDown += Form1_KeyDown;
             groupBox1.ResumeLayout(false);
