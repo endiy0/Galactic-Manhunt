@@ -66,7 +66,7 @@ namespace Client_test
 
         private void textBox1_TextChanged(object sender, EventArgs e) // 퍼옥사이드
         {
-            double mass = double.Parse(textBox1.Text);
+            double mass = Convert.ToDouble(textBox1.Text);
             hydrogen1 = mass;
             oxygen = mass * 8; // 수소 : 산소 = 1 : 8 로 퍼옥사이드 1 합성
             dataGridView2.Rows[0].Cells[1].Value = hydrogen1 + hydrogen2; // 수소 양
@@ -75,7 +75,7 @@ namespace Client_test
 
         private void textBox2_TextChanged(object sender, EventArgs e) // 하이드라진
         {
-            double mass = double.Parse(textBox2.Text);
+            double mass = Convert.ToDouble(textBox2.Text);
             hydrogen2 = mass;
             nitrogen = mass * 7; // 수소 : 질소 = 1 : 7 로 하이드라진 1 합성
             dataGridView2.Rows[0].Cells[1].Value = hydrogen1 + hydrogen2; // 수소 양
@@ -84,7 +84,7 @@ namespace Client_test
 
         private void textBox3_TextChanged(object sender, EventArgs e) // 엑실론
         {
-            double mass = double.Parse(textBox3.Text);
+            double mass = Convert.ToDouble(textBox3.Text);
             epsilonCrystal = mass * 2; // 엑실론-크리스탈 2로 엑실론 1 합성
             dataGridView2.Rows[3].Cells[1].Value = epsilonCrystal; // 엑실론-크리스탈 양
         }
