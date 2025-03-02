@@ -31,9 +31,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
             Item = new DataGridViewTextBoxColumn();
             Mass = new DataGridViewTextBoxColumn();
-            dataGridView2 = new DataGridView();
             Abilities = new DataGridViewTextBoxColumn();
             Number = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -56,26 +56,8 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(503, 538);
+            dataGridView1.Size = new Size(359, 538);
             dataGridView1.TabIndex = 1;
-            // 
-            // Item
-            // 
-            Item.HeaderText = "아이템";
-            Item.MinimumWidth = 8;
-            Item.Name = "Item";
-            Item.ReadOnly = true;
-            Item.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Item.Width = 250;
-            // 
-            // Mass
-            // 
-            Mass.HeaderText = "질량(kg)";
-            Mass.MinimumWidth = 8;
-            Mass.Name = "Mass";
-            Mass.ReadOnly = true;
-            Mass.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Mass.Width = 250;
             // 
             // dataGridView2
             // 
@@ -87,14 +69,32 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Abilities, Number });
             dataGridView2.Enabled = false;
-            dataGridView2.Location = new Point(521, 12);
+            dataGridView2.Location = new Point(377, 12);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 62;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(503, 538);
+            dataGridView2.Size = new Size(359, 538);
             dataGridView2.TabIndex = 2;
+            // 
+            // Item
+            // 
+            Item.HeaderText = "아이템";
+            Item.MinimumWidth = 8;
+            Item.Name = "Item";
+            Item.ReadOnly = true;
+            Item.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Item.Width = 178;
+            // 
+            // Mass
+            // 
+            Mass.HeaderText = "질량(kg)";
+            Mass.MinimumWidth = 8;
+            Mass.Name = "Mass";
+            Mass.ReadOnly = true;
+            Mass.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Mass.Width = 178;
             // 
             // Abilities
             // 
@@ -105,7 +105,7 @@
             Abilities.Name = "Abilities";
             Abilities.ReadOnly = true;
             Abilities.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Abilities.Width = 250;
+            Abilities.Width = 178;
             // 
             // Number
             // 
@@ -116,13 +116,13 @@
             Number.Name = "Number";
             Number.ReadOnly = true;
             Number.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Number.Width = 250;
+            Number.Width = 178;
             // 
             // Storage
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1033, 562);
+            ClientSize = new Size(749, 562);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Margin = new Padding(2);
