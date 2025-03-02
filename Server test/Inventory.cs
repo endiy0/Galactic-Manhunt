@@ -9,10 +9,10 @@ namespace Server_test
     // 인벤토리 클래스
     class Inventory
     {
-        List<Item> items; // 아이템 저장 함수
-        Dictionary<Ability, int> abilities; // 능력 저장 함수
-        double itemMax; // 아이템 최댓값, 단위: kg
-        int abilityMax; // 능력 최댓값, 단위: 개
+        List<Item> items;                    // 아이템 저장 함수
+        Dictionary<Ability, int> abilities;  // 능력 저장 함수
+        double itemMax;                      // 아이템 최댓값, 단위: kg
+        int abilityMax;                      // 능력 최댓값, 단위: 개
 
         public Inventory(double itemmax, int abilitymax) 
         {
@@ -99,6 +99,7 @@ namespace Server_test
             items.Clear();
         }
 
+        // 두 인벤토리 더하기
         public static Inventory operator +(Inventory inv, Item item)
         {
             for (int i = 0; i < inv.Items.Count; i++)

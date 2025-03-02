@@ -11,7 +11,7 @@ namespace Server_test
     {
         SailorType type; // 선원 타입
         public double EatInDay; // 식사량
-        public bool isDisable; // 행동 불능 상태: True = 행동 불능, False = 정상
+        public bool isDisable; // True: 행동 불능, False: 정상
         public Inventory inventory;
         public Work work;
 
