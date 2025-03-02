@@ -13,7 +13,8 @@ namespace Client_test
     public partial class ItemSynthesis : Form
     {
         TaskSelection form;
-        private double hydrogen = 0;
+        private double hydrogen1 = 0;
+        private double hydrogen2 = 0;
         private double nitrogen = 0;
         private double oxygen = 0;
         private double epsilonCrystal = 0;
@@ -56,18 +57,18 @@ namespace Client_test
         private void textBox1_TextChanged(object sender, EventArgs e) // 퍼옥사이드
         {
             double mass = double.Parse(textBox1.Text);
-            hydrogen = mass;
+            hydrogen1 = mass;
             oxygen = mass * 8; // 수소 : 산소 = 1 : 8 로 퍼옥사이드 1 합성
-            dataGridView2.Rows[0].Cells[1].Value = hydrogen; // 수소 양
+            dataGridView2.Rows[0].Cells[1].Value = hydrogen1 + hydrogen2; // 수소 양
             dataGridView2.Rows[2].Cells[1].Value = oxygen;   // 산소 양
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) // 하이드라진
         {
             double mass = double.Parse(textBox2.Text);
-            hydrogen = mass;
+            hydrogen2 = mass;
             nitrogen = mass * 7; // 수소 : 질소 = 1 : 7 로 하이드라진 1 합성
-            dataGridView2.Rows[0].Cells[1].Value = hydrogen; // 수소 양
+            dataGridView2.Rows[0].Cells[1].Value = hydrogen1 + hydrogen2; // 수소 양
             dataGridView2.Rows[1].Cells[1].Value = nitrogen; // 질소 양
         }
 
