@@ -45,6 +45,7 @@
             listBox1.Size = new Size(272, 184);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            listBox1.KeyDown += listBox1_KeyDown;
             // 
             // button1
             // 
