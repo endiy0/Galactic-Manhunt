@@ -61,7 +61,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = SystemColors.ButtonHighlight;
+            label1.BackColor = SystemColors.Control;
             label1.Font = new Font("맑은 고딕", 9F);
             label1.Location = new Point(43, 195);
             label1.Name = "label1";
