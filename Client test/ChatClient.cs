@@ -194,15 +194,15 @@ namespace Client_test
             {
                 if (textBox1.Text != "")
                 {
-                    stream.Write(Encoding.UTF8.GetBytes("0⧫" + $"{nickname}:" + textBox1.Text + '◊'));
+                    stream.Write(Encoding.UTF8.GetBytes("0⧫" + $"{nickname}: " + textBox1.Text + '◊'));
                     stream.Flush();
-                    listBox1.Items.Add($"{nickname}:" + textBox1.Text);
+                    listBox1.Items.Add($"{nickname}: " + textBox1.Text);
                     textBox1.Text = "";
                     listBox1.TopIndex = listBox1.Items.Count - 1;
                 }
                 else
                 {
-                    MessageBox.Show("문자는 공백이면 안됩니다.");
+                    MessageBox.Show("채팅은 공백이면 안됩니다.");
                 }
             }
             else
@@ -215,25 +215,7 @@ namespace Client_test
         {
             if (e.KeyCode == Keys.Enter && isconnected) // 엔터 누르면 전송
             {
-                if (!textBox1.Text.Contains('⧫') && !textBox1.Text.Contains('◊'))
-                {
-                    if (textBox1.Text != "")
-                    {
-                        stream.Write(Encoding.UTF8.GetBytes("0⧫" + $"{nickname}:" + textBox1.Text + '◊'));
-                        stream.Flush();
-                        listBox1.Items.Add($"{nickname}:" + textBox1.Text);
-                        textBox1.Text = "";
-                        listBox1.TopIndex = listBox1.Items.Count - 1;
-                    }
-                    else
-                    {
-                        MessageBox.Show("문자는 공백이면 안됩니다.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("다음 문자는 포함되어서는 안됩니다: ⧫, ◊");
-                }
+                button3_Click(sender, e); // 전송 버튼
             }
         }
 

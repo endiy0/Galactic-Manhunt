@@ -60,7 +60,6 @@ C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-wi
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.ItemUse.resources
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.ShipControl.resources
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.Storage.resources
-C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.Store.resources
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.TaskSelection.resources
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client.csproj.GenerateResource.cache
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
@@ -73,4 +72,4 @@ C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-wi
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client.pdb
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client.genruntimeconfig.cache
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\ref\Client.dll
-C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.Properties.Resources.resources
+C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.StoreClient.resources

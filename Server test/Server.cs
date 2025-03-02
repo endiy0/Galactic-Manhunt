@@ -268,15 +268,15 @@ namespace Server_test
                 {
                     foreach (var c in clients)
                     {
-                        c.client.GetStream().Write(Encoding.UTF8.GetBytes("0⧫" + "Server:" + textBox2.Text + '◊'));
+                        c.client.GetStream().Write(Encoding.UTF8.GetBytes("0⧫" + "Server: " + textBox2.Text + '◊'));
                     }
-                    listBox1.Items.Add("Server:" + textBox2.Text);
+                    listBox1.Items.Add("Server: " + textBox2.Text);
                     textBox2.Text = "";
                     listBox1.TopIndex = listBox1.Items.Count - 1;
                 }
                 else
                 {
-                    MessageBox.Show("문자는 공백이면 안됩니다.");
+                    MessageBox.Show("채팅은 공백이면 안됩니다.");
                 }
             }
             else
@@ -309,29 +309,9 @@ namespace Server_test
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && isServerRun)
+            if (e.KeyCode == Keys.Enter && isServerRun) // 엔터 누르면 전송
             {
-                if (!textBox1.Text.Contains('⧫') && !textBox1.Text.Contains('◊'))
-                {
-                    if (textBox1.Text != "")
-                    {
-                        foreach (var c in clients)
-                        {
-                            c.client.GetStream().Write(Encoding.UTF8.GetBytes("0⧫" + "Server:" + textBox2.Text + '◊'));
-                        }
-                        listBox1.Items.Add("Server:" + textBox2.Text);
-                        textBox2.Text = "";
-                        listBox1.TopIndex = listBox1.Items.Count - 1;
-                    }
-                    else
-                    {
-                        MessageBox.Show("문자는 공백이면 안됩니다.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("채팅에 다음 문자는 포함되면 안됩니다: ⧫, ◊");
-                }
+                button3_Click(sender, e); // 전송 버튼
             }
         }
 
