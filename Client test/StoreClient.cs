@@ -262,42 +262,66 @@ namespace Client_test
         private void textBox20_TextChanged(object sender, EventArgs e)
         {
             // 등잔 밑이 어둡다
-            copAbilityPrice["darkUnderTheLamp"] = Convert.ToInt32(textBox20.Text) * 10000;
+            int num = Convert.ToInt32(textBox20.Text);
+            int maxinum = Convert.ToInt32(dataGridView2.Rows[0].Cells[2].Value);
+            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+
+            copAbilityPrice["darkUnderTheLamp"] = num * 10000;
             showTotalAbilityPrice();
         }
 
         private void textBox19_TextChanged(object sender, EventArgs e)
         {
             // 은하 탐방
-            copAbilityPrice["galaxyTravel"] = Convert.ToInt32(textBox19.Text) * 50000;
+            int num = Convert.ToInt32(textBox19.Text);
+            int maxinum = Convert.ToInt32(dataGridView2.Rows[1].Cells[2].Value);
+            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+
+            copAbilityPrice["galaxyTravel"] = num * 50000;
             showTotalAbilityPrice();
         }
 
         private void textBox18_TextChanged(object sender, EventArgs e)
         {
             // 행성 탐방
-            copAbilityPrice["planetTravel"] = Convert.ToInt32(textBox18.Text) * 12000;
+            int num = Convert.ToInt32(textBox18.Text);
+            int maxinum = Convert.ToInt32(dataGridView2.Rows[2].Cells[2].Value);
+            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+
+            copAbilityPrice["planetTravel"] = num * 12000;
             showTotalAbilityPrice();
         }
 
         private void textBox17_TextChanged(object sender, EventArgs e)
         {
             // 수갑
-            copAbilityPrice["handcuff"] = Convert.ToInt32(textBox17.Text) * 2000;
+            int num = Convert.ToInt32(textBox17.Text);
+            int maxinum = Convert.ToInt32(dataGridView2.Rows[3].Cells[2].Value);
+            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+
+            copAbilityPrice["handcuff"] = num * 2000;
             showTotalAbilityPrice();
         }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
             // 팀 식별
-            copAbilityPrice["teamIdentify"] = Convert.ToInt32(textBox16.Text) * 2000;
+            int num = Convert.ToInt32(textBox16.Text);
+            int maxinum = Convert.ToInt32(dataGridView2.Rows[4].Cells[2].Value);
+            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+
+            copAbilityPrice["teamIdentify"] = num * 2000;
             showTotalAbilityPrice();
         }
 
         private void textBox15_TextChanged(object sender, EventArgs e) // 도둑은 능력이 5개이므로 도둑인 경우 visibility = false
         {
             // 저장량 증가
-            copAbilityPrice["storageGrowth"] = Convert.ToInt32(textBox15.Text) * 16000;
+            int num = Convert.ToInt32(textBox15.Text);
+            int maxinum = Convert.ToInt32(dataGridView2.Rows[5].Cells[2].Value);
+            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+
+            copAbilityPrice["storageGrowth"] = num * 16000;
             showTotalAbilityPrice();
         }
         #endregion
