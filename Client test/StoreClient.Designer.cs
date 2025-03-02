@@ -378,7 +378,7 @@
             button3.Font = new Font("맑은 고딕", 11F);
             button3.Location = new Point(638, 484);
             button3.Name = "button3";
-            button3.Size = new Size(60, 269);
+            button3.Size = new Size(60, 232);
             button3.TabIndex = 18;
             button3.Text = "구매";
             button3.UseVisualStyleBackColor = true;
@@ -389,7 +389,7 @@
             label5.BackColor = SystemColors.ButtonHighlight;
             label5.BorderStyle = BorderStyle.FixedSingle;
             label5.Font = new Font("맑은 고딕", 12F);
-            label5.Location = new Point(395, 422);
+            label5.Location = new Point(12, 422);
             label5.Name = "label5";
             label5.Size = new Size(236, 34);
             label5.TabIndex = 30;
@@ -403,7 +403,7 @@
             label6.BackColor = SystemColors.ButtonHighlight;
             label6.BorderStyle = BorderStyle.FixedSingle;
             label6.Font = new Font("맑은 고딕", 12F);
-            label6.Location = new Point(396, 719);
+            label6.Location = new Point(13, 719);
             label6.Name = "label6";
             label6.Size = new Size(236, 34);
             label6.TabIndex = 31;
