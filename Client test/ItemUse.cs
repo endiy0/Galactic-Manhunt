@@ -18,19 +18,6 @@ namespace Client_test
             InitializeComponent();
             this.form = form;
 
-            // 아이템 목록
-            dataGridView1.Rows.Add("수소", "0");
-            dataGridView1.Rows.Add("질소", "0");
-            dataGridView1.Rows.Add("산소", "0");
-            dataGridView1.Rows.Add("엑실론", "0");
-            dataGridView1.Rows.Add("퍼옥사이드", "0");
-            dataGridView1.Rows.Add("하이드라진", "0");
-            dataGridView1.Rows.Add("엑실론-크리스탈", "0");
-            dataGridView1.Rows.Add("물", "0");
-            dataGridView1.Rows.Add("음식", "0");
-            dataGridView1.Rows.Add("씨앗", "0");
-            dataGridView1.Rows.Add("크로노", "0");
-
             // 경찰인지 도둑인지에 따라 능력 목록 다르게
             // 경찰 능력 목록
             dataGridView2.Rows.Add("등잔 밑이 어둡다", "0");
