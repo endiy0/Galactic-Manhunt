@@ -22,7 +22,7 @@ namespace Server_test
         Null,           // 없음
         Ship_Control,   // 함선 조종
         Farming,        // 농사
-        Collecting,     // 채집
+        Collection,     // 채집
         Item_Use,       // 아이템 사용
         Item_Synthesis, // 아이템 합성
         Store           // 상점
