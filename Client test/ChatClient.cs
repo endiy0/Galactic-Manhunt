@@ -9,7 +9,7 @@ namespace Client_test
         private NetworkStream stream;
         private Thread receiveThread;
         int mynum;
-        bool isconnected;
+        bool isConnected;
         string nickname;
         static string str;
         public ChatClient()
@@ -17,7 +17,7 @@ namespace Client_test
             InitializeComponent();
             button2.Enabled = false;
             button3.Enabled = false;
-            isconnected = false;
+            isConnected = false;
         }
 
         private void button1_Click(object sender, EventArgs e) // 연결
@@ -32,7 +32,7 @@ namespace Client_test
                     receiveThread.IsBackground = true;
                     receiveThread.Start();
                     listBox1.Items.Add("Connected to server...");
-                    isconnected = true;
+                    isConnected = true;
                     button2.Enabled = true;
                     button3.Enabled = true;
                     button1.Enabled = false;
@@ -106,11 +106,11 @@ namespace Client_test
 
                         Invoke(new Action(() =>
                         {
-                            listBox1.Items.Add("Disconnected from server...");
+                            listBox1.Items.Add("DisConnected from server...");
                             button2.Enabled = false;
                             button3.Enabled = false;
                             button1.Enabled = true;
-                            isconnected = false;
+                            isConnected = false;
                             textBox4.Enabled = true;
                             listBox2.Items.Clear();
                         }));
@@ -162,28 +162,28 @@ namespace Client_test
             stream.Flush();
             stream.Close();
             client.Close();
-            listBox1.Items.Add("Disconnected from Server...");
+            listBox1.Items.Add("DisConnected from Server...");
             button2.Enabled = false;
             button3.Enabled = false;
             button1.Enabled = true;
-            isconnected = false;
+            isConnected = false;
             textBox4.Enabled = true;
             listBox2.Items.Clear();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) // 프로그램 종료
         {
-            if (isconnected)
+            if (isConnected)
             {
                 stream.Write(Encoding.UTF8.GetBytes("1⧫◊"));
                 stream.Flush();
                 stream.Close();
                 client.Close();
-                listBox1.Items.Add("Disconnected from server...");
+                listBox1.Items.Add("DisConnected from server...");
                 button2.Enabled = false;
                 button3.Enabled = false;
                 button1.Enabled = true;
-                isconnected = false;
+                isConnected = false;
                 textBox4.Enabled = true;
             }
         }
@@ -213,7 +213,7 @@ namespace Client_test
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && isconnected) // 엔터 누르면 전송
+            if (e.KeyCode == Keys.Enter && isConnected) // 엔터 누르면 전송
             {
                 button3_Click(sender, e); // 전송 버튼
             }
