@@ -162,7 +162,7 @@ namespace Client_test
             stream.Flush();
             stream.Close();
             client.Close();
-            listBox1.Items.Add("Disconnected from server...");
+            listBox1.Items.Add("Disconnected from Server...");
             button2.Enabled = false;
             button3.Enabled = false;
             button1.Enabled = true;
