@@ -25,7 +25,10 @@ namespace Client_test
             InitializeComponent();
             this.form = form;
             this.chatClient = chatClient;
+        }
 
+        private void ItemSynthesis_Load(object sender, EventArgs e)
+        {
             // 보유 자원 목록
             dataGridView1.Rows.Add("수소", 0);
             dataGridView1.Rows.Add("질소", 0);
@@ -42,6 +45,10 @@ namespace Client_test
             dataGridView2.Rows.Add("질소", 0);
             dataGridView2.Rows.Add("산소", 0);
             dataGridView2.Rows.Add("엑실론-크리스탈", 0);
+
+            dataGridView1.ClearSelection(); // 셀이 선택되지 않도록
+            dataGridView2.ClearSelection();
+            dataGridView3.ClearSelection();
         }
 
         private void button1_Click(object sender, EventArgs e) // 합성
@@ -87,8 +94,8 @@ namespace Client_test
             // TODO: TaskSelection 본인 턴 확인 후 실행
             //if (본인 턴)
             //{
-                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
-                  taskSelection.Show();
+            TaskSelection taskSelection = new TaskSelection(chatClient, false);
+            taskSelection.Show();
             //}
             //else
             //{

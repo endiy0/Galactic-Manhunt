@@ -31,7 +31,7 @@ namespace Client_test
             dataGridView1.Rows.Add("물", 100, 0);
             dataGridView1.Rows.Add("식량", 600, 0);
             dataGridView1.Rows.Add("씨앗", 400, 0);
-            
+
             // 역할에 따라 능력 목록 다르게
             // 경찰 능력 목록
             dataGridView2.Rows.Add("등잔 밑이 어둡다", 10000, 0);
@@ -55,14 +55,24 @@ namespace Client_test
             // TODO: TaskSelection 본인 턴 확인 후 실행
             //if (본인 턴)
             //{
-                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
-                  taskSelection.Show();
+            TaskSelection taskSelection = new TaskSelection(chatClient, false);
+            taskSelection.Show();
             //}
             //else
             //{
             //    TaskSelection taskSelection = new TaskSelection(chatClient, true);
             //    taskSelection.Show();
             //}
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.ClearSelection(); // 셀이 선택되지 않도록
+        }
+
+        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView2.ClearSelection(); // 셀이 선택되지 않도록
         }
 
         // TODO: 상점 구현

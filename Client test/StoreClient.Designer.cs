@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             button1 = new Button();
             button2 = new Button();
             label1 = new Label();
@@ -42,9 +45,6 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -66,6 +66,40 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(498, 365);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellEnter += dataGridView1_CellEnter;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "아이템";
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Column1.Width = 165;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            Column2.HeaderText = "1kg 당 가격(Cr)";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Column2.Width = 165;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            Column3.HeaderText = "남은 양(kg)";
+            Column3.MinimumWidth = 8;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Column3.Width = 165;
             // 
             // button1
             // 
@@ -124,6 +158,7 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(498, 365);
             dataGridView2.TabIndex = 6;
+            dataGridView2.CellEnter += dataGridView2_CellEnter;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -159,39 +194,6 @@
             Column4.ReadOnly = true;
             Column4.SortMode = DataGridViewColumnSortMode.NotSortable;
             Column4.Width = 165;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "아이템";
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Column1.Width = 165;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            Column2.DefaultCellStyle = dataGridViewCellStyle1;
-            Column2.HeaderText = "1kg 당 가격(Cr)";
-            Column2.MinimumWidth = 8;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Column2.Width = 165;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            Column3.DefaultCellStyle = dataGridViewCellStyle2;
-            Column3.HeaderText = "남은 양(kg)";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Column3.Width = 165;
             // 
             // StoreClient
             // 
