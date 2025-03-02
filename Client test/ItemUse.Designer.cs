@@ -38,9 +38,9 @@
             // button2
             // 
             button2.Font = new Font("맑은 고딕", 10F);
-            button2.Location = new Point(12, 556);
+            button2.Location = new Point(12, 433);
             button2.Name = "button2";
-            button2.Size = new Size(503, 55);
+            button2.Size = new Size(359, 55);
             button2.TabIndex = 7;
             button2.Text = "사용";
             button2.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 62;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(503, 538);
+            dataGridView2.Size = new Size(359, 415);
             dataGridView2.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
@@ -70,7 +70,7 @@
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
             dataGridViewTextBoxColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dataGridViewTextBoxColumn1.Width = 250;
+            dataGridViewTextBoxColumn1.Width = 178;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -79,13 +79,13 @@
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
             dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dataGridViewTextBoxColumn2.Width = 250;
+            dataGridViewTextBoxColumn2.Width = 178;
             // 
             // ItemUse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(525, 624);
+            ClientSize = new Size(385, 504);
             Controls.Add(button2);
             Controls.Add(dataGridView2);
             Margin = new Padding(2);
