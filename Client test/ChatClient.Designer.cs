@@ -82,10 +82,10 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(135, 575);
+            textBox1.Location = new Point(91, 575);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 31);
+            textBox1.Size = new Size(328, 31);
             textBox1.TabIndex = 3;
             // 
             // label1
@@ -203,7 +203,7 @@
             comboBox1.Location = new Point(9, 574);
             comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(122, 33);
+            comboBox1.Size = new Size(78, 33);
             comboBox1.TabIndex = 14;
             // 
             // button5
