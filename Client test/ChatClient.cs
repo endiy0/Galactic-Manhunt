@@ -43,7 +43,6 @@ namespace Client_test
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void ReceiveMessages()
@@ -117,6 +116,7 @@ namespace Client_test
 
                         break;
                     }
+
                     else if (message[0] == "2")
                     {
                         mynum = int.Parse(message[1]);
