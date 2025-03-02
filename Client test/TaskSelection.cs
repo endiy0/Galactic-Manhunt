@@ -28,17 +28,11 @@ namespace Client_test
             }
         }
 
-        // TODO: Enter 누르면 선택
-
         private void button1_Click(object sender, EventArgs e) // 선택
         {
             int selectecIndex = listBox1.SelectedIndex;
-            switch(selectecIndex)
+            switch (selectecIndex)
             {
-                case -1:
-                    MessageBox.Show("선택된 항목이 없습니다.");
-                    break;
-
                 case 0: // 함선 조종
                     ShipControl shipControl = new ShipControl(this);
                     shipControl.Show();
@@ -72,6 +66,19 @@ namespace Client_test
                 default:
                     break;
             }
+        }
+
+        private void TaskSelection_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // 엔터 누르면 선택
+            {
+                button1_Click(sender, e); // 선택 버튼
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) // listBox1에 작업이 선택되면 "선택된 작업이 없습니다" 텍스트 삭제
+        {
+            label1.Text = "";
         }
     }
 }

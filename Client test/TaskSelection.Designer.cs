@@ -30,6 +30,7 @@
         {
             listBox1 = new ListBox();
             button1 = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // listBox1
@@ -43,6 +44,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(272, 304);
             listBox1.TabIndex = 0;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -55,22 +57,37 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ButtonHighlight;
+            label1.Font = new Font("맑은 고딕", 9F);
+            label1.Location = new Point(46, 278);
+            label1.Name = "label1";
+            label1.Size = new Size(204, 25);
+            label1.TabIndex = 2;
+            label1.Text = "선택된 항목이 없습니다";
+            // 
             // TaskSelection
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(292, 383);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(listBox1);
             Margin = new Padding(2);
             Name = "TaskSelection";
             Text = "할 일 선택창";
+            KeyDown += TaskSelection_KeyDown;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ListBox listBox1;
         private Button button1;
+        private Label label1;
     }
 }
