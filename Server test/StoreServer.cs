@@ -38,7 +38,7 @@ namespace Server_test
             storeType = store;
             Random rand = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
 
-            if (storeType == StoreType.Slave_store) // 인력사무소
+            if (storeType == StoreType.Sailor_store) // 인력사무소
             {
                 sailors.Add(new Sailor(SailorType.Normal, 1, 140, new Work(WorkType.Null)), sailor_cost);     // 선원
                 sailors.Add(new Sailor(SailorType.Advanced, 1, 200, new Work(WorkType.Null)), advanced_cost); // 고급 선원
