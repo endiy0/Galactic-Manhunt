@@ -17,6 +17,36 @@ namespace Client_test
         {
             InitializeComponent();
             this.form = form;
+
+            // 아이템 목록
+            dataGridView1.Rows.Add("수소", "0");
+            dataGridView1.Rows.Add("질소", "0");
+            dataGridView1.Rows.Add("산소", "0");
+            dataGridView1.Rows.Add("엑실론", "0");
+            dataGridView1.Rows.Add("퍼옥사이드", "0");
+            dataGridView1.Rows.Add("하이드라진", "0");
+            dataGridView1.Rows.Add("엑실론-크리스탈", "0");
+            dataGridView1.Rows.Add("물", "0");
+            dataGridView1.Rows.Add("음식", "0");
+            dataGridView1.Rows.Add("씨앗", "0");
+            dataGridView1.Rows.Add("크로노", "0");
+
+            // 경찰인지 도둑인지에 따라 능력 목록 다르게
+            // 경찰 능력 목록
+            dataGridView2.Rows.Add("등잔 밑이 어둡다", "0");
+            dataGridView2.Rows.Add("은하 탐방", "0");
+            dataGridView2.Rows.Add("행성 탐방", "0");
+            dataGridView2.Rows.Add("스턴", "0");
+            dataGridView2.Rows.Add("수갑", "0");
+            dataGridView2.Rows.Add("팀 식별", "0");
+            dataGridView2.Rows.Add("저장량 증가", "0");
+
+            //// 도둑 능력 목록
+            //dataGridView2.Rows.Add("겟 퓨얼", "0");
+            //dataGridView2.Rows.Add("연료 교환권", "0");
+            //dataGridView2.Rows.Add("연료 압축기", "0");
+            //dataGridView2.Rows.Add("스턴 제거기", "0");
+            //dataGridView2.Rows.Add("저장량 증가", "0");
         }
 
         // TODO: 아아템 사용 구현

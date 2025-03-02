@@ -46,8 +46,8 @@ namespace Client_test
                 case 2: // 아이템 사용
                     ItemUse itemUse = new ItemUse(this);
                     itemUse.Show();
-
                     break;
+
                 case 3: // 아이템 합성
                     ItemSynthesis itemSynthesis = new ItemSynthesis(this);
                     itemSynthesis.Show();
