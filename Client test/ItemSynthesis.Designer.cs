@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
-            Item = new DataGridViewTextBoxColumn();
-            Mass = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             dataGridView2 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             button1 = new Button();
             label2 = new Label();
@@ -47,8 +43,12 @@
             textBox1 = new TextBox();
             listBox1 = new ListBox();
             dataGridView3 = new DataGridView();
+            Item = new DataGridViewTextBoxColumn();
+            Mass = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -73,25 +73,6 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(359, 167);
             dataGridView1.TabIndex = 2;
-            // 
-            // Item
-            // 
-            Item.HeaderText = "보유 자원";
-            Item.MinimumWidth = 8;
-            Item.Name = "Item";
-            Item.ReadOnly = true;
-            Item.Width = 178;
-            // 
-            // Mass
-            // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            Mass.DefaultCellStyle = dataGridViewCellStyle1;
-            Mass.HeaderText = "질량(kg)";
-            Mass.MinimumWidth = 8;
-            Mass.Name = "Mass";
-            Mass.ReadOnly = true;
-            Mass.Width = 178;
             // 
             // groupBox1
             // 
@@ -129,25 +110,6 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(327, 170);
             dataGridView2.TabIndex = 4;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "필요 자원";
-            dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 162;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewTextBoxColumn2.HeaderText = "질량(kg)";
-            dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 162;
             // 
             // label3
             // 
@@ -234,7 +196,7 @@
             dataGridView3.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView3.Location = new Point(12, 236);
+            dataGridView3.Location = new Point(12, 185);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.ReadOnly = true;
             dataGridView3.RowHeadersVisible = false;
@@ -243,12 +205,34 @@
             dataGridView3.Size = new Size(359, 134);
             dataGridView3.TabIndex = 4;
             // 
+            // Item
+            // 
+            Item.HeaderText = "보유 자원";
+            Item.MinimumWidth = 8;
+            Item.Name = "Item";
+            Item.ReadOnly = true;
+            Item.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Item.Width = 178;
+            // 
+            // Mass
+            // 
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Mass.DefaultCellStyle = dataGridViewCellStyle1;
+            Mass.HeaderText = "질량(kg)";
+            Mass.MinimumWidth = 8;
+            Mass.Name = "Mass";
+            Mass.ReadOnly = true;
+            Mass.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Mass.Width = 178;
+            // 
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewTextBoxColumn3.HeaderText = "아이템";
             dataGridViewTextBoxColumn3.MinimumWidth = 8;
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn3.Width = 178;
             // 
             // dataGridViewTextBoxColumn4
@@ -259,7 +243,29 @@
             dataGridViewTextBoxColumn4.MinimumWidth = 8;
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn4.Width = 178;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "필요 자원";
+            dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn1.Width = 162;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewTextBoxColumn2.HeaderText = "질량(kg)";
+            dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn2.Width = 162;
             // 
             // ItemSynthesis
             // 

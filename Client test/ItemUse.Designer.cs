@@ -69,6 +69,7 @@
             dataGridViewTextBoxColumn1.MinimumWidth = 8;
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn1.Width = 250;
             // 
             // dataGridViewTextBoxColumn2
@@ -77,6 +78,7 @@
             dataGridViewTextBoxColumn2.MinimumWidth = 8;
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn2.Width = 250;
             // 
             // ItemUse

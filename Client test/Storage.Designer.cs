@@ -31,9 +31,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
             Item = new DataGridViewTextBoxColumn();
             Mass = new DataGridViewTextBoxColumn();
-            dataGridView2 = new DataGridView();
             Abilities = new DataGridViewTextBoxColumn();
             Number = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -58,22 +58,6 @@
             dataGridView1.Size = new Size(503, 538);
             dataGridView1.TabIndex = 1;
             // 
-            // Item
-            // 
-            Item.HeaderText = "아이템";
-            Item.MinimumWidth = 8;
-            Item.Name = "Item";
-            Item.ReadOnly = true;
-            Item.Width = 250;
-            // 
-            // Mass
-            // 
-            Mass.HeaderText = "질량(kg)";
-            Mass.MinimumWidth = 8;
-            Mass.Name = "Mass";
-            Mass.ReadOnly = true;
-            Mass.Width = 250;
-            // 
             // dataGridView2
             // 
             dataGridView2.AllowUserToAddRows = false;
@@ -92,6 +76,24 @@
             dataGridView2.Size = new Size(503, 538);
             dataGridView2.TabIndex = 2;
             // 
+            // Item
+            // 
+            Item.HeaderText = "아이템";
+            Item.MinimumWidth = 8;
+            Item.Name = "Item";
+            Item.ReadOnly = true;
+            Item.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Item.Width = 250;
+            // 
+            // Mass
+            // 
+            Mass.HeaderText = "질량(kg)";
+            Mass.MinimumWidth = 8;
+            Mass.Name = "Mass";
+            Mass.ReadOnly = true;
+            Mass.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Mass.Width = 250;
+            // 
             // Abilities
             // 
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -100,6 +102,7 @@
             Abilities.MinimumWidth = 8;
             Abilities.Name = "Abilities";
             Abilities.ReadOnly = true;
+            Abilities.SortMode = DataGridViewColumnSortMode.NotSortable;
             Abilities.Width = 250;
             // 
             // Number
@@ -110,6 +113,7 @@
             Number.MinimumWidth = 8;
             Number.Name = "Number";
             Number.ReadOnly = true;
+            Number.SortMode = DataGridViewColumnSortMode.NotSortable;
             Number.Width = 250;
             // 
             // Storage
@@ -131,9 +135,9 @@
 
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn Abilities;
-        private DataGridViewTextBoxColumn Number;
         private DataGridViewTextBoxColumn Item;
         private DataGridViewTextBoxColumn Mass;
+        private DataGridViewTextBoxColumn Abilities;
+        private DataGridViewTextBoxColumn Number;
     }
 }
