@@ -15,6 +15,7 @@ namespace Client_test
     {
         ChatClient form;
         public TaskSelection(ChatClient Form, bool isReservation) // isReservation: 현재 본인 턴 X = true, 현재 본인 턴 O = false
+                                                                  // 본인 턴이 아니면 다음에 할 일 예약
         {
             InitializeComponent();
             form = Form;

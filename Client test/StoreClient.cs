@@ -37,7 +37,7 @@ namespace Client_test
             dataGridView2.Rows.Add("등잔 밑이 어둡다", 10000, 0);
             dataGridView2.Rows.Add("은하 탐방", 50000, 0);
             dataGridView2.Rows.Add("행성 탐방", 12000, 0);
-            //dataGridView2.Rows.Add("스턴", "0");
+            //dataGridView2.Rows.Add("스턴", "∞");
             dataGridView2.Rows.Add("수갑", 2000, 0);
             dataGridView2.Rows.Add("팀 식별", 2000, 0);
             dataGridView2.Rows.Add("저장량 증가", 16000, 0);
