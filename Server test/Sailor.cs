@@ -14,6 +14,7 @@ namespace Server_test
         public bool isDisable; // 행동 불능 상태: True = 행동 불능, False = 정상
         public Inventory inventory;
         public Work work;
+
         public Sailor(SailorType T, double EatINDAY, double Maxinventory, Work work)
         {
             inventory = new Inventory(Maxinventory, 0);
