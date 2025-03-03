@@ -56,6 +56,7 @@
             listBox1.Location = new Point(9, 59);
             listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
+            listBox1.SelectionMode = SelectionMode.None;
             listBox1.Size = new Size(530, 504);
             listBox1.TabIndex = 0;
             // 
@@ -153,6 +154,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(155, 31);
             textBox4.TabIndex = 10;
+            textBox4.KeyDown += textBox4_KeyDown;
             // 
             // groupBox1
             // 
@@ -173,6 +175,7 @@
             listBox2.Location = new Point(5, 30);
             listBox2.Margin = new Padding(2);
             listBox2.Name = "listBox2";
+            listBox2.SelectionMode = SelectionMode.None;
             listBox2.Size = new Size(304, 329);
             listBox2.TabIndex = 0;
             // 

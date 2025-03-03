@@ -61,6 +61,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(155, 31);
             textBox1.TabIndex = 1;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // button1
             // 
@@ -91,6 +92,7 @@
             listBox1.Location = new Point(9, 9);
             listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
+            listBox1.SelectionMode = SelectionMode.None;
             listBox1.Size = new Size(439, 479);
             listBox1.TabIndex = 4;
             // 
@@ -142,6 +144,7 @@
             listBox2.Location = new Point(5, 30);
             listBox2.Margin = new Padding(2);
             listBox2.Name = "listBox2";
+            listBox2.SelectionMode = SelectionMode.None;
             listBox2.Size = new Size(299, 304);
             listBox2.TabIndex = 0;
             // 

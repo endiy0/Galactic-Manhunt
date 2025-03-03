@@ -257,14 +257,22 @@ namespace Client_test
 
             //if (본인 턴)
             //{
-                  TaskSelection taskSelection = new TaskSelection(this, false);
-                  taskSelection.Show();
+            TaskSelection taskSelection = new TaskSelection(this, false);
+            taskSelection.Show();
             //}
             //else
             //{
             //    TaskSelection taskSelection = new TaskSelection(this, true);
             //    taskSelection.Show();
             //}
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && isConnected) // 엔터 누르면 연결
+            {
+                button1.PerformClick(); // 연결 버튼
+            }
         }
     }
 

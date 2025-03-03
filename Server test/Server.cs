@@ -319,7 +319,7 @@ namespace Server_test
 
         private void button4_Click(object sender, EventArgs e) // 게임 시작
         {
-            if(clients.Count >= 2)
+            if (clients.Count >= 2)
             {
                 button4.Enabled = false;
                 button5.Enabled = true;
@@ -386,6 +386,14 @@ namespace Server_test
                 Delay(10);
             }
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick(); // 서버 시작 버튼
+            }
         }
     }
 }
