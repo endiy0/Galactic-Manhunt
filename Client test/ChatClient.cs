@@ -188,7 +188,7 @@ namespace Client_test
                     {
                         isGameStarted = false;
                     }
-                    else if (message[0] == "8") // 역할 전송
+                    else if (message[0] == "8") // 역할 전송 받기
                     {
                         job = (Job)int.Parse(message[1]);
                         Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n"));
