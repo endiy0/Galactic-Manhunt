@@ -293,10 +293,11 @@ namespace Client_test
         }
     }
 
+    // 직업 종류
     enum Job
     {
-        Robber,
-        Cop
+        Robber, // 도둑
+        Cop     // 경찰
     }
 
     // 함선 타입
