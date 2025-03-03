@@ -130,6 +130,7 @@
             button1.TabIndex = 1;
             button1.Text = "구매";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -214,6 +215,7 @@
             textBox1.TabIndex = 7;
             textBox1.Text = "0";
             textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // textBox2
             // 
@@ -224,6 +226,7 @@
             textBox2.TabIndex = 8;
             textBox2.Text = "0";
             textBox2.TextChanged += textBox2_TextChanged;
+            textBox2.KeyDown += textBox2_KeyDown;
             // 
             // textBox3
             // 
@@ -234,6 +237,7 @@
             textBox3.TabIndex = 10;
             textBox3.Text = "0";
             textBox3.TextChanged += textBox3_TextChanged;
+            textBox3.KeyDown += textBox3_KeyDown;
             // 
             // textBox4
             // 
@@ -244,6 +248,7 @@
             textBox4.TabIndex = 9;
             textBox4.Text = "0";
             textBox4.TextChanged += textBox4_TextChanged;
+            textBox4.KeyDown += textBox4_KeyDown;
             // 
             // textBox5
             // 
@@ -254,6 +259,7 @@
             textBox5.TabIndex = 14;
             textBox5.Text = "0";
             textBox5.TextChanged += textBox5_TextChanged;
+            textBox5.KeyDown += textBox5_KeyDown;
             // 
             // textBox6
             // 
@@ -264,6 +270,7 @@
             textBox6.TabIndex = 13;
             textBox6.Text = "0";
             textBox6.TextChanged += textBox6_TextChanged;
+            textBox6.KeyDown += textBox6_KeyDown;
             // 
             // textBox7
             // 
@@ -274,6 +281,7 @@
             textBox7.TabIndex = 12;
             textBox7.Text = "0";
             textBox7.TextChanged += textBox7_TextChanged;
+            textBox7.KeyDown += textBox7_KeyDown;
             // 
             // textBox8
             // 
@@ -284,6 +292,7 @@
             textBox8.TabIndex = 11;
             textBox8.Text = "0";
             textBox8.TextChanged += textBox8_TextChanged;
+            textBox8.KeyDown += textBox8_KeyDown;
             // 
             // textBox9
             // 
@@ -294,6 +303,7 @@
             textBox9.TabIndex = 16;
             textBox9.Text = "0";
             textBox9.TextChanged += textBox9_TextChanged;
+            textBox9.KeyDown += textBox9_KeyDown;
             // 
             // textBox10
             // 
@@ -304,6 +314,7 @@
             textBox10.TabIndex = 15;
             textBox10.Text = "0";
             textBox10.TextChanged += textBox10_TextChanged;
+            textBox10.KeyDown += textBox10_KeyDown;
             // 
             // label3
             // 
@@ -338,6 +349,7 @@
             textBox15.TabIndex = 24;
             textBox15.Text = "0";
             textBox15.TextChanged += textBox15_TextChanged;
+            textBox15.KeyDown += textBox15_KeyDown;
             // 
             // textBox16
             // 
@@ -348,6 +360,7 @@
             textBox16.TabIndex = 23;
             textBox16.Text = "0";
             textBox16.TextChanged += textBox16_TextChanged;
+            textBox16.KeyDown += textBox16_KeyDown;
             // 
             // textBox17
             // 
@@ -358,6 +371,7 @@
             textBox17.TabIndex = 22;
             textBox17.Text = "0";
             textBox17.TextChanged += textBox17_TextChanged;
+            textBox17.KeyDown += textBox17_KeyDown;
             // 
             // textBox18
             // 
@@ -368,6 +382,7 @@
             textBox18.TabIndex = 21;
             textBox18.Text = "0";
             textBox18.TextChanged += textBox18_TextChanged;
+            textBox18.KeyDown += textBox18_KeyDown;
             // 
             // textBox19
             // 
@@ -378,6 +393,7 @@
             textBox19.TabIndex = 20;
             textBox19.Text = "0";
             textBox19.TextChanged += textBox19_TextChanged;
+            textBox19.KeyDown += textBox19_KeyDown;
             // 
             // textBox20
             // 
@@ -388,6 +404,7 @@
             textBox20.TabIndex = 19;
             textBox20.Text = "0";
             textBox20.TextChanged += textBox20_TextChanged;
+            textBox20.KeyDown += textBox20_KeyDown;
             // 
             // button3
             // 
@@ -398,6 +415,7 @@
             button3.TabIndex = 18;
             button3.Text = "구매";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label5
             // 

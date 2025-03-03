@@ -161,7 +161,11 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox1.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox1.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            }
 
             itemPrice["hydrogen"] = mass * 400;
             showTotalItemPrice();
@@ -175,7 +179,11 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox2.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox2.Text = dataGridView1.Rows[1].Cells[2].Value.ToString();
+            }
 
             itemPrice["nitrogen"] = mass * 120;
             showTotalItemPrice();
@@ -189,7 +197,11 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox4.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[2].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox4.Text = dataGridView1.Rows[2].Cells[2].Value.ToString();
+            }
 
             itemPrice["oxygen"] = mass * 100;
             showTotalItemPrice();
@@ -203,7 +215,11 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox3.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[3].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox3.Text = dataGridView1.Rows[3].Cells[2].Value.ToString();
+            }
 
             itemPrice["epsilonCrystal"] = mass * 1000;
             showTotalItemPrice();
@@ -217,7 +233,11 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox8.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[4].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox8.Text = dataGridView1.Rows[4].Cells[2].Value.ToString();
+            }
 
             itemPrice["peroxide"] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
@@ -231,7 +251,11 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox7.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[5].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox7.Text = dataGridView1.Rows[5].Cells[2].Value.ToString();
+            }
 
             itemPrice["hydrazine"] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
@@ -245,7 +269,11 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox6.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[6].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum)  // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox6.Text = dataGridView1.Rows[6].Cells[2].Value.ToString();
+            }
 
             itemPrice["epsilon"] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
@@ -390,10 +418,161 @@ namespace Client_test
         }
         #endregion
 
+        private void button1_Click(object sender, EventArgs e) // 아이템 구매
+        {
+            DialogResult = MessageBox.Show("아이템을 구매하시겠습니까?", "구매 확인", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                // 아이템 구매
+                MessageBox.Show("구매 완료"); // 구매 완료를 표현하는 방법은 이거 말고 label로 표현해주세요
+            }
+        }
+
+        #region itemKeyDown
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox8_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox7_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox6_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox10_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox9_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+        #endregion
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("능력을 구매하시겠습니까?", "구매 확인", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                // 아이템 구매
+                MessageBox.Show("구매 완료"); // 구매 완료를 표현하는 방법은 이거 말고 label로 표현해주세요
+            }
+        }
+
+        #region abilityKeyDown
+        private void textBox20_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button3.PerformClick();
+            }
+        }
+
+        private void textBox19_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button3.PerformClick();
+            }
+        }
+
+        private void textBox18_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button3.PerformClick();
+            }
+        }
+
+        private void textBox17_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button3.PerformClick();
+            }
+        }
+
+        private void textBox16_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button3.PerformClick();
+            }
+        }
+
+        private void textBox15_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button3.PerformClick();
+            }
+        }
+        #endregion
+
         // TODO: 상점 구현
         // 한번에 여러개 상품 선택가능하므로 여러개 한번에 구매할 수 있도록 구현해주세요
-        // TODO: Enter 누르면 구매, 구매 전 구매하시겠습니까? 확인창
-        // TODO: 구매할 때 구매할 질량 입력
         // TODO: 선택 안되어 있으면 구매버튼 비활성화, Enter 눌러도 안되도록
+        // TODO: 
     }
 }
