@@ -409,9 +409,9 @@
             // button3
             // 
             button3.Font = new Font("맑은 고딕", 11F);
-            button3.Location = new Point(638, 484);
+            button3.Location = new Point(635, 484);
             button3.Name = "button3";
-            button3.Size = new Size(60, 232);
+            button3.Size = new Size(63, 232);
             button3.TabIndex = 18;
             button3.Text = "구매";
             button3.UseVisualStyleBackColor = true;
