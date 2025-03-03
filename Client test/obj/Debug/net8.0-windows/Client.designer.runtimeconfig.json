@@ -12,7 +12,11 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\이동하\\.dotnet\\store\\|arch|\\|tfm|",
+=======
+      "C:\\Users\\endiy\\.dotnet\\store\\|arch|\\|tfm|",
+>>>>>>> 4dd5ebbba54bef5dcdf544b92c7698f295057cb3
       "C:\\Users\\endiy\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
