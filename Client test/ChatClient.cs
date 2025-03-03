@@ -18,9 +18,10 @@ namespace Client_test
 
         Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
         {
-            { Job.Robber, "도적" },
+            { Job.Robber, "도둑" },
             { Job.Cop, "경찰" }
         };
+
         Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
         {
             { ShipType.newbie_ship, "초급자 전용 함선" },
@@ -38,6 +39,11 @@ namespace Client_test
             isConnected = false;
             isGameStarted = false;
             comboBox1.SelectedIndex = 0; // default = 전체
+        }
+
+        public void GetShip()
+        {
+            Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n" + "함선: " + shipDisplay[ship]));
         }
 
         private void button1_Click(object sender, EventArgs e) // 연결
@@ -183,8 +189,7 @@ namespace Client_test
                     else if (message[0] == "8") // 역할 전송
                     {
                         job = (Job)int.Parse(message[1]);
-                        Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n"
-                                    + "함선: " + shipDisplay[ship]));
+                        Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n"));
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }

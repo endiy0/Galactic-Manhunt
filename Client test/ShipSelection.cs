@@ -38,6 +38,7 @@ namespace Client_test
             form.ship = (ShipType)listBox1.SelectedIndex;
             label2.Text = listBox1.SelectedItem.ToString() + " 선택됨";
             Delay(1500); // 1.5초 대기
+            form.GetShip(); // 선택된 함선을 서버로 전송
             this.Close(); // 종료
         }
 
