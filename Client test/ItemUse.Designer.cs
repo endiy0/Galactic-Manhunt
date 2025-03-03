@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             button2 = new Button();
             dataGridView2 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -44,6 +45,7 @@
             button2.TabIndex = 7;
             button2.Text = "사용";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // dataGridView2
             // 
@@ -62,6 +64,7 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(359, 415);
             dataGridView2.TabIndex = 6;
+            dataGridView2.KeyDown += dataGridView2_KeyDown;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -74,6 +77,10 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewTextBoxColumn2.HeaderText = "개수";
             dataGridViewTextBoxColumn2.MinimumWidth = 8;
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -92,6 +99,7 @@
             Name = "ItemUse";
             Text = "아이템 사용";
             FormClosing += ItemUse_FormClosing;
+            KeyDown += ItemUse_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
