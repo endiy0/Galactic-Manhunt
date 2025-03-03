@@ -34,8 +34,7 @@ namespace Client_test
 
         private void button1_Click(object sender, EventArgs e) // 선택
         {
-            Invoke(new Action(() => { form.ship = (ShipType)listBox1.SelectedIndex; })); // 선택된 함선을 form.ship에 저장
-            //form.ship = (ShipType)listBox1.SelectedIndex;
+            form.ship = (ShipType)listBox1.SelectedIndex;
             label2.Text = listBox1.SelectedItem.ToString() + " 선택됨";
             Delay(1500); // 1.5초 대기
             this.Close(); // 종료
