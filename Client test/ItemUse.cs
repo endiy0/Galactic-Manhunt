@@ -43,14 +43,35 @@ namespace Client_test
             // TODO: TaskSelection 본인 턴 확인 후 실행
             //if (본인 턴)
             //{
-                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
-                  taskSelection.Show();
+            TaskSelection taskSelection = new TaskSelection(chatClient, false);
+            taskSelection.Show();
             //}
             //else
             //{
             //    TaskSelection taskSelection = new TaskSelection(chatClient, true);
             //    taskSelection.Show();
             //}
+        }
+
+        private void button2_Click(object sender, EventArgs e) // 사용
+        {
+
+        }
+
+        private void ItemUse_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // 엔터 누르면 사용
+            {
+                button2.PerformClick();
+            }
+        }
+
+        private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // 엔터 누르면 사용
+            {
+                button2.PerformClick();
+            }
         }
 
         // TODO: 아아템 사용 구현
