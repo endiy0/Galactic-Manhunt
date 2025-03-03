@@ -60,7 +60,7 @@ namespace Client_test
         {
             if (e.KeyCode == Keys.Enter) // 엔터 누르면 합성
             {
-                button1_Click(sender, e); // 합성
+                button1.PerformClick(); // 합성
             }
         }
 

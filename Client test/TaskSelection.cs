@@ -80,7 +80,7 @@ namespace Client_test
         {
             if (e.KeyCode == Keys.Enter) // 엔터 누르면 선택
             {
-                button1_Click(sender, e); // 선택 버튼
+                button1.PerformClick(); // 선택 버튼
             }
         }
 

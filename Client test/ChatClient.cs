@@ -237,7 +237,7 @@ namespace Client_test
         {
             if (e.KeyCode == Keys.Enter && isConnected) // 엔터 누르면 전송
             {
-                button3_Click(sender, e); // 전송 버튼
+                button3.PerformClick(); // 전송 버튼
             }
         }
 
@@ -269,7 +269,7 @@ namespace Client_test
 
         private void textBox4_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && isConnected) // 엔터 누르면 연결
+            if (e.KeyCode == Keys.Enter) // 엔터 누르면 연결
             {
                 button1.PerformClick(); // 연결 버튼
             }

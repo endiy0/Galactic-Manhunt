@@ -313,7 +313,7 @@ namespace Server_test
         {
             if (e.KeyCode == Keys.Enter && isServerRun) // 엔터 누르면 전송
             {
-                button3_Click(sender, e); // 전송 버튼
+                button3.PerformClick(); // 전송 버튼
             }
         }
 
