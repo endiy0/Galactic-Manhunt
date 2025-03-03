@@ -16,6 +16,20 @@ namespace Client_test
         static Job job;
         internal ShipType ship;
 
+        Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
+        {
+            { Job.Robber, "도적" },
+            { Job.Cop, "경찰" }
+        };
+        Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
+        {
+            { ShipType.newbie_ship, "초급자 전용 함선" },
+            { ShipType.resource_ship, "자원 함선" },
+            { ShipType.sailor_ship, "선원 함선" },
+            { ShipType.galaxy_moving_ship, "초은하 이동 함선" },
+            { ShipType.thief_ship, "도적 함선" }
+        };
+
         public ChatClient()
         {
             InitializeComponent();
@@ -169,8 +183,8 @@ namespace Client_test
                     else if (message[0] == "8") // 역할 전송
                     {
                         job = (Job)int.Parse(message[1]);
-                        Invoke(new Action(() => label4.Text = "직업: " + job.ToString() + "\n"
-                                    + "함선: "));
+                        Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n"
+                                    + "함선: " + shipDisplay[ship]));
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
@@ -291,7 +305,7 @@ namespace Client_test
         newbie_ship,             // 초급자 전용 함선
         resource_ship,           // 자원 함선
         sailor_ship,             // 선원 함선
-        galaxy_moving_ship,      // 초 은하 이동 함선
+        galaxy_moving_ship,      // 초은하 이동 함선
         thief_ship               // 도적 함선
     }
 }
