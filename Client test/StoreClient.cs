@@ -148,6 +148,8 @@ namespace Client_test
                 dataGridView2.Rows.Add("저장량 증가", 16000, 0);
             }
 
+            // TODO: 아이템, 능력의 기능 설명해주는 ToolTip 추가
+
             dataGridView1.ClearSelection(); // 셀 선택 해제
             dataGridView2.ClearSelection();
 
