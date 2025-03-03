@@ -131,6 +131,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "Collection";
             Text = "채집";

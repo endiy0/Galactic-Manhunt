@@ -35,7 +35,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(615, 352);
-            Margin = new Padding(2, 2, 2, 2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2);
             Name = "ShipControl";
             Text = "함선 조종";
             FormClosing += ShipControl_FormClosing;

@@ -244,6 +244,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(listBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Margin = new Padding(2);

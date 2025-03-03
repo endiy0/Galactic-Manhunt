@@ -95,6 +95,7 @@
             ClientSize = new Size(385, 504);
             Controls.Add(button2);
             Controls.Add(dataGridView2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "ItemUse";
             Text = "아이템 사용";

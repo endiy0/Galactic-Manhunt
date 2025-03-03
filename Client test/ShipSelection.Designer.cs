@@ -111,6 +111,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ShipSelection";
             Text = "함선 선택";
             KeyDown += ShipSelection_KeyDown;

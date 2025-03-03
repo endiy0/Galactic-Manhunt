@@ -475,6 +475,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "StoreClient";
             Text = "상점";

@@ -31,9 +31,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
             Item = new DataGridViewTextBoxColumn();
             Mass = new DataGridViewTextBoxColumn();
+            dataGridView2 = new DataGridView();
             Abilities = new DataGridViewTextBoxColumn();
             Number = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -59,6 +59,24 @@
             dataGridView1.Size = new Size(359, 538);
             dataGridView1.TabIndex = 1;
             // 
+            // Item
+            // 
+            Item.HeaderText = "아이템";
+            Item.MinimumWidth = 8;
+            Item.Name = "Item";
+            Item.ReadOnly = true;
+            Item.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Item.Width = 178;
+            // 
+            // Mass
+            // 
+            Mass.HeaderText = "질량(kg)";
+            Mass.MinimumWidth = 8;
+            Mass.Name = "Mass";
+            Mass.ReadOnly = true;
+            Mass.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Mass.Width = 178;
+            // 
             // dataGridView2
             // 
             dataGridView2.AllowUserToAddRows = false;
@@ -77,24 +95,6 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(359, 538);
             dataGridView2.TabIndex = 2;
-            // 
-            // Item
-            // 
-            Item.HeaderText = "아이템";
-            Item.MinimumWidth = 8;
-            Item.Name = "Item";
-            Item.ReadOnly = true;
-            Item.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Item.Width = 178;
-            // 
-            // Mass
-            // 
-            Mass.HeaderText = "질량(kg)";
-            Mass.MinimumWidth = 8;
-            Mass.Name = "Mass";
-            Mass.ReadOnly = true;
-            Mass.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Mass.Width = 178;
             // 
             // Abilities
             // 
@@ -125,6 +125,7 @@
             ClientSize = new Size(749, 562);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "Storage";
             Text = "저장고";

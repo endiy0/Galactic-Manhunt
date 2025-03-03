@@ -77,6 +77,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(listBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "TaskSelection";
             Text = "할 일 선택창";

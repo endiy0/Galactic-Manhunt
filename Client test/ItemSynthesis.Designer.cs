@@ -282,6 +282,7 @@
             Controls.Add(dataGridView3);
             Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "ItemSynthesis";
             Text = "아이템 합성";
