@@ -181,6 +181,8 @@ namespace Client_test
                             ShipSelection shipSelection = new ShipSelection(this);
                             shipSelection.Show();
                         }));
+                        button4.Enabled = true;
+                        button5.Enabled = true;
                     }
                     else if (message[0] == "7") // 게임 종료
                     {
