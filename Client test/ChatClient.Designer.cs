@@ -203,6 +203,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.Enabled = false;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "전체", "팀" });
             comboBox1.Location = new Point(9, 574);

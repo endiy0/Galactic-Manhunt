@@ -59,10 +59,12 @@ namespace Client_test
                     receiveThread.Start();
                     listBox1.Items.Add("Connected to Server...");
                     isConnected = true;
-                    button2.Enabled = true;
-                    button3.Enabled = true;
-                    button1.Enabled = false;
-                    textBox4.Enabled = false;
+                    button1.Enabled = false;  // 연결
+                    button2.Enabled = true;   // 연결 해제
+                    button3.Enabled = true;   // 전송
+                    textBox1.Enabled = true;  // 닉네임
+                    textBox4.Enabled = false; // 채팅창
+                    comboBox1.Enabled = true; // 채팅 대상 설정
                 }
             }
             catch (Exception ex)
@@ -90,8 +92,12 @@ namespace Client_test
                         byte[] data = new byte[256];
                         int bytesRead = stream.Read(data, 0, data.Length);
                         if (bytesRead == 0)
+                        {
                             break;
+                        }
+
                         data = data.Where(x => x != 0).ToArray();
+
                         if (buffer.Length == 102400)
                         {
                             buffer = data;
@@ -132,11 +138,13 @@ namespace Client_test
                         Invoke(new Action(() =>
                         {
                             listBox1.Items.Add("DisConnected from server...");
-                            button2.Enabled = false;
-                            button3.Enabled = false;
-                            button1.Enabled = true;
                             isConnected = false;
-                            textBox4.Enabled = true;
+                            button1.Enabled = true;    // 연결
+                            button2.Enabled = false;   // 연결 해제
+                            button3.Enabled = false;   // 전송
+                            textBox4.Enabled = true;   // 닉네임
+                            textBox1.Enabled = false;  // 채팅창
+                            comboBox1.Enabled = false; // 채팅 대상 설정
                             listBox2.Items.Clear();
                         }));
 
@@ -209,11 +217,13 @@ namespace Client_test
             stream.Close();
             client.Close();
             listBox1.Items.Add("DisConnected from Server...");
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button1.Enabled = true;
             isConnected = false;
-            textBox4.Enabled = true;
+            button1.Enabled = true;    // 연결
+            button2.Enabled = false;   // 연결 해제
+            button3.Enabled = false;   // 전송
+            textBox4.Enabled = true;   // 닉네임
+            textBox1.Enabled = false;  // 채팅창
+            comboBox1.Enabled = false; // 채팅 대상 설정
             listBox2.Items.Clear();
         }
 
@@ -226,11 +236,11 @@ namespace Client_test
                 stream.Close();
                 client.Close();
                 listBox1.Items.Add("DisConnected from server...");
-                button2.Enabled = false;
-                button3.Enabled = false;
-                button1.Enabled = true;
                 isConnected = false;
-                textBox4.Enabled = true;
+                button1.Enabled = true;  // 연결
+                button2.Enabled = false; // 연결 해제
+                button3.Enabled = false; // 전송
+                textBox4.Enabled = true; // 닉네임
             }
         }
 
