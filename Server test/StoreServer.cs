@@ -51,7 +51,8 @@ namespace Server_test
                 if (storeType == StoreType.Cops_store) // 경찰 상점
                 {
                     multiply = 0.8; // 가격 0.8배, 경찰은 시세보다 싸게
-
+                    
+                    // 경찰만 있는 능력
                     abilities.Add(new Ability(AbilityType.dark_under_the_lamp), 10000); // 등잔 밑이 어둡다
                     abilities.Add(new Ability(AbilityType.galaxy_travel), 50000);       // 은하 탐방
                     abilities.Add(new Ability(AbilityType.planet_travel), 12000);       // 행성 탐방
@@ -64,13 +65,15 @@ namespace Server_test
 
                     multiply = 1.2;   // 가격 1.2배 // 도둑은 시세보다 비싸게
 
+                    // 도둑만 있는 능력
                     abilities.Add(new Ability(AbilityType.get_fuel), 5000);         // 겟 퓨얼
                     abilities.Add(new Ability(AbilityType.fuel_compressor), 10000); // 연료 압축기
                     abilities.Add(new Ability(AbilityType.fuel_changer), 5000);     // 연료 교환권
                     abilities.Add(new Ability(AbilityType.stun_remover), 5000);     // 스턴 제거기
                 }
 
-                // 공용 상점은 그대로 multiply = 1
+                // 공용 상점은 그대로 multiply = 1, 경찰은 0.8, 도둑은 1.2
+                // 나머지 아이템 한 번에 처리
                 items.Add(new Item(Resource.Food, MaxFood), food_cost * multiply);   // 음식
                 items.Add(new Item(Resource.Water, MaxFood), water_cost * multiply); // 물
                 items.Add(new Item(Resource.Seed, MaxSeed), seed_cost * multiply);   // 씨앗
@@ -84,17 +87,17 @@ namespace Server_test
 
             // 반환한거는 개인 크로노 추가
 
-            if (Re == Resource.Oxygen)          // 산소
+            if (Re == Resource.Oxygen) // 산소
             {
                 return count * 100;
             }
 
-            if (Re == Resource.Hydrogen)        // 수소
+            if (Re == Resource.Hydrogen) // 수소
             {
                 return count * 400;
             }
 
-            if (Re == Resource.Nitrogen)        // 질소
+            if (Re == Resource.Nitrogen) // 질소
             {
                 return count * 120;
             }
@@ -107,6 +110,7 @@ namespace Server_test
             return 0;
         }
 
+        // 상점 타입 반환
         public StoreType tp
         {
             get { return storeType; }

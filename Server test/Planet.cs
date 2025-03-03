@@ -18,8 +18,6 @@ namespace Server_test
         static double WaterMax = 18;
         static double SeedMax = 5;
 
-        // TODO: Planet 생성자에 행성 타입에 따라 Resource 랜덤하게 넣어주는 알고리즘 짜기
-
         public Planet(PlanetType T) 
         {
             type = T;

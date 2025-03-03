@@ -706,7 +706,5 @@ namespace Client_test
             }
         }
         #endregion
-
-        // TODO: 상점 구현
     }
 }

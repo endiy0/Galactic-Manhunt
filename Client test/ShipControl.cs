@@ -35,5 +35,7 @@ namespace Client_test
             //    taskSelection.Show();
             //}
         }
+
+        // TODO: 함선 조종 구현
     }
 }

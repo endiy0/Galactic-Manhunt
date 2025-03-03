@@ -342,7 +342,7 @@ namespace Server_test
         void Game()
         {
             // TODO: 게임 구현하기
-            // TODO: 서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘다 있는 은하는 보라색
+            // TODO: 서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘 다 있는 은하는 보라색
             foreach (var c in clients)
             {
                 c.Send("6", "");
@@ -385,7 +385,6 @@ namespace Server_test
                 r.Send("8", "0");
                 Delay(10);
             }
-
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
