@@ -12,14 +12,16 @@ namespace Client_test
 {
     public partial class ShipSelection : Form
     {
-        public ShipSelection()
+        ChatClient form;
+        public ShipSelection(ChatClient form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void button1_Click(object sender, EventArgs e) // 선택
         {
-            MessageBox.Show("선택 완료");
+            form.ship = listBox1.SelectedIndex;
         }
 
         private void ShipSelection_KeyDown(object sender, KeyEventArgs e)
@@ -35,6 +37,41 @@ namespace Client_test
             if (e.KeyCode == Keys.Enter) // 엔터 누르면 선택
             {
                 button1.PerformClick();
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) // listBox1에 함선이 선택되면 "선택된 함선이 없습니다" 텍스트 삭제
+        {
+            label2.Text = "";
+            button1.Enabled = true; // 리스트에 항목이 선택되면 버튼 활성화
+            int selectedIndex = listBox1.SelectedIndex;
+            switch (selectedIndex)
+            {
+                case 0: // 초급자용 함선
+                    label1.Text = "현재 함선: 초급자용 함선";
+                    label3.Text = "함선 설명:\n시작할 때 기본 아이템과\n자원이 지원됩니다.";
+                    break;
+                case 1:
+                    label1.Text = "현재 함선: 자원 함선";
+                    label3.Text = "함선 설명:\n턴마다 자신이 원하는\n자원을 선택할 수 있습니다.\n단, 연료 제작에 필요한\n자원이 증가합니다.";
+                    break;
+                case 2:
+                    label1.Text = "현재 함선: 선원 함선";
+                    label3.Text = "함선 설명:\n선원이 3명 지급됩니다.\n첫 20턴 동안은 매번\n식량 3kg, 물 2kg이 지급됩니다.";
+                    break;
+                case 3:
+                    label1.Text = "현재 함선: 초은하 이동 함선";
+                    label3.Text = "함선 설명:\n은하 이동을 3번\n무료로 사용할 수 있습니다.\n단, 엑실론 제작시\n엑실론-크리스탈이 1.5배 많이 필요합니다.";
+                    break;
+                case 4:
+                    label1.Text = "현재 함선: 도적 함선";
+                    label3.Text = "함선 설명:\n같은 은하 내 다른 함선의\n연료를 빼앗을 수 있습니다.\n단, 20%의 확률로 3턴 동안\n이동 불가 상태가 됩니다.";
+                    break;
+                default:
+                    label1.Text = "선택된 함선이 없습니다";
+                    label3.Text = "함선 설명: ";
+                    button1.Enabled = false; // 선택 안되면 버튼 비활성화
+                    break;
             }
         }
     }

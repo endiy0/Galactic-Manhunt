@@ -14,7 +14,8 @@ namespace Client_test
         static string str;
         static bool isGameStarted;
         static Job job;
-        
+        public static ShipType ship = 0;
+
         public ChatClient()
         {
             InitializeComponent();
@@ -96,11 +97,11 @@ namespace Client_test
                     }
                     string[] message = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊")[0].Split('⧫');
 
-                    if (message[0] == "0")
+                    if (message[0] == "0") // 채팅
                     {
                         Invoke(new Action(() => listBox1.Items.Add(message[1])));
                     }
-                    else if (message[0] == "1")
+                    else if (message[0] == "1") // 연결 종료
                     {
                         client.Close();
                         if (message[1] != "")
@@ -122,7 +123,7 @@ namespace Client_test
                         break;
                     }
 
-                    else if (message[0] == "2")
+                    else if (message[0] == "2") // 번호 지정
                     {
                         mynum = int.Parse(message[1]);
                         Invoke(new Action(() => str = textBox4.Text));
@@ -144,29 +145,29 @@ namespace Client_test
                         stream.Write(Encoding.UTF8.GetBytes("3⧫" + nickname + '◊'));
                         stream.Flush();
                     }
-                    else if (message[0] == "4")
+                    else if (message[0] == "4") // 접속한 클라이언트 이름
                     {
                         Invoke(new Action(() => listBox2.Items.Add(message[1])));
                     }
-                    else if (message[0] == "5")
+                    else if (message[0] == "5") // 접속 종료한 클라이언트 이름
                     {
                         Invoke(new Action(() => listBox2.Items.Remove(message[1])));
                     }
-                    else if (message[0] == "6")
+                    else if (message[0] == "6") // 게임 시작
                     {
                         isGameStarted = true;
-                        ShipSelection shipSelection = new ShipSelection();
+                        ShipSelection shipSelection = new ShipSelection(this);
                         shipSelection.Show();
                     }
-                    else if (message[0] == "7")
+                    else if (message[0] == "7") // 게임 종료
                     {
                         isGameStarted = false;
                     }
-                    else if (message[0] == "8")
+                    else if (message[0] == "8") // 역할 전송
                     {
                         job = (Job)int.Parse(message[1]);
                         label4.Text = "직업: " + job.ToString() + "\n"
-                                    + "함선: ";
+                                    + "함선: " + ship.ToString();
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
@@ -266,9 +267,20 @@ namespace Client_test
             //}
         }
     }
+
     enum Job
     {
         Robber,
         Cops
+    }
+
+    // 함선 타입
+    public enum ShipType
+    {
+        newbie_ship,             // 초급자 전용 함선
+        resource_ship,           // 자원 함선
+        sailor_ship,             // 선원 함선
+        galaxy_moving_ship,      // 초 은하 이동 함선
+        thief_ship               // 도적 함선
     }
 }

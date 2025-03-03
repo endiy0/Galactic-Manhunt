@@ -67,7 +67,7 @@
             label1.Name = "label1";
             label1.Size = new Size(204, 25);
             label1.TabIndex = 2;
-            label1.Text = "선택된 항목이 없습니다";
+            label1.Text = "선택된 작업이 없습니다";
             // 
             // TaskSelection
             // 
