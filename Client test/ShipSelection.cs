@@ -19,9 +19,25 @@ namespace Client_test
             this.form = form;
         }
 
+        public void Delay(int ms)
+        {
+            DateTime dateTimeNow = DateTime.Now;
+            TimeSpan duration = new TimeSpan(0, 0, 0, 0, ms);
+            DateTime dateTimeAdd = dateTimeNow.Add(duration);
+            while (dateTimeAdd >= dateTimeNow)
+            {
+                System.Windows.Forms.Application.DoEvents();
+                dateTimeNow = DateTime.Now;
+            }
+            return;
+        }
+
         private void button1_Click(object sender, EventArgs e) // 선택
         {
-            form.ship = listBox1.SelectedIndex;
+            //form.ship = (ShipType)listBox1.SelectedIndex;
+            label2.Text = listBox1.SelectedItem.ToString() + " 선택됨";
+            Delay(1500); // 1.5초 대기
+            this.Close(); // 종료
         }
 
         private void ShipSelection_KeyDown(object sender, KeyEventArgs e)

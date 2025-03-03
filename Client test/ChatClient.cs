@@ -14,7 +14,7 @@ namespace Client_test
         static string str;
         static bool isGameStarted;
         static Job job;
-        public static ShipType ship = 0;
+        internal static ShipType ship;
 
         public ChatClient()
         {
@@ -167,7 +167,7 @@ namespace Client_test
                     {
                         job = (Job)int.Parse(message[1]);
                         label4.Text = "직업: " + job.ToString() + "\n"
-                                    + "함선: " + ship.ToString();
+                                    + "함선: ";
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
@@ -271,11 +271,11 @@ namespace Client_test
     enum Job
     {
         Robber,
-        Cops
+        Cop
     }
 
     // 함선 타입
-    public enum ShipType
+    enum ShipType
     {
         newbie_ship,             // 초급자 전용 함선
         resource_ship,           // 자원 함선
