@@ -63,7 +63,7 @@ namespace Client_test
             int selectedIndex = listBox1.SelectedIndex;
             switch (selectedIndex)
             {
-                case 0: // 초급자용 함선
+                case 0:
                     label1.Text = "현재 함선: 초급자용 함선";
                     label3.Text = "함선 설명:\n\n시작할 때 기본 아이템과\n\n자원이 지원됩니다.";
                     break;
