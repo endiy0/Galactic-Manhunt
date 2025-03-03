@@ -13,7 +13,7 @@ namespace Client_test
         string nickname;
         static string str;
         static bool isGameStarted;
-        static Job job;
+        internal Job job;
         internal ShipType ship;
 
         Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시

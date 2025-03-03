@@ -112,24 +112,41 @@ namespace Client_test
             dataGridView1.Rows.Add("식량", 600, 0);
             dataGridView1.Rows.Add("씨앗", 400, 0);
 
-            // 역할에 따라 능력 목록 다르게
             // 경찰 능력 목록
-            // 이름, 가격, 남은 양
-            dataGridView2.Rows.Add("등잔 밑이 어둡다", 10000, 0);
-            dataGridView2.Rows.Add("은하 탐방", 50000, 0);
-            dataGridView2.Rows.Add("행성 탐방", 12000, 0);
-            //dataGridView2.Rows.Add("스턴", "∞"); // 스턴은 기본 스킬로 개수 제한 없이 사용할 수 있음
-            dataGridView2.Rows.Add("수갑", 2000, 0);
-            dataGridView2.Rows.Add("팀 식별", 2000, 0);
-            dataGridView2.Rows.Add("저장량 증가", 16000, 0);
+            if (chatClient.job == Job.Cop)
+            {
+                dataGridView2.Size = new Size(498, 232); // 경찰은 능력 6개
+                button3.Size = new Size(60, 232);
+                textBox15.Visible = true;
+                label6.Location = new Point(13, 719);
+                this.Size = new Size(727, 816);
 
-            //// 도둑 능력 목록
-            //// 이름, 가격, 남은 양
-            //dataGridView2.Rows.Add("겟 퓨얼", 5000, 0);
-            //dataGridView2.Rows.Add("연료 교환권", 5000, 0);
-            //dataGridView2.Rows.Add("연료 압축기", 10000, 0);
-            //dataGridView2.Rows.Add("스턴 제거기", 5000, 0);
-            //dataGridView2.Rows.Add("저장량 증가", 16000, 0);
+                // 이름, 가격, 남은 양
+                dataGridView2.Rows.Add("등잔 밑이 어둡다", 10000, 0);
+                dataGridView2.Rows.Add("은하 탐방", 50000, 0);
+                dataGridView2.Rows.Add("행성 탐방", 12000, 0);
+                //dataGridView2.Rows.Add("스턴", "∞"); // 스턴은 기본 스킬로 개수 제한 없이 사용할 수 있음
+                dataGridView2.Rows.Add("수갑", 2000, 0);
+                dataGridView2.Rows.Add("팀 식별", 2000, 0);
+                dataGridView2.Rows.Add("저장량 증가", 16000, 0);
+            }
+
+            // 도둑 능력 목록
+            else if (chatClient.job == Job.Robber)
+            {
+                dataGridView2.Size = new Size(498, 200); // 도둑은 아이템 5개
+                button3.Size = new Size(60, 200);
+                textBox15.Visible = false;
+                label6.Location = new Point(13, 687);
+                this.Size = new Size(727, 784);
+
+                // 이름, 가격, 남은 양
+                dataGridView2.Rows.Add("겟 퓨얼", 5000, 0);
+                dataGridView2.Rows.Add("연료 교환권", 5000, 0);
+                dataGridView2.Rows.Add("연료 압축기", 10000, 0);
+                dataGridView2.Rows.Add("스턴 제거기", 5000, 0);
+                dataGridView2.Rows.Add("저장량 증가", 16000, 0);
+            }
 
             dataGridView1.ClearSelection(); // 셀 선택 해제
             dataGridView2.ClearSelection();
@@ -169,18 +186,22 @@ namespace Client_test
         {
             double totalPrice = 0;
 
-            //역할에 따라 가격 총합 다르게 계산
-            // 경찰 능력 가격 총합
-            foreach (var price in copAbilityPrice)
+            if(chatClient.job == Job.Cop)
             {
-                totalPrice += price.Value;
+                // 경찰 능력 가격 총합
+                foreach (var price in copAbilityPrice)
+                {
+                    totalPrice += price.Value;
+                }
             }
-
-            //// 도둑 능력 가격 총합
-            //foreach (var price in thiefAbilityPrice)
-            //{
-            //    totalPrice += price.Value;
-            //}
+            else if (chatClient.job == Job.Robber)
+            {
+                // 도둑 능력 가격 총합
+                foreach (var price in thiefAbilityPrice)
+                {
+                    totalPrice += price.Value;
+                }
+            }
 
             label6.Text = "합계 금액: " + totalPrice + " Cr";
         }
@@ -378,7 +399,6 @@ namespace Client_test
             {
                 textBox20.Text = "0";
             }
-            // 등잔 밑이 어둡다
             int num = Convert.ToInt32(textBox20.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[0].Cells[2].Value);
             if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
@@ -387,7 +407,17 @@ namespace Client_test
                 textBox20.Text = dataGridView2.Rows[0].Cells[2].Value.ToString();
             }
 
-            copAbilityPrice[CopAbility.darkUnderTheLamp] = num * 10000;
+            if (chatClient.job == Job.Cop)
+            {
+                // 등잔 밑이 어둡다
+                copAbilityPrice[CopAbility.darkUnderTheLamp] = num * 10000;
+            }
+            else if (chatClient.job == Job.Robber)
+            {
+                // 겟 퓨얼
+                thiefAbilityPrice[ThiefAbility.getFuel] = num * 5000;
+            }
+
             showTotalAbilityPrice();
         }
 
@@ -397,7 +427,6 @@ namespace Client_test
             {
                 textBox19.Text = "0";
             }
-            // 은하 탐방
             int num = Convert.ToInt32(textBox19.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[1].Cells[2].Value);
             if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
@@ -406,7 +435,17 @@ namespace Client_test
                 textBox19.Text = dataGridView2.Rows[1].Cells[2].Value.ToString();
             }
 
-            copAbilityPrice[CopAbility.galaxyTravel] = num * 50000;
+            if (chatClient.job == Job.Cop)
+            {
+                // 은하 탐방
+                copAbilityPrice[CopAbility.galaxyTravel] = num * 50000;
+            }
+            else if (chatClient.job == Job.Robber)
+            {
+                // 연료 교환권
+                thiefAbilityPrice[ThiefAbility.fuelChanger] = num * 5000;
+            }
+
             showTotalAbilityPrice();
         }
 
@@ -416,7 +455,6 @@ namespace Client_test
             {
                 textBox18.Text = "0";
             }
-            // 행성 탐방
             int num = Convert.ToInt32(textBox18.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[2].Cells[2].Value);
             if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
@@ -425,7 +463,17 @@ namespace Client_test
                 textBox18.Text = dataGridView2.Rows[2].Cells[2].Value.ToString();
             }
 
-            copAbilityPrice[CopAbility.planetTravel] = num * 12000;
+            if (chatClient.job == Job.Cop)
+            {
+                // 행성 탐방
+                copAbilityPrice[CopAbility.planetTravel] = num * 12000;
+            }
+            else if (chatClient.job == Job.Robber)
+            {
+                // 연료 압축기
+                thiefAbilityPrice[ThiefAbility.fuelCompressor] = num * 10000;
+            }
+
             showTotalAbilityPrice();
         }
 
@@ -435,7 +483,6 @@ namespace Client_test
             {
                 textBox17.Text = "0";
             }
-            // 수갑
             int num = Convert.ToInt32(textBox17.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[3].Cells[2].Value);
             if (num > maxinum) // num이 maximun보다 크면 maximun을 num으로
@@ -444,7 +491,17 @@ namespace Client_test
                 textBox17.Text = dataGridView2.Rows[3].Cells[2].Value.ToString();
             }
 
-            copAbilityPrice[CopAbility.handcuff] = num * 2000;
+            if (chatClient.job == Job.Cop)
+            {
+                // 수갑
+                copAbilityPrice[CopAbility.handcuff] = num * 2000;
+            }
+            else if (chatClient.job == Job.Robber)
+            {
+                // 스턴 제거기
+                thiefAbilityPrice[ThiefAbility.stunRemover] = num * 5000;
+            }
+
             showTotalAbilityPrice();
         }
 
@@ -454,7 +511,6 @@ namespace Client_test
             {
                 textBox16.Text = "0";
             }
-            // 팀 식별
             int num = Convert.ToInt32(textBox16.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[4].Cells[2].Value);
             if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
@@ -463,11 +519,21 @@ namespace Client_test
                 textBox16.Text = dataGridView2.Rows[4].Cells[2].Value.ToString();
             }
 
-            copAbilityPrice[CopAbility.teamIdentify] = num * 2000;
+            if (chatClient.job == Job.Cop)
+            {
+                // 팀 식별
+                copAbilityPrice[CopAbility.teamIdentify] = num * 2000;
+            }
+            else if (chatClient.job == Job.Robber)
+            {
+                // 저장량 증가
+                thiefAbilityPrice[ThiefAbility.storageGrowth] = num * 16000;
+            }
+
             showTotalAbilityPrice();
         }
 
-        private void textBox15_TextChanged(object sender, EventArgs e) // 도둑은 능력이 5개이므로 도둑인 경우 visibility = false
+        private void textBox15_TextChanged(object sender, EventArgs e) // 도둑은 능력이 5개이므로 도둑인 경우 visible = false
         {
             if (textBox15.Text == "")
             {
@@ -493,7 +559,7 @@ namespace Client_test
             if (DialogResult == DialogResult.Yes)
             {
                 // 아이템 구매
-                MessageBox.Show("구매 완료"); // 구매 완료를 표현하는 방법은 이거 말고 label로 표현해주세요
+                MessageBox.Show("구매 완료"); // 구매 완료를 표현하는 방법은 이거 말고 label로 표현해주세요, 지금은 확인용으로 임시입니다
             }
         }
 
@@ -585,7 +651,7 @@ namespace Client_test
             if (DialogResult == DialogResult.Yes)
             {
                 // 아이템 구매
-                MessageBox.Show("구매 완료"); // 구매 완료를 표현하는 방법은 이거 말고 label로 표현해주세요
+                MessageBox.Show("구매 완료"); // 구매 완료를 표현하는 방법은 이거 말고 label로 표현해주세요, 지금은 확인용으로 임시입니다
             }
         }
 
@@ -640,8 +706,5 @@ namespace Client_test
         #endregion
 
         // TODO: 상점 구현
-        // 한번에 여러개 상품 선택가능하므로 여러개 한번에 구매할 수 있도록 구현해주세요
-        // TODO: 선택 안되어 있으면 구매버튼 비활성화, Enter 눌러도 안되도록
-        // TODO: 
     }
 }
