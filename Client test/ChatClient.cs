@@ -156,8 +156,11 @@ namespace Client_test
                     else if (message[0] == "6") // 게임 시작
                     {
                         isGameStarted = true;
-                        ShipSelection shipSelection = new ShipSelection(this);
-                        shipSelection.Show();
+                        Invoke(new Action(() =>
+                        {
+                            ShipSelection shipSelection = new ShipSelection(this);
+                            shipSelection.Show();
+                        }));
                     }
                     else if (message[0] == "7") // 게임 종료
                     {
@@ -166,8 +169,8 @@ namespace Client_test
                     else if (message[0] == "8") // 역할 전송
                     {
                         job = (Job)int.Parse(message[1]);
-                        label4.Text = "직업: " + job.ToString() + "\n"
-                                    + "함선: ";
+                        Invoke(new Action(() => label4.Text = "직업: " + job.ToString() + "\n"
+                                    + "함선: "));
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
