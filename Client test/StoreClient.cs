@@ -18,43 +18,76 @@ namespace Client_test
         // textBox에 입력한 값에 가격을 곱한 값을 Value에 저장
         // Value의 총합 = 지불해야 할 크로노 총합
 
+        enum Item
+        {
+            hydrogen,
+            nitrogen,
+            oxygen,
+            epsilonCrystal,
+            peroxide,
+            hydrazine,
+            epsilon,
+            water,
+            food,
+            seed
+        }
+
+        enum CopAbility
+        {
+            darkUnderTheLamp,
+            galaxyTravel,
+            planetTravel,
+            handcuff,
+            teamIdentify,
+            storageGrowth
+        }
+
+        enum ThiefAbility
+        {
+            getFuel,
+            fuelChanger,
+            fuelCompressor,
+            stunRemover,
+            storageGrowth
+        }
+
         // 아이템 양에 따른 크로노 양
-        private Dictionary<string, double> itemPrice
-            = new Dictionary<string, double>
+        private Dictionary<Item, double> itemPrice
+            = new Dictionary<Item, double>
             {
-                { "hydrogen", 0 },
-                { "nitrogen", 0 },
-                { "oxygen", 0 },
-                { "epsilonCrystal", 0 },
-                { "peroxide", 0 },
-                { "hydrazine", 0 },
-                { "epsilon", 0 },
-                { "water", 0 },
-                { "food", 0 },
-                { "seed", 0 }
+                { Item.hydrogen, 0 },
+                { Item.nitrogen, 0 },
+                { Item.oxygen, 0 },
+                { Item.epsilonCrystal, 0 },
+                { Item.peroxide, 0 },
+                { Item.hydrazine, 0 },
+                { Item.epsilon, 0 },
+                { Item.water, 0 },
+                { Item.food, 0 },
+                { Item.seed, 0 }
             };
 
         // 경찰 능력에 따른 크로노 양
-        private Dictionary<string, int> copAbilityPrice
-            = new Dictionary<string, int>
+        private Dictionary<CopAbility, int> copAbilityPrice
+            = new Dictionary<CopAbility, int>
             {
-                { "darkUnderTheLamp", 0 },
-                { "galaxyTravel", 0 },
-                { "planetTravel", 0 },
-                { "handcuff", 0 },
-                { "teamIdentify", 0 },
-                { "storageGrowth", 0 }
+                { CopAbility.darkUnderTheLamp, 0 },
+                { CopAbility.galaxyTravel, 0 },
+                { CopAbility.planetTravel, 0 },
+                { CopAbility.handcuff, 0 },
+                { CopAbility.teamIdentify, 0 },
+                { CopAbility.storageGrowth, 0 }
             };
 
         // 도둑 능력에 따른 크로노 양
-        private Dictionary<string, int> thiefAbilityPrice
-            = new Dictionary<string, int>
+        private Dictionary<ThiefAbility, int> thiefAbilityPrice
+            = new Dictionary<ThiefAbility, int>
             {
-                { "getFuel", 0 },
-                { "fuelChanger", 0 },
-                { "fuelCompressor", 0 },
-                { "stunRemover", 0 },
-                { "storageGrowth", 0 }
+                { ThiefAbility.getFuel, 0 },
+                { ThiefAbility.fuelChanger, 0 },
+                { ThiefAbility.fuelCompressor, 0 },
+                { ThiefAbility.stunRemover, 0 },
+                { ThiefAbility.storageGrowth, 0 }
             };
 
         public StoreClient(TaskSelection form, ChatClient chatClient)
@@ -167,7 +200,7 @@ namespace Client_test
                 textBox1.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
             }
 
-            itemPrice["hydrogen"] = mass * 400;
+            itemPrice[Item.hydrogen] = mass * 400;
             showTotalItemPrice();
         }
 
@@ -185,7 +218,7 @@ namespace Client_test
                 textBox2.Text = dataGridView1.Rows[1].Cells[2].Value.ToString();
             }
 
-            itemPrice["nitrogen"] = mass * 120;
+            itemPrice[Item.nitrogen] = mass * 120;
             showTotalItemPrice();
         }
 
@@ -203,7 +236,7 @@ namespace Client_test
                 textBox4.Text = dataGridView1.Rows[2].Cells[2].Value.ToString();
             }
 
-            itemPrice["oxygen"] = mass * 100;
+            itemPrice[Item.oxygen] = mass * 100;
             showTotalItemPrice();
         }
 
@@ -221,7 +254,7 @@ namespace Client_test
                 textBox3.Text = dataGridView1.Rows[3].Cells[2].Value.ToString();
             }
 
-            itemPrice["epsilonCrystal"] = mass * 1000;
+            itemPrice[Item.epsilonCrystal] = mass * 1000;
             showTotalItemPrice();
         }
 
@@ -239,7 +272,7 @@ namespace Client_test
                 textBox8.Text = dataGridView1.Rows[4].Cells[2].Value.ToString();
             }
 
-            itemPrice["peroxide"] = mass * 0; // TODO: 가격 정하기
+            itemPrice[Item.peroxide] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
         }
 
@@ -257,7 +290,7 @@ namespace Client_test
                 textBox7.Text = dataGridView1.Rows[5].Cells[2].Value.ToString();
             }
 
-            itemPrice["hydrazine"] = mass * 0; // TODO: 가격 정하기
+            itemPrice[Item.hydrazine] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
         }
 
@@ -275,7 +308,7 @@ namespace Client_test
                 textBox6.Text = dataGridView1.Rows[6].Cells[2].Value.ToString();
             }
 
-            itemPrice["epsilon"] = mass * 0; // TODO: 가격 정하기
+            itemPrice[Item.epsilon] = mass * 0; // TODO: 가격 정하기
             showTotalItemPrice();
         }
 
@@ -287,9 +320,13 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox5.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[7].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox5.Text = dataGridView1.Rows[7].Cells[2].Value.ToString();
+            }
 
-            itemPrice["water"] = mass * 100;
+            itemPrice[Item.water] = mass * 100;
             showTotalItemPrice();
         }
 
@@ -301,9 +338,13 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox10.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[8].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox10.Text = dataGridView1.Rows[8].Cells[2].Value.ToString();
+            }
 
-            itemPrice["food"] = mass * 600;
+            itemPrice[Item.food] = mass * 600;
             showTotalItemPrice();
         }
 
@@ -315,9 +356,13 @@ namespace Client_test
             }
             double mass = Convert.ToDouble(textBox9.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[9].Cells[2].Value);
-            mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
+            if (mass > maxinum) // mass가 maxinum보다 크면 maxinum을 mass로
+            {
+                mass = maxinum;
+                textBox9.Text = dataGridView1.Rows[9].Cells[2].Value.ToString();
+            }
 
-            itemPrice["seed"] = mass * 400;
+            itemPrice[Item.seed] = mass * 400;
             showTotalItemPrice();
         }
         #endregion
@@ -336,9 +381,13 @@ namespace Client_test
             // 등잔 밑이 어둡다
             int num = Convert.ToInt32(textBox20.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[0].Cells[2].Value);
-            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+            if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
+            {
+                num = maxinum;
+                textBox20.Text = dataGridView2.Rows[0].Cells[2].Value.ToString();
+            }
 
-            copAbilityPrice["darkUnderTheLamp"] = num * 10000;
+            copAbilityPrice[CopAbility.darkUnderTheLamp] = num * 10000;
             showTotalAbilityPrice();
         }
 
@@ -351,9 +400,13 @@ namespace Client_test
             // 은하 탐방
             int num = Convert.ToInt32(textBox19.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[1].Cells[2].Value);
-            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+            if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
+            {
+                num = maxinum;
+                textBox19.Text = dataGridView2.Rows[1].Cells[2].Value.ToString();
+            }
 
-            copAbilityPrice["galaxyTravel"] = num * 50000;
+            copAbilityPrice[CopAbility.galaxyTravel] = num * 50000;
             showTotalAbilityPrice();
         }
 
@@ -366,9 +419,13 @@ namespace Client_test
             // 행성 탐방
             int num = Convert.ToInt32(textBox18.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[2].Cells[2].Value);
-            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+            if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
+            {
+                num = maxinum;
+                textBox18.Text = dataGridView2.Rows[2].Cells[2].Value.ToString();
+            }
 
-            copAbilityPrice["planetTravel"] = num * 12000;
+            copAbilityPrice[CopAbility.planetTravel] = num * 12000;
             showTotalAbilityPrice();
         }
 
@@ -381,9 +438,13 @@ namespace Client_test
             // 수갑
             int num = Convert.ToInt32(textBox17.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[3].Cells[2].Value);
-            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+            if (num > maxinum) // num이 maximun보다 크면 maximun을 num으로
+            {
+                num = maxinum;
+                textBox17.Text = dataGridView2.Rows[3].Cells[2].Value.ToString();
+            }
 
-            copAbilityPrice["handcuff"] = num * 2000;
+            copAbilityPrice[CopAbility.handcuff] = num * 2000;
             showTotalAbilityPrice();
         }
 
@@ -396,9 +457,13 @@ namespace Client_test
             // 팀 식별
             int num = Convert.ToInt32(textBox16.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[4].Cells[2].Value);
-            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+            if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
+            {
+                num = maxinum;
+                textBox16.Text = dataGridView2.Rows[4].Cells[2].Value.ToString();
+            }
 
-            copAbilityPrice["teamIdentify"] = num * 2000;
+            copAbilityPrice[CopAbility.teamIdentify] = num * 2000;
             showTotalAbilityPrice();
         }
 
@@ -411,9 +476,13 @@ namespace Client_test
             // 저장량 증가
             int num = Convert.ToInt32(textBox15.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[5].Cells[2].Value);
-            num = Int32.Min(num, maxinum); // num이 maxinum보다 크면 maxinum을 num으로
+            if (num > maxinum) // num이 maxinum보다 크면 maxinum을 num으로
+            {
+                num = maxinum;
+                textBox15.Text = dataGridView2.Rows[5].Cells[2].Value.ToString();
+            }
 
-            copAbilityPrice["storageGrowth"] = num * 16000;
+            copAbilityPrice[CopAbility.storageGrowth] = num * 16000;
             showTotalAbilityPrice();
         }
         #endregion
