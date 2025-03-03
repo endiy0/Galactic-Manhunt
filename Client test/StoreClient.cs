@@ -155,6 +155,10 @@ namespace Client_test
         #region item_textBox_TextChanged
         private void textBox1_TextChanged(object sender, EventArgs e) // 수소
         {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox1.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -165,6 +169,10 @@ namespace Client_test
 
         private void textBox2_TextChanged(object sender, EventArgs e) // 질소
         {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox2.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -175,6 +183,10 @@ namespace Client_test
 
         private void textBox4_TextChanged(object sender, EventArgs e) // 산소 
         {
+            if (textBox4.Text == "")
+            {
+                textBox4.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox4.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[2].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -185,6 +197,10 @@ namespace Client_test
 
         private void textBox3_TextChanged(object sender, EventArgs e) // 엑실론-크리스탈
         {
+            if (textBox3.Text == "")
+            {
+                textBox3.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox3.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[3].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -195,6 +211,10 @@ namespace Client_test
 
         private void textBox8_TextChanged(object sender, EventArgs e) // 퍼옥사이드
         {
+            if (textBox8.Text == "")
+            {
+                textBox8.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox8.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[4].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -205,6 +225,10 @@ namespace Client_test
 
         private void textBox7_TextChanged(object sender, EventArgs e) // 하이드라진
         {
+            if (textBox7.Text == "")
+            {
+                textBox7.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox7.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[5].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -215,6 +239,10 @@ namespace Client_test
 
         private void textBox6_TextChanged(object sender, EventArgs e) // 엑실론
         {
+            if (textBox6.Text == "")
+            {
+                textBox6.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox6.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[6].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -225,6 +253,10 @@ namespace Client_test
 
         private void textBox5_TextChanged(object sender, EventArgs e) // 물
         {
+            if (textBox5.Text == "")
+            {
+                textBox5.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox5.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[7].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -235,6 +267,10 @@ namespace Client_test
 
         private void textBox10_TextChanged(object sender, EventArgs e) // 식량
         {
+            if (textBox10.Text == "")
+            {
+                textBox10.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox10.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[8].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -245,6 +281,10 @@ namespace Client_test
 
         private void textBox9_TextChanged(object sender, EventArgs e) // 씨앗
         {
+            if (textBox9.Text == "")
+            {
+                textBox9.Text = "0";
+            }
             double mass = Convert.ToDouble(textBox9.Text);
             double maxinum = Convert.ToDouble(dataGridView1.Rows[9].Cells[2].Value);
             mass = Double.Min(mass, maxinum); // mass가 maxinum보다 크면 maxinum을 mass로
@@ -261,6 +301,10 @@ namespace Client_test
 
         private void textBox20_TextChanged(object sender, EventArgs e)
         {
+            if (textBox20.Text == "")
+            {
+                textBox20.Text = "0";
+            }
             // 등잔 밑이 어둡다
             int num = Convert.ToInt32(textBox20.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[0].Cells[2].Value);
@@ -272,6 +316,10 @@ namespace Client_test
 
         private void textBox19_TextChanged(object sender, EventArgs e)
         {
+            if (textBox19.Text == "")
+            {
+                textBox19.Text = "0";
+            }
             // 은하 탐방
             int num = Convert.ToInt32(textBox19.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[1].Cells[2].Value);
@@ -283,6 +331,10 @@ namespace Client_test
 
         private void textBox18_TextChanged(object sender, EventArgs e)
         {
+            if (textBox18.Text == "")
+            {
+                textBox18.Text = "0";
+            }
             // 행성 탐방
             int num = Convert.ToInt32(textBox18.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[2].Cells[2].Value);
@@ -294,6 +346,10 @@ namespace Client_test
 
         private void textBox17_TextChanged(object sender, EventArgs e)
         {
+            if (textBox17.Text == "")
+            {
+                textBox17.Text = "0";
+            }
             // 수갑
             int num = Convert.ToInt32(textBox17.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[3].Cells[2].Value);
@@ -305,6 +361,10 @@ namespace Client_test
 
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
+            if (textBox16.Text == "")
+            {
+                textBox16.Text = "0";
+            }
             // 팀 식별
             int num = Convert.ToInt32(textBox16.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[4].Cells[2].Value);
@@ -316,6 +376,10 @@ namespace Client_test
 
         private void textBox15_TextChanged(object sender, EventArgs e) // 도둑은 능력이 5개이므로 도둑인 경우 visibility = false
         {
+            if (textBox15.Text == "")
+            {
+                textBox15.Text = "0";
+            }
             // 저장량 증가
             int num = Convert.ToInt32(textBox15.Text);
             int maxinum = Convert.ToInt32(dataGridView2.Rows[5].Cells[2].Value);
