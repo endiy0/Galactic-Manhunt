@@ -297,7 +297,7 @@ namespace Client_test
         }
     }
 
-    // 직업 종류
+    // 직업 타입
     enum Job
     {
         Robber, // 도둑
