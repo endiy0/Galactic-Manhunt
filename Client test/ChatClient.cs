@@ -14,7 +14,7 @@ namespace Client_test
         static string str;
         static bool isGameStarted;
         static Job job;
-        static ShipType ship;
+        internal ShipType ship;
 
         public ChatClient()
         {
