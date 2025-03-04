@@ -323,4 +323,231 @@ namespace Client_test
         galaxy_moving_ship, // 초은하 이동 함선
         thief_ship          // 도적 함선
     }
+
+    #region Ability
+    // Ability 클래스
+    class Ability
+    {
+        AbilityType type;
+        public Ability(AbilityType ABILITYTYPE)
+        {
+            type = ABILITYTYPE;
+        }
+    }
+
+    enum AbilityType
+    {
+        // 경찰
+        dark_under_the_lamp,   // 등잔 밑이 어둡다
+        galaxy_travel,         // 은하 탐방
+        planet_travel,         // 행성 탐방
+        stun,                  // 스턴
+        handcuff,             // 수갑
+        team_identify,       // 팀 식별
+
+        // 도둑                  
+        get_fuel,              // 겟 퓨얼
+        fuel_changer,         // 연료 교환권
+        fuel_compressor,       // 연료 압축기
+        stun_remover,          // 스턴 제거기
+
+        // 공통                  
+        store_growth          // 저장량 증가
+    }
+    #endregion
+
+    #region Item
+    // 아이템 클래스
+    class Item
+    {
+        Resource Itemtype;
+        string Name;
+        public double mass; // 질량, 단위: kg
+        public static int ResourceCount = 10;
+        public static int AirCount = 3;
+        public static int CompountCount = 4;
+        public static int MineralCount = 2;
+        public static int OrganicMatterCount = 1;
+
+        public Item(Resource ITEMTYPE, double MASS)
+        {
+            Itemtype = ITEMTYPE;
+            mass = MASS;
+            if (Itemtype == Resource.Hydrogen)
+                Name = "수소";
+
+            else if (Itemtype == Resource.Nitrogen)
+                Name = "질소";
+
+            else if (Itemtype == Resource.Oxygen)
+                Name = "산소";
+
+            else if (Itemtype == Resource.Peroxide)
+                Name = "퍼옥사이드";
+
+            else if (Itemtype == Resource.Hydrazine)
+                Name = "하이드라진";
+
+            else if (Itemtype == Resource.Epsilon)
+                Name = "엑실론";
+
+            else if (Itemtype == Resource.Food)
+                Name = "식량";
+
+            else if (Itemtype == Resource.Epsilon_crystal)
+                Name = "엑실론 크리스탈";
+
+            else if (Itemtype == Resource.Water)
+                Name = "물";
+
+            else if (Itemtype == Resource.Seed)
+                Name = "씨앗";
+
+            else if (Itemtype == Resource.Chrono)
+                Name = "크로노";
+        }
+
+        public Resource GetItemType()
+        {
+            return Itemtype;
+        }
+
+        public string GetItemName()
+        {
+            return Name;
+        }
+    }
+
+    // 자원 종류
+    // 자원 추가할때마다 Item의 전역변수 Count 수정하기
+    enum Resource
+    {
+        Hydrogen,         // 수소
+        Nitrogen,         // 질소
+        Oxygen,           // 산소
+        Epsilon_crystal,  // 엑실론-크리스탈
+
+        Peroxide,         // 퍼옥사이드
+        Hydrazine,        // 하이드라진
+        Epsilon,          // 엑실론
+
+        Water,            // 물
+        Food,             // 식량
+
+        Seed,             // 씨앗
+
+        Chrono            // 크로노
+    }
+    #endregion
+
+    #region Inventory
+    // 인벤토리 클래스
+    class Inventory
+    {
+        List<Item> items;                    // 아이템 저장 함수
+        Dictionary<Ability, int> abilities;  // 능력 저장 함수
+        double itemMax;                      // 아이템 최댓값, 단위: kg
+        int abilityMax;                      // 능력 최댓값, 단위: 개
+
+        public Inventory(double itemmax, int abilitymax)
+        {
+            items = new List<Item>();
+            abilities = new Dictionary<Ability, int>();
+            itemMax = itemmax;
+            abilityMax = abilitymax;
+        }
+
+        // 아이템 최대량 반환
+        public double ItemMax
+        {
+            get { return itemMax; }
+        }
+
+        // 능력 최대량 반환
+        public int AbilityMax
+        {
+            get { return abilityMax; }
+        }
+
+        // 아이템 리스트 반환
+        public List<Item> Items
+        {
+            get { return items; }
+        }
+
+        // 능력 리스트 반환
+        public Dictionary<Ability, int> Abilities
+        {
+            get { return abilities; }
+        }
+
+        // 아이템 최대량 설정
+        public void SetItemMax(double itemMAX)
+        {
+            itemMax = itemMAX;
+        }
+
+        // 능력 최대량 설정
+        public void SetAbilityMax(int abilityMAX)
+        {
+            abilityMax = abilityMAX;
+        }
+
+        // 아이템 추가
+        public void AddItem(Item item)
+        {
+            for (int i = 0; i < this.Items.Count; i++)
+            {
+                if (this.items[i].GetItemType() == item.GetItemType())
+                {
+                    this.items[i].mass += item.mass;
+                    return;
+                }
+            }
+            this.items.Add(item);
+        }
+
+        // 아이템 삭제
+        public bool RemoveItem(Item item) // if문 사용해서 빠졌는지 안빠졌는지 꼭 체크해줘야함
+        {
+            for (int i = 0; i < this.Items.Count; i++)
+            {
+                if (this.items[i].GetItemType() == item.GetItemType())
+                {
+                    if (this.items[i].mass - item.mass >= 0)
+                    {
+                        this.items[i].mass -= item.mass;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // 아이템 초기화(전체 삭제)
+        public void Clear()
+        {
+            items.Clear();
+        }
+
+        // 두 인벤토리 더하기
+        public static Inventory operator +(Inventory inv, Item item)
+        {
+            for (int i = 0; i < inv.Items.Count; i++)
+            {
+                if (inv.items[i].GetItemType() == item.GetItemType())
+                {
+                    inv.items[i].mass += item.mass;
+                    return inv;
+                }
+            }
+            inv.items.Add(item);
+            return inv;
+        }
+    }
+    #endregion
 }
