@@ -37,9 +37,17 @@ namespace Client_test
             //Invoke(new Action(() => { form.ship = (ShipType)listBox1.SelectedIndex; })); // 선택된 함선을 form.ship에 저장
             form.ship = (ShipType)listBox1.SelectedIndex;
             label2.Text = listBox1.SelectedItem.ToString() + " 선택됨";
-            Delay(1500); // 1.5초 대기
-            form.GetShip(); // 선택된 함선을 서버로 전송
-            this.Close(); // 종료
+            var answer = MessageBox.Show(listBox1.SelectedItem.ToString() + "이 선택되었습니다.\n결정하시겠습니까?", "알림", MessageBoxButtons.YesNo);
+            if (answer == DialogResult.No)
+            {
+                label2.Text = "";
+                return;
+            }
+            else
+            {
+                form.GetShip(); // 선택된 함선을 서버로 전송
+                this.Close(); // 종료
+            }
         }
 
         private void ShipSelection_KeyDown(object sender, KeyEventArgs e)
