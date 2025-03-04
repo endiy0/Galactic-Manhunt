@@ -314,6 +314,8 @@ namespace Client_test
         Cop     // 경찰
     }
 
+    // TODO: 함선 클래스 완성되면 붙여넣기
+
     // 함선 타입
     enum ShipType
     {
@@ -550,6 +552,4 @@ namespace Client_test
         }
     }
     #endregion
-
-    // TODO: 함선 클래스 완성되면 붙여넣기
 }
