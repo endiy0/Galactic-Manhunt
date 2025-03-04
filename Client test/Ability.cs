@@ -27,7 +27,6 @@ namespace Server_test
         handcuff,             // 수갑
         team_identify,       // 팀 식별
 
-                               
         // 도둑                  
         get_fuel,              // 겟 퓨얼
         fuel_changer,         // 연료 교환권
