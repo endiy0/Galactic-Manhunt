@@ -13,7 +13,6 @@ namespace Server_test
         public Ability(AbilityType ABILITYTYPE)
         {
             type = ABILITYTYPE;
-
         }
     }
 
