@@ -550,4 +550,6 @@ namespace Client_test
         }
     }
     #endregion
+
+    // TODO: 함선 클래스 완성되면 붙여넣기
 }
