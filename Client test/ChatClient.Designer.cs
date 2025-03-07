@@ -214,7 +214,6 @@
             // 
             // button5
             // 
-            button5.Enabled = false;
             button5.Location = new Point(702, 563);
             button5.Margin = new Padding(2);
             button5.Name = "button5";
