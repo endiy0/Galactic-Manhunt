@@ -15,6 +15,7 @@ namespace Client_test
         static bool isGameStarted;
         internal Job job;
         internal ShipType ship;
+        private Inventory inventory;
 
         Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
         {
