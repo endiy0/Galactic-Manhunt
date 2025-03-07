@@ -12,9 +12,6 @@ namespace Client_test
 {
     public partial class StoreClient : Form
     {
-        TaskSelection form;
-        ChatClient chatClient;
-
         // textBox에 입력한 값에 가격을 곱한 값을 Value에 저장
         // Value의 총합 = 지불해야 할 크로노 총합
 
@@ -89,6 +86,9 @@ namespace Client_test
                 { ThiefAbility.stunRemover, 0 },
                 { ThiefAbility.storageGrowth, 0 }
             };
+
+        TaskSelection form;
+        ChatClient chatClient;
 
         public StoreClient(TaskSelection form, ChatClient chatClient)
         {
