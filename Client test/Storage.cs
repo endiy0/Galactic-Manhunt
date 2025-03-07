@@ -35,6 +35,7 @@ namespace Client_test
                     dataGridView2.Rows.Add(ability.Key.ToString(), ability.Value);
                 }
             }
+
             dataGridView1.ClearSelection(); // 셀이 선택되지 않도록
             dataGridView2.ClearSelection();
         }
