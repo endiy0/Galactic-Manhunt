@@ -134,7 +134,7 @@ namespace Client_test
             // 도둑 능력 목록
             else if (chatClient.job == Job.Robber)
             {
-                dataGridView2.Size = new Size(498, 200); // 도둑은 아이템 5개
+                dataGridView2.Size = new Size(498, 200); // 도둑은 능력 5개
                 button3.Size = new Size(60, 200);
                 textBox15.Visible = false;
                 label6.Location = new Point(13, 687);
