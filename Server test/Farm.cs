@@ -11,12 +11,12 @@ namespace Server_test
     {
         double day1, day2, day3;        // 1,2,3 일차에 있는 씨앗 개수들
 
-        double tmp1, tmp2, tmp3;
-
         public double food = 0;
-        public Farm(double day)
+        public Farm(double Day1, double Day2, double Day3)
         {
-
+            day1 = Day1;
+            day2 = Day2;
+            day3 = Day3;
         }
 
         public double Water(double water)
