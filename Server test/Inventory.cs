@@ -94,11 +94,53 @@ namespace Server_test
         }
 
         // 아이템 초기화(전체 삭제)
-        public void Clear()
+        public void ItemClear()
         {
             items.Clear();
         }
 
+
+        // 능력 추가
+
+        public void AddAbility(Ability ability)
+        {
+            foreach(var Ab in abilities)
+            {
+                if(ability.GetType() == Ab.GetType())
+                {
+                    abilities[Ab.Key]++;
+                }
+            }
+        }
+
+        // 능력 삭제 __ 구현은 RemoveItem과 동일한 방식
+
+        public bool RemoveAbility(Ability ability)
+        {
+            foreach(var Ab in abilities)
+            {
+                if(ability.GetType() == ability.GetType())
+                {
+                    if(abilities[Ab.Key] - 1 >= 0)
+                    {
+                        abilities[Ab.Key]--;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // 능력 초기화
+
+        public void AbilityClear()
+        {
+            abilities.Clear();
+        }
         // 두 인벤토리 더하기
         public static Inventory operator +(Inventory inv, Item item)
         {

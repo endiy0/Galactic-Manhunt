@@ -16,7 +16,7 @@ namespace Server_test
 
         const int MaxFood = 10000000; // 물과 음식 상점 수용 용량
         const int MaxSeed = 1000000;  // 씨앗 상점 최대 수용 용량
-
+        
         // 1kg 기준 가격
         const double food_cost = 600;
         const double water_cost = 100;
@@ -30,7 +30,7 @@ namespace Server_test
         // 스킬 가격은 아래 바로바로 구현함 - 저장소 제외
 
         Dictionary<Ability, double> abilities; // 상점 종류당 판매하는 능력
-        Inventory items;        // 상점 종류당 판매하는 아이템
+        Inventory items;// 상점 종류당 판매하는 아이템
         Dictionary<Sailor, double> sailors;    // 인력사무소에서 판매하는 선원들
 
         public StoreServer(StoreType store) // 일단 상점 종류만 받기 - 수정할거면 ㄱㄱ
