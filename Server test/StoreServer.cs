@@ -30,7 +30,7 @@ namespace Server_test
         // 스킬 가격은 아래 바로바로 구현함 - 저장소 제외
 
         Dictionary<Ability, double> abilities; // 상점 종류당 판매하는 능력
-        Inventory items;// 상점 종류당 판매하는 아이템
+        Dictionary<Item, double> items;// 상점 종류당 판매하는 아이템
         Dictionary<Sailor, double> sailors;    // 인력사무소에서 판매하는 선원들
 
         public StoreServer(StoreType store) // 일단 상점 종류만 받기 - 수정할거면 ㄱㄱ
@@ -74,9 +74,9 @@ namespace Server_test
 
                 // 공용 상점은 그대로 multiply = 1, 경찰은 0.8, 도둑은 1.2
                 // 나머지 아이템 한 번에 처리
-                items.AddItem(new Item(Resource.Food, MaxFood));   // 음식
-                items.AddItem(new Item(Resource.Water, MaxFood)); // 물
-                items.AddItem(new Item(Resource.Seed, MaxSeed));   // 씨앗
+                items.Add(new Item(Resource.Food, MaxFood),600 * multiply);   // 음식
+                items.Add(new Item(Resource.Water, MaxFood), 100 * multiply); // 물
+                items.Add(new Item(Resource.Seed, MaxSeed), 400 * multiply);   // 씨앗
 
                 abilities.Add(new Ability(AbilityType.store_growth), storage_cost * multiply); // 저장량 증가
             }
