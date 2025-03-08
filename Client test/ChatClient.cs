@@ -15,7 +15,7 @@ namespace Client_test
         static bool isGameStarted;
         internal Job job;
         internal ShipType ship;
-        internal Inventory storage = new Inventory(0, 0);
+        internal Inventory storage;
 
         internal Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
         {
@@ -40,6 +40,8 @@ namespace Client_test
             isConnected = false;
             isGameStarted = false;
             comboBox1.SelectedIndex = 0; // default = 전체
+
+            storage = new Inventory(0, 0); // 아이템 최대량, 능력 최대량
         }
 
         public void GetShip()
