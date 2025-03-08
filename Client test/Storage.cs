@@ -21,16 +21,19 @@ namespace Client_test
 
         private void Storage_Load(object sender, EventArgs e)
         {
-            if (form.inventory.Items.Count() != 0)
+            if (form.storage.Items.Count() != 0)
             {
                 // 아이템 리스트 보여주기
-                foreach (var item in form.inventory.Items)
+                foreach (var item in form.storage.Items)
                 {
                     dataGridView1.Rows.Add(item.ToString(), 0);
                 }
+            }
 
+            if (form.storage.Abilities.Count() != 0)
+            {
                 // 능력 리스트 보여주기
-                foreach (var ability in form.inventory.Abilities)
+                foreach (var ability in form.storage.Abilities)
                 {
                     dataGridView2.Rows.Add(ability.Key.ToString(), ability.Value);
                 }
