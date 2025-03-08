@@ -3,47 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Server_test
 {
     class Work
     {
         WorkType type;
+        string Name;
         public Work(WorkType WORKTYPE)
         {
             type = WORKTYPE;
-            if(type == WorkType.Null)
-            {
-
-            }
             if(type == WorkType.Ship_Control)
-            {
+                Name = "함선 조종";
 
-            }
-            if(type == WorkType.Farming)
-            {
+            else if (type == WorkType.Farming)
+                Name = "농사";
 
-            }
-            if(type == WorkType.Collection)
-            {
+            else if (type == WorkType.Collection)
+                Name = "채집";
 
-            }
-            if(type == WorkType.Item_Use)
-            {
+            else if(type == WorkType.Item_Use)
+                Name = "아이템 사용";
 
-            }
-            if(type == WorkType.Item_Synthesis)
-            {
+            else if(type == WorkType.Item_Synthesis)
+                Name = "아이템 합성";
 
-            }
-            if(type == WorkType.Store)
-            {
+            else if(type == WorkType.Store)
+                Name = "상점";
 
-            }
+            else if (type == WorkType.Null)
+                Name = "없음";
         }
-        
 
+        public WorkType GetWorkType()
+        {
+            return type;
+        }
 
+        public string GetWorkName()
+        {
+            return Name;
+        }
     }
 
     // 작업 타입

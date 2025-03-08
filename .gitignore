@@ -4,3 +4,7 @@
 
 /.vs/Galacitic Manhunt
 /.vs/ProjectEvaluation
+/Client test/bin
+/Client test/obj/Debug
+/Server test/bin
+/Server test/obj/Debug

@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "5jUr1eKT544=",
+<<<<<<< HEAD
+  "dgSpecHash": "pXbuhwSIGJw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
+  "projectFilePath": "C:\\Users\\pace\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
+=======
+  "dgSpecHash": "KoKhfw3hu6Y=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\이동하\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
+>>>>>>> b7e0852ef814482de8e806d48bac7446fa00edd8
   "expectedPackageFiles": [],
   "logs": []
 }

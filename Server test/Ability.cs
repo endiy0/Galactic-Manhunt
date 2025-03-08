@@ -49,6 +49,16 @@ namespace Server_test
             else if (type == AbilityType.store_growth)
                 Name = "저장량 증가";
         }
+
+        public AbilityType GetAbilityType()
+        {
+            return type;
+        }
+
+        public string GetAbilityName()
+        {
+            return Name;
+        }
     }
 
     enum AbilityType

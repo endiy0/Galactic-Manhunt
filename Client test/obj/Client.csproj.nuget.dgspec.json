@@ -1,23 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj": {}
+<<<<<<< HEAD
+    "C:\\Users\\pace\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj": {
+    "C:\\Users\\pace\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\pace\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\ASUS\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Source\\Repos\\Galactic-Manhunt\\Client test\\obj\\",
+        "projectPath": "C:\\Users\\pace\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
+        "packagesPath": "C:\\Users\\pace\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pace\\Source\\Repos\\Galactic-Manhunt\\Client test\\obj\\",
+=======
+    "C:\\Users\\이동하\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\이동하\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\이동하\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
+        "projectName": "Client",
+        "projectPath": "C:\\Users\\이동하\\Source\\Repos\\Galactic-Manhunt\\Client test\\Client.csproj",
+        "packagesPath": "C:\\Users\\이동하\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\이동하\\Source\\Repos\\Galactic-Manhunt\\Client test\\obj\\",
+>>>>>>> b7e0852ef814482de8e806d48bac7446fa00edd8
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+          "C:\\Users\\pace\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\이동하\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> b7e0852ef814482de8e806d48bac7446fa00edd8
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +62,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -68,7 +86,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
