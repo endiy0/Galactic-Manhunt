@@ -26,7 +26,7 @@ namespace Client_test
                 // 아이템 리스트 보여주기
                 foreach (var item in form.storage.Items)
                 {
-                    dataGridView1.Rows.Add(item.GetItemName(), 0);
+                    dataGridView1.Rows.Add(item.GetItemName(), item.mass);
                 }
             }
 
