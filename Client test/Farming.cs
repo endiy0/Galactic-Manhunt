@@ -21,13 +21,18 @@ namespace Client_test
             this.chatClient = chatClient;
         }
 
+        private void Farming_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add(0, 0, 0);
+        }
+
         private void Farming_FormClosing(object sender, FormClosingEventArgs e)
         {
             // TODO: TaskSelection 본인 턴 확인 후 실행
             //if (본인 턴)
             //{
-                  TaskSelection taskSelection = new TaskSelection(chatClient, false);
-                  taskSelection.Show();
+            TaskSelection taskSelection = new TaskSelection(chatClient, false);
+            taskSelection.Show();
             //}
             //else
             //{

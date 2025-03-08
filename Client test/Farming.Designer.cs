@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             textBox1 = new TextBox();
             button1 = new Button();
             groupBox1 = new GroupBox();
@@ -201,9 +201,9 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            Column1.DefaultCellStyle = dataGridViewCellStyle4;
             Column1.HeaderText = "씨앗량";
             Column1.MinimumWidth = 8;
             Column1.Name = "Column1";
@@ -212,9 +212,9 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            Column2.DefaultCellStyle = dataGridViewCellStyle5;
             Column2.HeaderText = "심은 씨앗량";
             Column2.MinimumWidth = 8;
             Column2.Name = "Column2";
@@ -223,9 +223,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            Column3.DefaultCellStyle = dataGridViewCellStyle6;
             Column3.HeaderText = "수확 가능량";
             Column3.MinimumWidth = 8;
             Column3.Name = "Column3";
@@ -247,6 +247,7 @@
             Name = "Farming";
             Text = "농사";
             FormClosing += Farming_FormClosing;
+            Load += Farming_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
