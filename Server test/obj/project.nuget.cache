@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "XWzoT07BUtU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pace\\Source\\Repos\\Galactic-Manhunt\\Server test\\Server.csproj",
+=======
   "dgSpecHash": "gkuw7moTtZo=",
   "success": true,
   "projectFilePath": "C:\\Users\\이동하\\Source\\Repos\\Galactic-Manhunt\\Server test\\Server.csproj",
+>>>>>>> b7e0852ef814482de8e806d48bac7446fa00edd8
   "expectedPackageFiles": [],
   "logs": []
 }
