@@ -24,6 +24,8 @@ namespace Client_test
         private void Farming_Load(object sender, EventArgs e)
         {
             dataGridView1.Rows.Add(0, 0, 0);
+
+            dataGridView1.ClearSelection(); // 셀 선택 해제
         }
 
         private void Farming_FormClosing(object sender, FormClosingEventArgs e)

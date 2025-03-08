@@ -47,6 +47,9 @@
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -232,11 +235,41 @@
             Column3.ReadOnly = true;
             Column3.Width = 207;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(375, 259);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 25);
+            label1.TabIndex = 10;
+            label1.Text = "00kg";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(463, 259);
+            label2.Name = "label2";
+            label2.Size = new Size(52, 25);
+            label2.TabIndex = 11;
+            label2.Text = "00kg";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(559, 259);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 25);
+            label3.TabIndex = 12;
+            label3.Text = "00kg";
+            // 
             // Farming
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(644, 302);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox3);
@@ -257,6 +290,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -276,5 +310,8 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

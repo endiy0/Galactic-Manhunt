@@ -101,3 +101,4 @@ C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows
 C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client.pdb
 C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client.genruntimeconfig.cache
 C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\ref\Client.dll
+C:\Users\이동하\Source\Repos\Galactic-Manhunt\Client test\obj\Debug\net8.0-windows\Client_test.Properties.Resources.resources
