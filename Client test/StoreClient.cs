@@ -105,9 +105,9 @@ namespace Client_test
             dataGridView1.Rows.Add("질소", 120, 0);
             dataGridView1.Rows.Add("산소", 100, 0);
             dataGridView1.Rows.Add("엑실론-크리스탈", 1000, 0);
-            dataGridView1.Rows.Add("퍼옥사이드", 0, 0);
-            dataGridView1.Rows.Add("하이드라진", 0, 0);
-            dataGridView1.Rows.Add("엑실론", 0, 0);
+            dataGridView1.Rows.Add("퍼옥사이드", 1440, 0);
+            dataGridView1.Rows.Add("하이드라진", 1488, 0);
+            dataGridView1.Rows.Add("엑실론", 2400, 0);
             dataGridView1.Rows.Add("물", 100, 0);
             dataGridView1.Rows.Add("식량", 600, 0);
             dataGridView1.Rows.Add("씨앗", 400, 0);
