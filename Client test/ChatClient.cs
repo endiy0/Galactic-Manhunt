@@ -17,13 +17,13 @@ namespace Client_test
         internal ShipType ship;
         internal Inventory storage = new Inventory(0, 0);
 
-        Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
+        internal Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
         {
             { Job.Robber, "도둑" },
             { Job.Cop, "경찰" }
         };
 
-        Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
+        internal Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
         {
             { ShipType.newbie_ship, "초급자 전용 함선" },
             { ShipType.resource_ship, "자원 함선" },

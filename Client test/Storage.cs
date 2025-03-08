@@ -26,7 +26,7 @@ namespace Client_test
                 // 아이템 리스트 보여주기
                 foreach (var item in form.storage.Items)
                 {
-                    dataGridView1.Rows.Add(item.ToString(), 0);
+                    dataGridView1.Rows.Add(item.GetItemName(), 0);
                 }
             }
 
@@ -35,7 +35,7 @@ namespace Client_test
                 // 능력 리스트 보여주기
                 foreach (var ability in form.storage.Abilities)
                 {
-                    dataGridView2.Rows.Add(ability.Key.ToString(), ability.Value);
+                    dataGridView2.Rows.Add(ability.Key, ability.Value); // TODO: 한글 이름 가져오기
                 }
             }
 
