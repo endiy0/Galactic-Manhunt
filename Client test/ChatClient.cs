@@ -15,14 +15,15 @@ namespace Client_test
         static bool isGameStarted;
         internal Job job;
         internal ShipType ship;
+        internal Inventory storage;
 
-        Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
+        internal Dictionary<Job, string> jobDisplay = new Dictionary<Job, string> // enum Job에 따른 한글 표시
         {
             { Job.Robber, "도둑" },
             { Job.Cop, "경찰" }
         };
 
-        Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
+        internal Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
         {
             { ShipType.newbie_ship, "초급자 전용 함선" },
             { ShipType.resource_ship, "자원 함선" },
@@ -39,6 +40,8 @@ namespace Client_test
             isConnected = false;
             isGameStarted = false;
             comboBox1.SelectedIndex = 0; // default = 전체
+
+            storage = new Inventory(0, 0); // 아이템 최대량, 능력 최대량
         }
 
         public void GetShip()
@@ -340,18 +343,18 @@ namespace Client_test
     enum AbilityType
     {
         // 경찰
-        dark_under_the_lamp,   // 등잔 밑이 어둡다
-        galaxy_travel,         // 은하 탐방
-        planet_travel,         // 행성 탐방
-        stun,                  // 스턴
+        dark_under_the_lamp,  // 등잔 밑이 어둡다
+        galaxy_travel,        // 은하 탐방
+        planet_travel,        // 행성 탐방
+        stun,                 // 스턴
         handcuff,             // 수갑
-        team_identify,       // 팀 식별
+        team_identify,        // 팀 식별
 
         // 도둑                  
-        get_fuel,              // 겟 퓨얼
+        get_fuel,             // 겟 퓨얼
         fuel_changer,         // 연료 교환권
-        fuel_compressor,       // 연료 압축기
-        stun_remover,          // 스턴 제거기
+        fuel_compressor,      // 연료 압축기
+        stun_remover,         // 스턴 제거기
 
         // 공통                  
         store_growth          // 저장량 증가

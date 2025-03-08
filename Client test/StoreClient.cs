@@ -12,9 +12,6 @@ namespace Client_test
 {
     public partial class StoreClient : Form
     {
-        TaskSelection form;
-        ChatClient chatClient;
-
         // textBox에 입력한 값에 가격을 곱한 값을 Value에 저장
         // Value의 총합 = 지불해야 할 크로노 총합
 
@@ -90,6 +87,9 @@ namespace Client_test
                 { ThiefAbility.storageGrowth, 0 }
             };
 
+        TaskSelection form;
+        ChatClient chatClient;
+
         public StoreClient(TaskSelection form, ChatClient chatClient)
         {
             InitializeComponent();
@@ -134,7 +134,7 @@ namespace Client_test
             // 도둑 능력 목록
             else if (chatClient.job == Job.Robber)
             {
-                dataGridView2.Size = new Size(498, 200); // 도둑은 아이템 5개
+                dataGridView2.Size = new Size(498, 200); // 도둑은 능력 5개
                 button3.Size = new Size(60, 200);
                 textBox15.Visible = false;
                 label6.Location = new Point(13, 687);

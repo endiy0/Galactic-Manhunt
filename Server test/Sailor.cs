@@ -26,7 +26,7 @@ namespace Server_test
 
         public SailorType sailorType
         {
-            get { return type; }
+            get { return type; } // TODO: 한글로 반환 필요
         }
     }
 
