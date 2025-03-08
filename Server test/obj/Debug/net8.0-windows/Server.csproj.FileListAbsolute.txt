@@ -49,3 +49,13 @@ C:\Users\이동하\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-wi
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.pdb
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.genruntimeconfig.cache
 C:\Users\이동하\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\ref\Server.dll
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server_test.Server.resources
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.csproj.GenerateResource.cache
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.AssemblyInfoInputs.cache
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.AssemblyInfo.cs
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.sourcelink.json
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.dll
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\refint\Server.dll
+C:\Users\ASUS\Source\Repos\Galactic-Manhunt\Server test\obj\Debug\net8.0-windows\Server.pdb

@@ -71,20 +71,20 @@ namespace Server_test
     // 자원 추가할때마다 Item의 전역변수 Count 수정하기
     enum Resource
     {
-        Hydrogen,         // 수소
-        Nitrogen,         // 질소
-        Oxygen,           // 산소
-        Epsilon_crystal,  // 엑실론-크리스탈
+        Hydrogen = 1,         // 수소
+        Nitrogen = 2,         // 질소
+        Oxygen = 3,           // 산소
+        Epsilon_crystal = 4,  // 엑실론-크리스탈
 
-        Peroxide,         // 퍼옥사이드
-        Hydrazine,        // 하이드라진
-        Epsilon,          // 엑실론
+        Peroxide = 5,         // 퍼옥사이드
+        Hydrazine = 6,        // 하이드라진
+        Epsilon = 7 ,          // 엑실론
 
-        Water,            // 물
-        Food,             // 식량
+        Water = 8,            // 물
+        Food = 9,             // 식량
 
-        Seed,             // 씨앗
+        Seed = 10,             // 씨앗
                              
-        Chrono            // 크로노
+        Chrono = 11            // 크로노
     }
 }
