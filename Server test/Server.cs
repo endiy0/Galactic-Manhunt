@@ -19,10 +19,10 @@ namespace Server_test
             isServerRun = false;
             T = new Thread(() => ServerLoop(1111));
             Tt = new List<Thread>();
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
+            button2.Enabled = false; // 서버 종료
+            button3.Enabled = false; // 전송
+            button4.Enabled = false; // 게임 시작
+            button5.Enabled = false; // 게임 종료
             isClosing = false;
             label2.Text = "로컬 IP주소:\n" + GetLocalIPAddress() + "\n외부 IP주소:\n" + GetExternalIPAddress();
         }
@@ -31,14 +31,13 @@ namespace Server_test
         {
             if (int.TryParse(textBox1.Text, out int port) && 0 < port && port < 100000)
             {
-
                 T = new Thread(() => ServerLoop(port));
                 T.IsBackground = true;
                 T.Start();
-                button1.Enabled = false;
-                button2.Enabled = true;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                button1.Enabled = false; // 서버 시작
+                button2.Enabled = true;  // 서버 종료
+                button3.Enabled = true;  // 전송
+                button4.Enabled = true;  // 게임 시작
                 isServerRun = true;
                 listBox1.Items.Add("Server started");
             }
@@ -48,13 +47,16 @@ namespace Server_test
             }
         }
 
-        // 입력 코드
+        /* 입력 코드 */
         // 0: 채팅
         // 1: 연결종료
         // 2: 번호 지정(서버=>클라이언트)
         // 3: 닉네임 전송(클라이언트=>서버)
         // 4: 접속한 클라이언트 이름
         // 5: 접속 종료한 클라이언트 이름
+        // 6: 게임 시작
+        // 7: 게임 종료
+        // 8: 역할 전송 (ex: 8⧫0◊, 0이면 도둑, 1이면 경찰)
 
         // Split 문자 : ⧫
         // 송신 Check 문자 : ◊
@@ -80,7 +82,6 @@ namespace Server_test
             isServerRun = true;
 
             int count = 0;
-            byte[] buffer;
 
             while (true)
             {
@@ -115,7 +116,6 @@ namespace Server_test
             {
                 try
                 {
-
                     buffer = new byte[102400];
                     if (msg != "")
                     {
@@ -126,17 +126,33 @@ namespace Server_test
                         byte[] data = new byte[256];
                         int bytesRead = stream.Read(data, 0, data.Length);
                         if (bytesRead == 0)
+                        {
                             break;
+                        }
                         data = data.Where(x => x != 0).ToArray();
-                        if (buffer.Length == 102400) buffer = data;
-                        else buffer = buffer.Concat(data).ToArray();
+                        if (buffer.Length == 102400)
+                        {
+                            buffer = data;
+                        }
+                        else
+                        {
+                            buffer = buffer.Concat(data).ToArray();
+                        }
 
                         msg = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
-                        if (msg.Contains('◊')) break;
+                        if (msg.Contains('◊'))
+                        {
+                            break;
+                        }
                     }
                     if (Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊").Length == 1)
+                    {
                         msg = "";
-                    else msg = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊")[1];
+                    }
+                    else
+                    {
+                        msg = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊")[1];
+                    }
                     string[] message = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Split("◊")[0].Split('⧫');
                     if (message[0] == "0")
                     {
@@ -154,8 +170,6 @@ namespace Server_test
                     }
                     else if (message[0] == "1")
                     {
-
-
                         Invoke(new Action(() => listBox1.Items.Add($"{client.nickname} disconnected...")));
                         Invoke(new Action(() => listBox2.Items.Remove(client.nickname)));
                         foreach (var c in clients)
@@ -183,9 +197,10 @@ namespace Server_test
                                 string nickname = "";
                                 foreach (var c2 in clients)
                                 {
-                                    if (c2 != client) nickname += c2.nickname + ", ";
+                                    if (c2 != client)
+                                        nickname += c2.nickname + ", ";
                                 }
-                                client.client.GetStream().Write(Encoding.UTF8.GetBytes("1⧫닉네임은 다음과 같을 수 없습니다:" + nickname + '◊'));
+                                client.client.GetStream().Write(Encoding.UTF8.GetBytes("1⧫닉네임은 다음과 같을 수 없습니다: " + nickname + '◊'));
                                 clients.Remove(client);
                                 Invoke(new Action(() => listBox2.Items.Remove(client.nickname)));
                                 int b = 0;
@@ -220,8 +235,6 @@ namespace Server_test
                 }
                 catch (Exception e)
                 {
-
-
                     break;
                 }
             }
@@ -251,9 +264,9 @@ namespace Server_test
                 c.client.GetStream().Write(Encoding.UTF8.GetBytes("1⧫◊"));
                 c.client.Close();
             }
-            button2.Enabled = false;
-            button1.Enabled = true;
-            button3.Enabled = false;
+            button1.Enabled = true;  // 서버 시작
+            button2.Enabled = false; // 서버 종료
+            button3.Enabled = false; // 전송
             isServerRun = false;
             listBox1.Items.Add("Server stopped");
             server.Stop();
@@ -268,15 +281,15 @@ namespace Server_test
                 {
                     foreach (var c in clients)
                     {
-                        c.client.GetStream().Write(Encoding.UTF8.GetBytes("0⧫" + "Server:" + textBox2.Text + '◊'));
+                        c.client.GetStream().Write(Encoding.UTF8.GetBytes("0⧫" + "Server: " + textBox2.Text + '◊'));
                     }
-                    listBox1.Items.Add("Server:" + textBox2.Text);
+                    listBox1.Items.Add("Server: " + textBox2.Text);
                     textBox2.Text = "";
                     listBox1.TopIndex = listBox1.Items.Count - 1;
                 }
                 else
                 {
-                    MessageBox.Show("문자는 공백이면 안됩니다.");
+                    MessageBox.Show("채팅은 공백이면 안됩니다.");
                 }
             }
             else
@@ -309,35 +322,15 @@ namespace Server_test
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && isServerRun)
+            if (e.KeyCode == Keys.Enter && isServerRun) // 엔터 누르면 전송
             {
-                if (!textBox1.Text.Contains('⧫') && !textBox1.Text.Contains('◊'))
-                {
-                    if (textBox1.Text != "")
-                    {
-                        foreach (var c in clients)
-                        {
-                            c.client.GetStream().Write(Encoding.UTF8.GetBytes("0⧫" + "Server:" + textBox2.Text + '◊'));
-                        }
-                        listBox1.Items.Add("Server:" + textBox2.Text);
-                        textBox2.Text = "";
-                        listBox1.TopIndex = listBox1.Items.Count - 1;
-                    }
-                    else
-                    {
-                        MessageBox.Show("문자는 공백이면 안됩니다.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("채팅에 다음 문자는 포함되면 안됩니다: ⧫, ◊");
-                }
+                button3.PerformClick(); // 전송 버튼
             }
         }
 
         private void button4_Click(object sender, EventArgs e) // 게임 시작
         {
-            if(clients.Count >= 2)
+            if (clients.Count >= 2)
             {
                 button4.Enabled = false;
                 button5.Enabled = true;
@@ -360,7 +353,57 @@ namespace Server_test
         void Game()
         {
             // TODO: 게임 구현하기
-            // TODO: 서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘다 있는 은하는 보라색
+            // TODO: 서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘 다 있는 은하는 보라색
+            foreach (var c in clients)
+            {
+                c.Send("6", "");
+                Delay(10);
+            }
+
+            int copsCount = CopsCount(clients.Count);
+            List<Client> cops = new List<Client>();
+            List<Client> robbers = new List<Client>();
+            Random random = new Random();
+
+            List<int> selectedIndices = new List<int>();
+
+            while (cops.Count < copsCount)
+            {
+                int index = random.Next(clients.Count);
+                if (!selectedIndices.Contains(index))
+                {
+                    selectedIndices.Add(index);
+                    cops.Add(clients[index]);
+                }
+            }
+
+            for (int i = 0; i < clients.Count; i++)
+            {
+                if (!selectedIndices.Contains(i))
+                {
+                    robbers.Add(clients[i]);
+                }
+            }
+
+            foreach (var c in cops)
+            {
+                c.Send("8", "1");
+                Delay(10);
+            }
+
+            foreach (var r in robbers)
+            {
+                r.Send("8", "0");
+                Delay(10);
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick(); // 서버 시작 버튼
+            }
         }
     }
 }

@@ -30,13 +30,16 @@
         {
             SuspendLayout();
             // 
-            // Form5
+            // Farming
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "Form5";
+            ClientSize = new Size(615, 352);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2);
+            Name = "Farming";
             Text = "농사";
+            FormClosing += Farming_FormClosing;
             ResumeLayout(false);
         }
 

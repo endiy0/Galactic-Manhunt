@@ -16,14 +16,15 @@ namespace Server_test
         // TODO: Wokr클래스에 부족한 것 있으면 보완하기
     }
 
+    // 작업 타입
     enum WorkType
     {
-        None,       // 없음
-        Ship_Move,  // 함선 조종
-        Farm_Work,  // 농사
-        Mine_Work,  // 채집
-        Item_Make,  // 아이템 사용
-        Item_Use,   // 아이템 제작
-        Store_Use   // 상점 이용
+        Null,           // 없음
+        Ship_Control,   // 함선 조종
+        Farming,        // 농사
+        Collection,     // 채집
+        Item_Use,       // 아이템 사용
+        Item_Synthesis, // 아이템 합성
+        Store           // 상점
     }
 }

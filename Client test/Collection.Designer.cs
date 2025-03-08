@@ -99,7 +99,6 @@
             // button3
             // 
             button3.BackColor = Color.Transparent;
-            button3.BackgroundImage = Properties.Resources.right_arrow;
             button3.Font = new Font("맑은 고딕", 17F);
             button3.ImageAlign = ContentAlignment.TopLeft;
             button3.Location = new Point(572, 258);
@@ -112,7 +111,6 @@
             // button4
             // 
             button4.BackColor = Color.Transparent;
-            button4.BackgroundImage = Properties.Resources.right_arrow;
             button4.Font = new Font("맑은 고딕", 17F);
             button4.ImageAlign = ContentAlignment.TopLeft;
             button4.Location = new Point(572, 332);
@@ -133,9 +131,11 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(button1);
-            Margin = new Padding(2, 2, 2, 2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2);
             Name = "Collection";
             Text = "채집";
+            FormClosing += Collection_FormClosing;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
