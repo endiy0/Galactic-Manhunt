@@ -12,8 +12,38 @@ namespace Server_test
         public Work(WorkType WORKTYPE)
         {
             type = WORKTYPE;
+            if(type == WorkType.Null)
+            {
+
+            }
+            if(type == WorkType.Ship_Control)
+            {
+
+            }
+            if(type == WorkType.Farming)
+            {
+
+            }
+            if(type == WorkType.Collection)
+            {
+
+            }
+            if(type == WorkType.Item_Use)
+            {
+
+            }
+            if(type == WorkType.Item_Synthesis)
+            {
+
+            }
+            if(type == WorkType.Store)
+            {
+
+            }
         }
-        // TODO: Wokr클래스에 부족한 것 있으면 보완하기
+        
+
+
     }
 
     // 작업 타입

@@ -10,7 +10,7 @@ namespace Server_test
     class Inventory
     {
         List<Item> items;                    // 아이템 저장
-        Dictionary<Ability, int> abilities;  // 능력 저장
+        Dictionary<Ability, int> abilities;  // 능력 저장,    이름, 개수
         double itemMax;                      // 아이템 최댓값, 단위: kg
         int abilityMax;                      // 능력 최댓값, 단위: 개
 
