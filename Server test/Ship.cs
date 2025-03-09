@@ -27,7 +27,6 @@ namespace Server_test
 
         public Ship(ShipType shipType)
         {
-
             this.shipType = shipType;
             
             if (shipType == ShipType.newbie_ship)
@@ -40,7 +39,7 @@ namespace Server_test
                 Name = "선원 함선";
 
             else if (shipType == ShipType.galaxy_moving_ship)
-                Name = "초 은하 이동 함선";
+                Name = "초은하 이동 함선";
 
             else if (shipType == ShipType.thief_ship)
                 Name = "도적 함선";
@@ -93,10 +92,10 @@ namespace Server_test
     // 함선 타입
     enum ShipType
     {
-        newbie_ship,             // 초급자 전용 함선
-        Resource_ship,           // 자원 함선
-        sailor_ship,             // 선원 함선
-        galaxy_moving_ship,      // 초 은하 이동 함선
-        thief_ship               // 도적 함선
+        newbie_ship,        // 초급자 전용 함선
+        Resource_ship,      // 자원 함선
+        sailor_ship,        // 선원 함선
+        galaxy_moving_ship, // 초은하 이동 함선
+        thief_ship          // 도적 함선
     }
 }
