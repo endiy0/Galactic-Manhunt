@@ -19,6 +19,7 @@ namespace Server_test
             this.client = client;
             nickname = "Client" + n.ToString();
             ship = new Ship();
+            // TODO: 클라이언트에서 함선 종류 받아오기
         }
 
         public Client(TcpClient client, string str)
