@@ -45,7 +45,7 @@ namespace Server_test
                 Name = "도적 함선";
         }
 
-        public ShipType GetshipType()
+        public ShipType GetShipType()
         {
             return shipType;
         }
