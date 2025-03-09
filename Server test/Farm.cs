@@ -9,14 +9,14 @@ namespace Server_test
 {
     class Farm
     {
-        double day1, day2, day3; // 1,2,3 일차에 있는 씨앗 개수들
-
+        double day1, day2, day3; // 1, 2, 3일차에 있는 씨앗 개수들
         public double food = 0;
-        public Farm(double Day1, double Day2, double Day3)
+
+        public Farm(double day1, double day2, double day3)
         {
-            day1 = Day1;
-            day2 = Day2;
-            day3 = Day3;
+            this.day1 = day1;
+            this.day2 = day2;
+            this.day3 = day3;
         }
 
         public double Water(double water)
