@@ -13,13 +13,16 @@ namespace Server_test
         public TcpClient client;
         public string nickname;
         public Ship ship;
+        public Inventory inventory;
 
         public Client(TcpClient client, int n)
         {
             this.client = client;
             nickname = "Client" + n.ToString();
             ship = new Ship();
+            inventory = new Inventory();
             // TODO: 클라이언트에서 함선 종류 받아오기
+            // TODO: itemMax, abilityMax 받아오기
         }
 
         public Client(TcpClient client, string str)
@@ -27,6 +30,7 @@ namespace Server_test
             this.client = client;
             nickname = str;
             ship = new Ship();
+            inventory = new Inventory();
         }
 
         public void Send(string type, string msg)
