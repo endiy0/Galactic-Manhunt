@@ -205,7 +205,11 @@ namespace Client_test
                         job = (Job)int.Parse(message[1]);
                         Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n"));
                     }
-                    Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
+                    else if(message[0] == "10") // 모두 선택 확인
+                    {
+                        // TODO: 게임 시작 구현
+                    }
+                        Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
                 catch (Exception ex)
                 {

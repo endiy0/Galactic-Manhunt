@@ -58,6 +58,7 @@ namespace Server_test
         // 7: 게임 종료
         // 8: 역할 전송 (ex: 8⧫0◊, 0이면 도둑, 1이면 경찰)
         // 9: 선택한 함선 전송 (클라이언트 => 서버)
+        // 10: 모두 함선 선택 완료 (서버 => 클라이언트)
 
         // Split 문자 : ⧫
         // 송신 Check 문자 : ◊
@@ -235,6 +236,18 @@ namespace Server_test
                     else if(message[0] == "9")
                     {
                         client.ship.shipType = (ShipType)int.Parse(message[1]);
+                        bool isAllSelected = true;
+                        foreach (var c in clients)
+                        {
+                            if (c.ship.shipType == ShipType.none)
+                            {
+                                isAllSelected = false;
+                            }
+                        }
+                        if (isAllSelected)
+                        {
+                            client.client.GetStream().Write(Encoding.UTF8.GetBytes("10⧫◊"));
+                        }
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }
