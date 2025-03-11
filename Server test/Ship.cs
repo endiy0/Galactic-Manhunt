@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -88,6 +89,8 @@ namespace Server_test
         // 1. 자원 증가율 매번 랜덤으로 할건지, 랜덤으로 할거면 저정도 수치가 괜찮을지
         // 2. Resource_Give에서 저게 return이 잘 될지를 모르겠어요.
 
+
+
         // 초보자용 함선 처음에 아이템 주기
 
         public List<Item> Newbie_Resource(ShipType type)
@@ -108,6 +111,9 @@ namespace Server_test
 
 
             List<Item> items = new List<Item>();
+
+            if (type != ShipType.newbie_ship) return items;         // 맞는 종류인지 확인
+
             items.Add(new Item(Resource.Chrono, chrono));
             items.Add(new Item(Resource.Water, water));
             items.Add(new Item(Resource.Epsilon, epsilon));
@@ -121,8 +127,39 @@ namespace Server_test
             items.Add(new Item(Resource.Food, food));
 
             return items;
-
         }
+
+        // 선원 함선
+
+        // 매턴 선원 식량 주는거 - 20턴 동안
+        public List<Item> Sailor_Resource(ShipType type)
+        {
+
+            List<Item> items = new List<Item>();
+
+            if (type != ShipType.sailor_ship) return items;     // 맞는 종류인지 확인
+
+            items.Add(new Item(Resource.Food, 3));
+            items.Add(new Item(Resource.Water, 2));
+            return items;
+        }
+
+        // 처음에 선원 3명 주는 함수
+
+        
+        public List<Sailor> Sailor_Give(ShipType type)
+        {
+            List<Sailor>sailors = new List<Sailor>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                sailors.Add(new Sailor(SailorType.Normal, 1, 140));
+            }
+
+            return sailors;
+        }
+
+        // TODO : 선원 주는 함선 함수 좀만 더 ㄱㄱ
     }
 
     // 함선 타입
