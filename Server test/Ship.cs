@@ -79,14 +79,50 @@ namespace Server_test
             {
                 return 1;   // 다른 타입이면 그냥 원래대로
             }
-            double Increased = rand.NextDouble();
-            return Increased * 30;        // 0 ~ 30 사이의 정수
+            double Increased = rand.Next(20, 50);
+            return Increased;
         }
 
         // Todo : 자원 함선 이외 4가지 함선들 구현
         // FeedBack
         // 1. 자원 증가율 매번 랜덤으로 할건지, 랜덤으로 할거면 저정도 수치가 괜찮을지
         // 2. Resource_Give에서 저게 return이 잘 될지를 모르겠어요.
+
+        // 초보자용 함선 처음에 아이템 주기
+
+        public List<Item> Newbie_Resource(ShipType type)
+        {
+            // 초기에 주는 자원량 상수로 만들어 놓기 -> 불편하면 위로 빼도 되고
+
+            const double chrono = 10000;
+            const double seed = 10;
+            const double food = 500;
+            const double water = 500;
+            const double epsilon = 500;
+            const double hydrazine = 500;
+            const double peroxide = 500;
+            const double hydrogen = 500;
+            const double nitrogen = 500;
+            const double oxygen = 500;
+            const double epsilon_crystal = 500;
+
+
+            List<Item> items = new List<Item>();
+            items.Add(new Item(Resource.Chrono, chrono));
+            items.Add(new Item(Resource.Water, water));
+            items.Add(new Item(Resource.Epsilon, epsilon));
+            items.Add(new Item(Resource.Seed, seed));
+            items.Add(new Item(Resource.Hydrazine, hydrazine));
+            items.Add(new Item(Resource.Hydrogen, hydrogen));
+            items.Add(new Item(Resource.Nitrogen, nitrogen));
+            items.Add(new Item(Resource.Peroxide, peroxide));
+            items.Add(new Item(Resource.Epsilon_crystal, epsilon_crystal));
+            items.Add(new Item(Resource.Oxygen, oxygen));
+            items.Add(new Item(Resource.Food, food));
+
+            return items;
+
+        }
     }
 
     // 함선 타입
