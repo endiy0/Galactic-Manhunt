@@ -45,7 +45,7 @@ namespace Client_test
             }
             else
             {
-                form.GetShip(); // 선택된 함선을 서버로 전송
+                form.GetShip(); // 선택된 함선을 클라이언트로 전송
                 this.Close(); // 종료
             }
         }

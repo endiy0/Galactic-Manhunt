@@ -165,6 +165,7 @@ namespace Server_test
     // 함선 타입
     enum ShipType
     {
+        none,               // 선택되지 않음
         newbie_ship,        // 초급자 전용 함선
         Resource_ship,      // 자원 함선
         sailor_ship,        // 선원 함선

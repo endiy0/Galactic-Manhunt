@@ -19,9 +19,8 @@ namespace Server_test
         {
             this.client = client;
             nickname = "Client" + n.ToString();
-            ship = new Ship();
+            ship = new Ship(ship);
             inventory = new Inventory();
-            // TODO: 클라이언트에서 함선 종류 받아오기
             // TODO: itemMax, abilityMax 받아오기
         }
 
@@ -29,7 +28,7 @@ namespace Server_test
         {
             this.client = client;
             nickname = str;
-            ship = new Ship();
+            ship = new Ship(ship);
             inventory = new Inventory();
         }
 

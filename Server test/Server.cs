@@ -57,6 +57,7 @@ namespace Server_test
         // 6: 게임 시작
         // 7: 게임 종료
         // 8: 역할 전송 (ex: 8⧫0◊, 0이면 도둑, 1이면 경찰)
+        // 9: 선택한 함선 전송 (클라이언트 => 서버)
 
         // Split 문자 : ⧫
         // 송신 Check 문자 : ◊
@@ -230,6 +231,10 @@ namespace Server_test
                             NetworkStream s = c.client.GetStream();
                             s.Write(buffer, 0, buffer.Length);
                         }
+                    }
+                    else if(message[0] == "9")
+                    {
+                        client.ship.shipType = (ShipType)int.Parse(message[1]);
                     }
                     Invoke(new Action(() => listBox1.TopIndex = listBox1.Items.Count - 1));
                 }

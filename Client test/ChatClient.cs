@@ -47,6 +47,7 @@ namespace Client_test
         public void GetShip()
         {
             Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n" + "함선: " + shipDisplay[ship]));
+            stream.Write(Encoding.UTF8.GetBytes("9⧫" + (int)ship + '◊'));
         }
 
         private void button1_Click(object sender, EventArgs e) // 연결
