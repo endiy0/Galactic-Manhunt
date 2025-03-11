@@ -48,6 +48,7 @@ namespace Client_test
         {
             Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n" + "함선: " + shipDisplay[ship]));
             stream.Write(Encoding.UTF8.GetBytes("9⧫" + (int)ship + '◊'));
+            // TODO: Server에서 함선 선택 끝나기 전까지 로딩 화면 구현
         }
 
         private void button1_Click(object sender, EventArgs e) // 연결
@@ -205,7 +206,7 @@ namespace Client_test
                         job = (Job)int.Parse(message[1]);
                         Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n"));
                     }
-                    else if(message[0] == "10") // 모두 선택 확인
+                    else if (message[0] == "10") // 모두 선택 확인
                     {
                         // TODO: 게임 시작 구현
                     }
