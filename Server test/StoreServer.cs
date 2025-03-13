@@ -40,8 +40,8 @@ namespace Server_test
 
             if (storeType == StoreType.Sailor_store) // 인력사무소
             {
-                sailors.Add(new Sailor(SailorType.Normal, 1, 140, new Work(WorkType.Null)), sailor_cost);     // 선원
-                sailors.Add(new Sailor(SailorType.Advanced, 1, 200, new Work(WorkType.Null)), advanced_cost); // 고급 선원
+                sailors.Add(new Sailor(SailorType.Normal, 1, 140), sailor_cost);     // 선원
+                sailors.Add(new Sailor(SailorType.Advanced, 1, 200), advanced_cost); // 고급 선원
             }
 
             else

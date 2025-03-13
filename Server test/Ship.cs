@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Security;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Server_test
         public Inventory inventory;  // 인벤토리
         public List<Sailor> sailors; // 선원들
         string Name;
+        int galaxy_moving_count = 3;    // 초은하 이동 함선 이동 가능 횟수
         Random rand = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
         Array resources = Enum.GetValues(typeof(Resource));
         
@@ -61,11 +63,14 @@ namespace Server_test
         // 나중에 delegate 넣으면 필요 없을 수도
         public Item Resource_Give(ShipType type)
         {
+
+            Item items = new Item(Resource.Chrono,0);
+
             if (type != ShipType.Resource_ship)
             {
-                return null;
+                return items;
             }
-            Item items;
+            
             int mass = rand.Next(1000, 3000); // 랜덤으로 자원량 줄 것
             int index = rand.Next(0, 12); // 랜덤 자원 
             Resource resource = (Resource)index;    // 여기 틀린거 같으면 다시 구현해주세요.
@@ -73,22 +78,7 @@ namespace Server_test
             return items;
         }
 
-        // 자원 증가율 -> 매턴 랜덤으로
-        public double Resource_Increased(ShipType type)
-        {
-            if (type != ShipType.Resource_ship)
-            {
-                return 1;   // 다른 타입이면 그냥 원래대로
-            }
-            double Increased = rand.Next(20, 50);
-            return Increased;
-        }
-
-        // Todo : 자원 함선 이외 4가지 함선들 구현
-        // FeedBack
-        // 1. 자원 증가율 매번 랜덤으로 할건지, 랜덤으로 할거면 저정도 수치가 괜찮을지
-        // 2. Resource_Give에서 저게 return이 잘 될지를 모르겠어요.
-
+        // 자원 증가율 -> FuelSynthesis.cs 에서
 
 
         // 초보자용 함선 처음에 아이템 주기
@@ -131,6 +121,7 @@ namespace Server_test
 
         // 선원 함선
 
+
         // 매턴 선원 식량 주는거 - 20턴 동안
         public List<Item> Sailor_Resource(ShipType type)
         {
@@ -145,8 +136,6 @@ namespace Server_test
         }
 
         // 처음에 선원 3명 주는 함수
-
-        
         public List<Sailor> Sailor_Give(ShipType type)
         {
             List<Sailor>sailors = new List<Sailor>();
@@ -155,11 +144,22 @@ namespace Server_test
             {
                 sailors.Add(new Sailor(SailorType.Normal, 1, 140));
             }
-
             return sailors;
         }
 
-        // TODO : 선원 주는 함선 함수 좀만 더 ㄱㄱ
+
+        // 초은하 이동 함선
+
+        public bool is_Galaxy_Moving(ShipType type)
+        {
+            if (type != ShipType.galaxy_moving_ship) return false;
+            if (galaxy_moving_count > 0)
+            {
+                galaxy_moving_count--;
+                return true;
+            }
+            else return false;
+        }
     }
 
     // 함선 타입
