@@ -9,6 +9,7 @@ namespace Server_test
     // 채굴 행성 클래스
     class Planet
     {
+        public Vector2 location;
         public Inventory resources;
         PlanetType type;
         static double HydrogenMax = 8;
@@ -18,10 +19,11 @@ namespace Server_test
         static double WaterMax = 18;
         static double SeedMax = 5;
 
-        public Planet(PlanetType T) 
+        public Planet(PlanetType T, double xx,double yy) 
         {
             type = T;
             resources = new Inventory(1800, 0);
+            location = new Vector2(xx, yy);
             Random random = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
 
             int AirCount = (T == PlanetType.Earth) ? random.Next(0, Item.AirCount + 1) : random.Next(Item.AirCount / 2, Item.AirCount + 1);

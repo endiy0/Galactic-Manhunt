@@ -161,6 +161,7 @@ namespace Server_test
             else return false;
         }
     }
+    // TODO : 현재 은하, 현재 행성시스템 추가
 
     // 함선 타입
     enum ShipType

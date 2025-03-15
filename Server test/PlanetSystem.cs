@@ -36,8 +36,10 @@ namespace Server_test
                         EarthCount++;
                     }
                 }
+                int x = rand.Next(-10000,10000);
+                int y = rand.Next(-10000, 10000);
                 
-                planets.Add(new Planet(type)); // 행성 생성
+                planets.Add(new Planet(type,x,y)); // 행성 생성
             }
         }
 

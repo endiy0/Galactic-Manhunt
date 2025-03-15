@@ -45,6 +45,49 @@ namespace Server_test
         {
             return Name;
         }
+
+        
+
+        // 함선 조종
+        
+
+        public Vector2 Ship_Moving(Planet planet)
+        { 
+            return planet.location;
+        }
+
+        public Vector2 Ship_Moving(PlanetSystem system)
+        {
+            return system.Location;
+            
+        }
+
+        public Vector2 Ship_Moving(Galaxy galaxy)
+        {
+            return galaxy.Location;
+        }
+
+        // 퍼옥사이드하고 하이드라진 이용하는 행성계 간 이동
+        double return_fuel(double fuel, Resource fuel_type, Vector2 location, PlanetSystem system)
+        {
+            if (fuel_type == Resource.Epsilon) return -1;
+            double distance = Math.Sqrt((location.y - system.Location.y) * (location.y - system.Location.y) + (location.x - system.Location.y) * (location.x - system.Location.y));
+            double fuels = fuel - distance * (fuel_type == Resource.Peroxide ? 10.2 : 8);
+            if (fuels < 0) return -1;           // -1 이면 이동 못한다는 의미로 이해하고 못가게 하기
+            return fuels;               // 아니면 이동하는거지
+        }
+
+        // 엑실론 사용하는 은하간 이동
+        double return_fuel(double fuel, Resource fuel_type,Vector2 location, Galaxy galaxy)
+        {
+            if (fuel_type != Resource.Epsilon) return -1;
+            double distance = Math.Sqrt((location.y - galaxy.Location.y) * (location.y - galaxy.Location.y) + (location.x - galaxy.Location.y) * (location.x - galaxy.Location.y));
+            double fuels = fuel - distance * 4;
+            if (fuels < 0) return -1;           // 똑같아요 위에하고
+            return fuels;
+        }
+
+
     }
 
     // 작업 타입
