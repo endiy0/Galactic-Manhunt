@@ -14,14 +14,16 @@ namespace Server_test
         public string nickname;
         public Ship ship;
         public Inventory inventory;
+        Galaxy galaxy;
+        PlanetSystem planetSystem;
 
         public Client(TcpClient client, int n)
         {
             this.client = client;
             nickname = "Client" + n.ToString();
             ship = new Ship(ship.shipType);
-            inventory = new Inventory();
-            // TODO: itemMax, abilityMax 받아오기
+            inventory = new Inventory(140,100);
+
         }
 
         public Client(TcpClient client, string str)
@@ -29,7 +31,7 @@ namespace Server_test
             this.client = client;
             nickname = str;
             ship = new Ship(ship.shipType);
-            inventory = new Inventory();
+            inventory = new Inventory(140,100);
         }
 
         public void Send(string type, string msg)

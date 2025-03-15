@@ -50,6 +50,7 @@ namespace Server_test
 
         // 함선 조종
         
+        // 함선 다음 위치 반환
 
         public Vector2 Ship_Moving(Planet planet)
         { 
@@ -87,6 +88,24 @@ namespace Server_test
             return fuels;
         }
 
+
+
+        // 아이템 사용 == 능력 사용
+
+        int Using_ability(Ability ability)
+        {
+            if(ability.GetAbilityType() == AbilityType.store_growth)
+            {
+                return 4000;
+            }
+
+            else if(ability.GetAbilityType() == AbilityType.galaxy_travel)
+            {
+                
+            }
+            return 0;
+        }
+        
 
     }
 

@@ -1,10 +1,11 @@
-﻿using System.Net;
+﻿using System.Diagnostics;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
 namespace Server_test
 {
-    public partial class Server : Form
+    internal partial class Server : Form
     {
         static TcpListener server;
         static List<Client> clients;
@@ -12,6 +13,13 @@ namespace Server_test
         List<Thread> Tt;
         static bool isServerRun;
         static bool isClosing;
+        static List<Client> cops;
+        static List<Client> robbers;
+        public List<Client> Robbers
+        {
+            get { return robbers; }
+        }
+
         public Server()
         {
             InitializeComponent();
@@ -372,6 +380,8 @@ namespace Server_test
         {
             // TODO: 게임 구현하기
             // TODO: 서버에 이미지 파일 하나 만들어서 전체 지도 표시할거임. 평범한 상태는 검은색, 도둑이 있는 은하는 빨간색, 경찰이 있는 은하는 파란색, 둘 다 있는 은하는 보라색
+            Random rand = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
+
             foreach (var c in clients)
             {
                 c.Send("6", "");
@@ -379,8 +389,8 @@ namespace Server_test
             }
 
             int copsCount = CopsCount(clients.Count);
-            List<Client> cops = new List<Client>();
-            List<Client> robbers = new List<Client>();
+            cops = new List<Client>();
+            robbers = new List<Client>();
             Random random = new Random();
 
             List<int> selectedIndices = new List<int>();
@@ -414,7 +424,27 @@ namespace Server_test
                 r.Send("8", "0");
                 Delay(10);
             }
-        }
+
+            List<Galaxy> galaxy_list = new List<Galaxy>();
+            bool[,] visited = new bool[2001, 2001];
+            
+            int galaxy_size = rand.Next(15, 21);
+            for(int i = 0; i < galaxy_size; i++)
+            {
+                int x = rand.Next(-1000, 1001);
+                int y = rand.Next(-1000, 1001);
+                while (visited[x, y] || visited[x+3,y+3]|| visited[x + 2,y+2] || visited[x+1,y+1] || visited[x-1,y-1] || visited[x-2,y-2] || visited[x-3,y-3])
+                {
+                    x = rand.Next(-1000, 1001);
+                    y = rand.Next(-1000, 1001);
+                }
+                for(int j = -3; j <= 3; j++)
+                {
+                    visited[x + j, y + j] = true;
+                }
+                galaxy_list.Add(new Galaxy(x, y));
+            }
+    }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
         {
