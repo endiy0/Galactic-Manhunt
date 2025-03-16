@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -8,13 +9,13 @@ namespace Server_test
     internal partial class Server : Form
     {
         static TcpListener server;
-        static List<Client> clients;
+        public static List<Client> clients;
         Thread T;
         List<Thread> Tt;
         static bool isServerRun;
         static bool isClosing;
-        static List<Client> cops;
-        static List<Client> robbers;
+        public static List<Client> cops;
+        public static List<Client> robbers;
         public List<Client> Robbers
         {
             get { return robbers; }
@@ -395,6 +396,9 @@ namespace Server_test
 
             List<int> selectedIndices = new List<int>();
 
+
+                   
+            // 팀 가르기
             while (cops.Count < copsCount)
             {
                 int index = random.Next(clients.Count);
@@ -402,6 +406,7 @@ namespace Server_test
                 {
                     selectedIndices.Add(index);
                     cops.Add(clients[index]);
+                    clients[index].Type_Selection(Client.PlayerType.cop);
                 }
             }
 
@@ -410,6 +415,7 @@ namespace Server_test
                 if (!selectedIndices.Contains(i))
                 {
                     robbers.Add(clients[i]);
+                    clients[i].Type_Selection(Client.PlayerType.robber);
                 }
             }
 
@@ -424,6 +430,8 @@ namespace Server_test
                 r.Send("8", "0");
                 Delay(10);
             }
+
+            // 랜덤 지도 생성
 
             List<Galaxy> galaxy_list = new List<Galaxy>();
             bool[,] visited = new bool[2001, 2001];
@@ -445,6 +453,8 @@ namespace Server_test
                 galaxy_list.Add(new Galaxy(x, y));
             }
     }
+
+        
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
         {

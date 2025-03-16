@@ -26,6 +26,7 @@ namespace Server_test
 
         const double sailor_cost = 2000;
         const double advanced_cost = 3000;
+        const double team_Identify = 1000;
 
         // 스킬 가격은 아래 바로바로 구현함 - 저장소 제외
 
@@ -78,6 +79,7 @@ namespace Server_test
                 items.Add(new Item(Resource.Water, MaxFood), 100 * multiply); // 물
                 items.Add(new Item(Resource.Seed, MaxSeed), 400 * multiply);   // 씨앗
 
+                abilities.Add(new Ability(AbilityType.team_identify),team_Identify *multiply);
                 abilities.Add(new Ability(AbilityType.store_growth), storage_cost * multiply); // 저장량 증가
             }
         }

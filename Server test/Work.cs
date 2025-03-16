@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -92,20 +93,107 @@ namespace Server_test
 
         // 아이템 사용 == 능력 사용
 
-        int Using_ability(Ability ability)
+        // 저장량 증가
+
+        int Using_Store_Growth(Ability ability)
         {
             if(ability.GetAbilityType() == AbilityType.store_growth)
             {
                 return 4000;
             }
-
-            else if(ability.GetAbilityType() == AbilityType.galaxy_travel)
-            {
-                
-            }
             return 0;
         }
         
+        // 은하 탐방
+        List<Vector2>Using_Galaxy_Moving(Ability ability)
+        {
+            if (ability.GetAbilityType() == AbilityType.galaxy_travel)
+            {
+                List<Vector2> location_list = new List<Vector2>();
+                foreach (var robber in Server.robbers)
+                {
+                    location_list.Add(robber.galaxy.Location);
+                }
+                return location_list;
+            }
+            return null;
+        }
+
+        // 행성 탐방
+
+       List<Vector2>Using_Planet_Travel(Ability ability)
+        {
+            List<Vector2> location_list = new List<Vector2>();
+            if (ability.GetAbilityType() == AbilityType.planet_travel)
+            {
+                
+                foreach(var robber in Server.robbers)
+                {
+                    location_list.Add(robber.advanced_planetsystem.Location);
+                }
+                return location_list;
+            }
+            return location_list;
+        }
+
+        // 경찰 기본스킬 - 행성계 들어가면 도둑들 스턴        -- 얘는 그냥 움직일 때마다 사용하는거라서 매개변수 필요 x
+
+        public void Stun_Robber(Vector2 Location)
+        {
+            foreach(var robber in Server.robbers)
+            {
+                if(robber.planetSystem.Location == Location)
+                {
+                    robber.is_moving = false;
+                }
+            }
+        }
+
+        // 팀 식별 - 전체 공용
+
+        public List<Client.PlayerType> Team_Identify(PlanetSystem planetSystem)
+        {
+            List<Client.PlayerType> return_list= new List<Client.PlayerType>();
+            foreach(var client in Server.clients)
+            {
+                if(planetSystem.Location == client.planetSystem.Location)
+                {
+                    return_list.Add(client.playerType);
+                }
+            }
+            return return_list;
+        }
+        
+        // 겟 퓨얼 - 도둑
+
+        public Item Get_Fuel(Resource resource)
+        {
+            Random rand = new Random();
+            Item return_item = new Item(resource, rand.Next(20, 80));
+            return return_item;
+        }
+
+        // 연료 교환권 - 도둑
+
+        // List에서 0번째는 본인이 요청한 연료, 1번째는 본인이 줄 연료 == 0 : 추가, 1 : 차감
+        // TODO : 본인 제외하고 보내야함
+        public List<Item> Fuel_Changed(Resource resource, double mass, Resource resource2, double mass2)
+        {
+            List<Item> return_item = new List<Item>();
+            foreach(var robber in Server.robbers)
+            {
+                if (robber.Help_robber(resource, mass))
+                {
+                    return_item.Add(new Item(resource, mass));
+                    return_item.Add(new Item(resource2, mass2));
+                }
+                
+            }
+            return return_item;
+            
+        }
+
+
 
     }
 
