@@ -396,8 +396,6 @@ namespace Server_test
 
             List<int> selectedIndices = new List<int>();
 
-
-                   
             // 팀 가르기
             while (cops.Count < copsCount)
             {
@@ -432,7 +430,6 @@ namespace Server_test
             }
 
             // 랜덤 지도 생성
-
             List<Galaxy> galaxy_list = new List<Galaxy>();
             bool[,] visited = new bool[2001, 2001];
             
@@ -452,9 +449,7 @@ namespace Server_test
                 }
                 galaxy_list.Add(new Galaxy(x, y));
             }
-    }
-
-        
+        }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
         {
