@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // 은하 클래스
-    class Galaxy
+    public class Galaxy
     {
-        List<PlanetSystem> systems;
-        Vector2 location;
+        public List<PlanetSystem> systems;
+        public Vector2 location;
+        public Prison prinson;
 
         public Galaxy(double xx, double yy) // Server 아직 구현 안된 곳에서 받아올것
         {
@@ -41,6 +42,7 @@ namespace Server_test
                     }
                 }
                 systems.Add(new PlanetSystem(Location));
+                
             }
         }
 
@@ -69,6 +71,11 @@ namespace Server_test
         public void ClearSystems()
         {
             systems.Clear();
+        }
+        
+        public void Making_Prison(Galaxy galaxy)
+        {
+            prinson = new Prison(galaxy);
         }
     }
 }

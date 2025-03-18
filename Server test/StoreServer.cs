@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // 상점 클래스
-    class StoreServer
+    public class StoreServer
     {
         StoreType storeType;
 
@@ -120,7 +120,7 @@ namespace Server_test
     }
 
     // 상점 타입
-    enum StoreType
+    public enum StoreType
     {
         Cops_store,
         Black_market,

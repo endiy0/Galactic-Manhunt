@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // 행성계 클래스
-    class PlanetSystem
+    public class PlanetSystem
     {
-        List<Planet> planets;
-        Vector2 location;
+        public List<Planet> planets;
+        public Vector2 location;
         public StoreServer store;
         
         public PlanetSystem(Vector2 L) // Galaxy class에서 받아올것
@@ -24,6 +24,7 @@ namespace Server_test
 
             for(int i = 0; i < size; i++) // planets List채우기
             {
+                bool[,] visited = new bool[10001,10001];
                 PlanetType type = (rand.Next(0, 2) == 1) ? PlanetType.Jupitor : PlanetType.Earth; // 1: 목성형, 0: 지구형
                 if (type == PlanetType.Earth)      // 지구형 행성 최대 4개 검사
                 {
@@ -36,9 +37,14 @@ namespace Server_test
                         EarthCount++;
                     }
                 }
-                int x = rand.Next(-10000,10000);
+                int x = rand.Next(-10000, 10000);
                 int y = rand.Next(-10000, 10000);
-                
+                while (visited[x, y])
+                {
+                    x = rand.Next(-10000, 10000);
+                    y = rand.Next(-10000, 10000);
+                }
+                visited[x,y] = true;
                 planets.Add(new Planet(type,x,y)); // 행성 생성
             }
         }

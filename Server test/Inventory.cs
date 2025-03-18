@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // 인벤토리 클래스
-    class Inventory
+    public class Inventory
     {
         List<Item> items;                    // 아이템 저장
         Dictionary<Ability, int> abilities;  // 능력 저장,    이름, 개수

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // 채굴 행성 클래스
-    class Planet
+    public class Planet
     {
         public Vector2 location;
         public Inventory resources;
-        PlanetType type;
+        public PlanetType type;
         static double HydrogenMax = 8;
         static double NitrogenMax = 28;
         static double OxygenMax = 32;
@@ -79,7 +79,7 @@ namespace Server_test
     }
 
     // 행성 타입
-    enum PlanetType
+    public enum PlanetType
     {
         Earth,
         Jupitor

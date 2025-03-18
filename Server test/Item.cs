@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // 아이템 클래스
-    class Item
+    public class Item
     {
         Resource Itemtype;
         string Name;
@@ -69,7 +69,7 @@ namespace Server_test
 
     // 자원 종류
     // 자원 추가할때마다 Item의 전역변수 Count 수정하기
-    enum Resource
+    public enum Resource
     {
         Hydrogen = 1,         // 수소
         Nitrogen = 2,         // 질소

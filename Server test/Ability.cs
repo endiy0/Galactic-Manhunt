@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Server_test
 {
     // Ability 클래스
-    class Ability
+    public class Ability
     {
         AbilityType type;
         string Name;
@@ -17,13 +17,13 @@ namespace Server_test
             type = ABILITYTYPE;
 
             if (type == AbilityType.dark_under_the_lamp)
-                Name = "등잔 밑이 어둡다";
+                Name = "등잔 밑이 어둡다";     
 
             else if (type == AbilityType.galaxy_travel)
-                Name = "은하 탐방";
+                Name = "은하 탐방";         // work.cs 구현
 
             else if (type == AbilityType.planet_travel)
-                Name = "행성 탐방";
+                Name = "행성 탐방";         // work.cs 구현
 
             else if (type == AbilityType.stun)
                 Name = "스턴";
@@ -32,22 +32,22 @@ namespace Server_test
                 Name = "수갑";
 
             else if (type == AbilityType.team_identify)
-                Name = "팀 식별";
+                Name = "팀 식별";          // work.cs 구현
 
             else if (type == AbilityType.get_fuel)
-                Name = "겟 퓨얼";
+                Name = "겟 퓨얼";          // work.cs 구현
 
             else if (type == AbilityType.fuel_changer)
-                Name = "연료 교환권";
+                Name = "연료 교환권";        // work.cs 구현
 
             else if (type == AbilityType.fuel_compressor)
-                Name = "연료 압축기";
+                Name = "연료 압축기";        
 
             else if (type == AbilityType.stun_remover)
-                Name = "스턴 제거기";
+                Name = "스턴 제거기";        
 
             else if (type == AbilityType.store_growth)
-                Name = "저장량 증가";
+                Name = "저장량 증가";        // work.cs 구현
         }
 
         public AbilityType GetAbilityType()
@@ -61,7 +61,7 @@ namespace Server_test
         }
     }
 
-    enum AbilityType
+    public enum AbilityType
     {
         // 경찰
         dark_under_the_lamp,   // 등잔 밑이 어둡다

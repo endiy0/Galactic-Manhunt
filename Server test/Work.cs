@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Security;
 using System.Net.WebSockets;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -88,8 +90,6 @@ namespace Server_test
             if (fuels < 0) return -1;           // 똑같아요 위에하고
             return fuels;
         }
-
-
 
         // 아이템 사용 == 능력 사용
 
@@ -196,10 +196,27 @@ namespace Server_test
             
         }
 
+        // 수갑
 
-
-
-
+        public void HandCuff(PlanetSystem planetSystem, Planet planet)
+        {
+            foreach(var robber in Server.robbers)
+            {
+                if(robber.planetSystem.Location == planetSystem.Location)
+                {
+                    if(robber.planet.location == planet.location)
+                    {
+                        //  잡힌 상태 - 감옥에 가둬놓는 형태
+                        robber.galaxy = Server.prison.galaxy;
+                        Server.prison.Add_Robber();
+                        if (Server.prison.Is_Finish())
+                        {
+                            // TODO : 게임 끝내는 기능 추가
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // 작업 타입

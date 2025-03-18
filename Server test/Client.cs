@@ -17,6 +17,7 @@ namespace Server_test
         public Galaxy galaxy;
         public PlanetSystem planetSystem;
         public PlanetSystem advanced_planetsystem;          // 행성 탐방 스킬때문에 사용
+        public Planet planet;
         public PlayerType playerType;
         public bool is_moving = true;        // 행동 가능/불가능 판별 변수
         

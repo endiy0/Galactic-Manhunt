@@ -16,6 +16,7 @@ namespace Server_test
         static bool isClosing;
         public static List<Client> cops;
         public static List<Client> robbers;
+        public static Prison prison;
         public List<Client> Robbers
         {
             get { return robbers; }
@@ -434,6 +435,7 @@ namespace Server_test
             bool[,] visited = new bool[2001, 2001];
             
             int galaxy_size = rand.Next(15, 21);
+            int prison_location_galaxy = rand.Next(0, galaxy_size);
             for(int i = 0; i < galaxy_size; i++)
             {
                 int x = rand.Next(-1000, 1001);
@@ -447,8 +449,11 @@ namespace Server_test
                 {
                     visited[x + j, y + j] = true;
                 }
+                
                 galaxy_list.Add(new Galaxy(x, y));
             }
+            prison = new Prison(galaxy_list[prison_location_galaxy]);
+            
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
