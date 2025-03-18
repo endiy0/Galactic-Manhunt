@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Security;
 using System.Net.WebSockets;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace Server_test
         {
             type = WORKTYPE;
             if(type == WorkType.Ship_Control)
-                Name = "함선 조종";
+                Name = "함선 조종";             // complete
 
             else if (type == WorkType.Farming)
                 Name = "농사";
@@ -27,7 +28,7 @@ namespace Server_test
                 Name = "채집";
 
             else if(type == WorkType.Item_Use)
-                Name = "아이템 사용";
+                Name = "아이템 사용";            // 90% complete - except 등잔밑이 어둡다
 
             else if(type == WorkType.Item_Synthesis)
                 Name = "아이템 합성";
@@ -72,11 +73,11 @@ namespace Server_test
         }
 
         // 퍼옥사이드하고 하이드라진 이용하는 행성계 간 이동
-        double return_fuel(double fuel, Resource fuel_type, Vector2 location, PlanetSystem system)
+        double return_fuel(double fuel, Resource fuel_type, Vector2 location, PlanetSystem system, int sale)
         {
             if (fuel_type == Resource.Epsilon) return -1;
             double distance = Math.Sqrt((location.y - system.Location.y) * (location.y - system.Location.y) + (location.x - system.Location.y) * (location.x - system.Location.y));
-            double fuels = fuel - distance * (fuel_type == Resource.Peroxide ? 10.2 : 8);
+            double fuels = fuel - distance * (fuel_type == Resource.Peroxide ? 10.2 : 8) / (sale > 0 ? 4 : 20) * 4;
             if (fuels < 0) return -1;           // -1 이면 이동 못한다는 의미로 이해하고 못가게 하기
             return fuels;               // 아니면 이동하는거지
         }
@@ -216,6 +217,39 @@ namespace Server_test
                     }
                 }
             }
+        }
+
+        // 스턴 && 스턴 제거기
+
+        public void Stun(Vector2 Location)
+        {
+            foreach(var robber in Server.robbers)
+            {
+                if(robber.galaxy.Location == Location)
+                {
+                    robber.is_moving = false;
+
+                    // TODO : 게임 구현 후 2턴 만들어서 그거로 스턴 해제 하고 그러기
+                }
+            }
+        }
+
+        public void Stun_Remover(string nick)
+        {
+            foreach(var robber in Server.robbers)
+            {
+                if(robber.nickname == nick)
+                {
+                    robber.is_moving = true;
+                }
+            }
+        }
+
+        // 연료 압축기
+
+        public int Return_Sale_Fuel()
+        {
+            return 20;
         }
     }
 

@@ -17,7 +17,7 @@ namespace Server_test
             type = ABILITYTYPE;
 
             if (type == AbilityType.dark_under_the_lamp)
-                Name = "등잔 밑이 어둡다";     
+                Name = "등잔 밑이 어둡다";         
 
             else if (type == AbilityType.galaxy_travel)
                 Name = "은하 탐방";         // work.cs 구현
@@ -25,11 +25,11 @@ namespace Server_test
             else if (type == AbilityType.planet_travel)
                 Name = "행성 탐방";         // work.cs 구현
 
-            else if (type == AbilityType.stun)
-                Name = "스턴";
+            else if (type == AbilityType.stun)      
+                Name = "스턴";            // work.cs 구현 - 이건 게임 구현 후 턴 개념 추가되면 재구현
 
             else if (type == AbilityType.handcuff)
-                Name = "수갑";
+                Name = "수갑";        // work.cs 반 정도 구현 - TODO
 
             else if (type == AbilityType.team_identify)
                 Name = "팀 식별";          // work.cs 구현
@@ -41,10 +41,11 @@ namespace Server_test
                 Name = "연료 교환권";        // work.cs 구현
 
             else if (type == AbilityType.fuel_compressor)
-                Name = "연료 압축기";        
+                Name = "연료 압축기";        // work.cs 일단 구현..?
+
 
             else if (type == AbilityType.stun_remover)
-                Name = "스턴 제거기";        
+                Name = "스턴 제거기";            // work.cs 구현
 
             else if (type == AbilityType.store_growth)
                 Name = "저장량 증가";        // work.cs 구현
