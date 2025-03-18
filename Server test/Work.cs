@@ -176,22 +176,27 @@ namespace Server_test
         // 연료 교환권 - 도둑
 
         // List에서 0번째는 본인이 요청한 연료, 1번째는 본인이 줄 연료 == 0 : 추가, 1 : 차감
-        // TODO : 본인 제외하고 보내야함
-        public List<Item> Fuel_Changed(Resource resource, double mass, Resource resource2, double mass2)
+
+        public List<Item> Fuel_Changed(Resource resource, double mass, Resource resource2, double mass2, string name)
         {
             List<Item> return_item = new List<Item>();
             foreach(var robber in Server.robbers)
             {
-                if (robber.Help_robber(resource, mass))
+                if (robber.Help_robber(resource, mass, name))
                 {
                     return_item.Add(new Item(resource, mass));
                     return_item.Add(new Item(resource2, mass2));
+                    robber.inventory.AddItem(new Item(resource2, mass2));
+                    robber.inventory.AddItem(new Item(resource, -mass));
+                    break;
                 }
                 
             }
             return return_item;
             
         }
+
+
 
 
 

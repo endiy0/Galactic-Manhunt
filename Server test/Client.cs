@@ -39,12 +39,23 @@ namespace Server_test
         }
 
 
-        // 겟 퓨얼 찬 반 함수
-
-        // TODO 구현
-        public bool Help_robber(Resource resource, double mass)
+        // 겟 퓨얼 찬성/반대 함수
+        public bool Help_robber(Resource resource, double mass, string name)            // name 은 비교하는 대상이 스킬 사용 대상과 같은지 비교 위해서
         {
-            return true;
+            if(name == nickname)
+            {
+                return false;
+            }
+
+            foreach(var item in inventory.Items)
+            {
+                if (item.GetItemType() == resource)
+                {
+                    if (item.mass >= mass) return true;
+                }
+                else return false;
+            }
+            return false;
         }
         
 
