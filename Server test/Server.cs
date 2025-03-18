@@ -431,10 +431,11 @@ namespace Server_test
             }
 
             // 랜덤 지도 생성
+
             List<Galaxy> galaxy_list = new List<Galaxy>();
             bool[,] visited = new bool[2001, 2001];
-            
-            int galaxy_size = rand.Next(15, 21);
+            int max_galaxy = (clients.Count() > 40) ? 20 : (clients.Count() < 20 ? 11 : clients.Count() / 2); // 최대는 11 ~ 20인데 20 - > 인원 / 2로
+            int galaxy_size = rand.Next(10, max_galaxy);
             int prison_location_galaxy = rand.Next(0, galaxy_size);
             for(int i = 0; i < galaxy_size; i++)
             {
