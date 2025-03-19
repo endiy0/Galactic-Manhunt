@@ -277,7 +277,7 @@ namespace Server_test
             return farm.ReturnFood();       // 완료된 음식 반환
         }
 
-
+        // 상점
         public Tuple<List<Item>,List<Ability>> Store(double chrono, Client.PlayerType playerType,Planet planet, List<Item> itemBuyList, List<Ability>abilityBuyList)
         {
             Tuple<List<Item>, List<Ability>> returnTuple;
