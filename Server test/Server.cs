@@ -116,10 +116,10 @@ namespace Server_test
             }
         }
 
-        void ClientCheck(int clientrealnumber, int clientn)
+        void ClientCheck(int clientRealNumber, int clientN)
         {
-            Client client = clients[clientrealnumber];
-            NetworkStream stream = clients[clientrealnumber].client.GetStream();
+            Client client = clients[clientRealNumber];
+            NetworkStream stream = clients[clientRealNumber].client.GetStream();
             byte[] buffer = new byte[102400];
             buffer[102399] = 255;
             bool error = false;
@@ -405,7 +405,7 @@ namespace Server_test
                 {
                     selectedIndices.Add(index);
                     cops.Add(clients[index]);
-                    clients[index].Type_Selection(Client.PlayerType.cop);
+                    clients[index].TypeSelection(Client.PlayerType.cop);
                 }
             }
 
@@ -414,7 +414,7 @@ namespace Server_test
                 if (!selectedIndices.Contains(i))
                 {
                     robbers.Add(clients[i]);
-                    clients[i].Type_Selection(Client.PlayerType.robber);
+                    clients[i].TypeSelection(Client.PlayerType.robber);
                 }
             }
 
@@ -432,28 +432,30 @@ namespace Server_test
 
             // 랜덤 지도 생성
 
-            List<Galaxy> galaxy_list = new List<Galaxy>();
+            List<Galaxy> galaxyList = new List<Galaxy>();
             bool[,] visited = new bool[2001, 2001];
-            int max_galaxy = (clients.Count() > 40) ? 20 : (clients.Count() < 20 ? 11 : clients.Count() / 2); // 최대는 11 ~ 20인데 20 - > 인원 / 2로
-            int galaxy_size = rand.Next(10, max_galaxy);
-            int prison_location_galaxy = rand.Next(0, galaxy_size);
-            for(int i = 0; i < galaxy_size; i++)
+            int maxGalaxy = (clients.Count() > 40) ? 20 : (clients.Count() < 20 ? 11 : clients.Count() / 2); // 최대는 11 ~ 20인데 20 - > 인원 / 2로
+            int galaxySize = rand.Next(10, maxGalaxy);
+            int prisonLocationGalaxy = rand.Next(0, galaxySize);
+
+            for (int i = 0; i < galaxySize; i++)
             {
                 int x = rand.Next(-1000, 1001);
                 int y = rand.Next(-1000, 1001);
-                while (visited[x, y] || visited[x+3,y+3]|| visited[x + 2,y+2] || visited[x+1,y+1] || visited[x-1,y-1] || visited[x-2,y-2] || visited[x-3,y-3])
+                while (visited[x, y] || visited[x + 3, y + 3]|| visited[x + 2, y + 2] || 
+                    visited[x + 1, y + 1] || visited[x - 1, y - 1] || visited[x - 2, y - 2] || visited[x - 3, y - 3])
                 {
                     x = rand.Next(-1000, 1001);
                     y = rand.Next(-1000, 1001);
                 }
-                for(int j = -3; j <= 3; j++)
+                for (int j = -3; j <= 3; j++)
                 {
                     visited[x + j, y + j] = true;
                 }
                 
-                galaxy_list.Add(new Galaxy(x, y));
+                galaxyList.Add(new Galaxy(x, y));
             }
-            prison = new Prison(galaxy_list[prison_location_galaxy]);
+            prison = new Prison(galaxyList[prisonLocationGalaxy]);
             
         }
 
