@@ -9,8 +9,9 @@ namespace Server_test
 {
     class Farm
     {
-        double day1, day2, day3; // 1, 2, 3일차에 있는 씨앗 개수들
+        public double day1, day2, day3; // 1, 2, 3일차에 있는 씨앗 개수들
         public double food = 0;
+        public double water = 0;
 
         public Farm(double day1, double day2, double day3)
         {
@@ -21,6 +22,7 @@ namespace Server_test
 
         public double Water(double water)
         {
+            this.water = water;
             if (day3 <= water)
             {
                 water -= day3;
@@ -48,8 +50,13 @@ namespace Server_test
                 day2 += water;
                 return 0;
             }
-
+            this.water = water;
             return water;
+        }
+
+        public double ReturnFood()
+        {
+            return food;
         }
     }
 }

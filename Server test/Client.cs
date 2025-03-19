@@ -20,7 +20,7 @@ namespace Server_test
         public Planet planet;
         public PlayerType playerType;
         public bool isMoving = true; // 행동 가능/불가능 판별 변수
-        public int fuelSale = 0;     // 연료 압축기로 줄이는 비율 - 할인 비율 20%
+        public int fuelSale = 0;     // 연료 압축기로 줄이는 비율 - 할인 비율 40%
 
         // TODO : 2턴동안만 못움직이게 하기 -> 턴을 어떻게 가지고 오냐 -> 일단 게임 구현 해야함
         

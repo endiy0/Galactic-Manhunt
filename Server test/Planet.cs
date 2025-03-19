@@ -12,6 +12,8 @@ namespace Server_test
         public Vector2 location;
         public Inventory resources;
         public PlanetType type;
+        public StoreType storeType;
+        public StoreServer store;
         static double hydrogenMax = 8;
         static double nitrogenMax = 28;
         static double oxygenMax = 32;
@@ -25,12 +27,20 @@ namespace Server_test
             resources = new Inventory(1800, 0);
             location = new Vector2(xx, yy);
             Random random = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
+            int whatStore = random.Next(0, 4);
 
             int airCount = (T == PlanetType.earth) ? random.Next(0, Item.airCount + 1) : random.Next(Item.airCount / 2, Item.airCount + 1);
 
             int mineralCount = (T == PlanetType.earth) ? random.Next(0, Item.mineralCount + 1) : 0;
 
             int organicMatterCount = (T == PlanetType.earth) ? random.Next(0, Item.organicMatterCount + 1) : 0;
+
+            if (whatStore == 0) storeType = StoreType.sailorStore;
+            else if (whatStore == 1) storeType = StoreType.copsStore;
+            else if (whatStore == 2) storeType = StoreType.publicStore;
+            else if (whatStore == 3) storeType = StoreType.blackMarket;
+
+            store = new StoreServer(storeType);
 
             for(int i = 0; i < airCount; i++)
             {

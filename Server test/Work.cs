@@ -253,16 +253,74 @@ namespace Server_test
         {
             return 40;
         }
+
+
+
+        // 채집
+
+        // 씨앗 심기
+        // 이 친구는 씨앗 수집 이후 진행되어야함
+        public Farm Plant(int seedCount, Farm farm)
+        {
+            if (farm.day1 == 0 || farm.water == 0)
+            {
+                farm = new Farm(farm.day1 + seedCount, farm.day2, farm.day3);
+                return farm;
+            }
+            else return null;
+        }
+
+        // 음식 채집
+        public double Collection(Farm farm, double water)
+        {
+            farm.Water(water);          // 씨앗 쑥쑥 키우기
+            return farm.ReturnFood();       // 완료된 음식 반환
+        }
+
+
+        public Tuple<List<Item>,List<Ability>> Store(double chrono, Client.PlayerType playerType,Planet planet, List<Item> itemBuyList, List<Ability>abilityBuyList)
+        {
+            Tuple<List<Item>, List<Ability>> returnTuple;
+            List<Item> itemlist = new List<Item>();
+            List<Ability> abilitylist = new List<Ability>();
+            if(planet.storeType == StoreType.sailorStore || planet.storeType == StoreType.publicStore)
+            {
+                
+            }
+            else if(planet.storeType == StoreType.copsStore && playerType == Client.PlayerType.cop)
+            {
+                foreach (var it in itemBuyList)
+                {
+                    Tuple<Item, double> tuple = planet.store.ReturnItem(it, chrono);
+                    if (chrono == -1)
+                    {
+                        // -1이면 돈이 부족
+                        break;
+                    }
+                    else
+                    {
+                        chrono = tuple.Item2;
+                        itemlist.Add(tuple.Item1);
+                    }
+                }
+            }
+            else if(planet.storeType == StoreType.blackMarket && playerType == Client.PlayerType.robber)
+            {
+
+            }
+            return null;
+        }
+
     }
 
     // 작업 타입
     enum WorkType
     {
         none,          // 없음
-        shipControl,   // 함선 조종
-        farming,       // 농사
-        collection,    // 채집
-        itemUse,       // 아이템 사용
+        shipControl,   // 함선 조종 - complete
+        farming,       // 농사 - complete?
+        collection,    // 채집 - complete?
+        itemUse,       // 아이템 사용 - complete
         itemSynthesis, // 아이템 합성
         store          // 상점
     }

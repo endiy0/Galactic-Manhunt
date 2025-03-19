@@ -111,6 +111,45 @@ namespace Server_test
             return 0;
         }
 
+        //  아이템 구매
+
+        public Tuple<Item,double> ReturnItem(Item item, double chrono)
+        {
+            foreach(var it in items)
+            {
+                if(it.Key.GetItemType() == item.GetItemType())
+                {
+                    double price = chrono * item.mass * it.Value;
+                    if (price > chrono) return new Tuple<Item,double>(item,-1);
+                    else
+                    {
+                        return new Tuple<Item,double>(item,chrono - price);
+                    }
+                }
+            }
+            return new Tuple<Item, double>(item, -1);
+        }
+
+        // 능력 구매
+        public Tuple<Ability, double> ReturnAbility(Ability ability, double chrono)
+        {
+            foreach (var ab in abilities)
+            {
+                if (ab.Key.GetAbilityType() == ability.GetAbilityType())
+                {
+                    double price = chrono * ab.Value;
+                    if (price > chrono) return new Tuple<Ability, double>(ability, -1);
+                    else
+                    {
+                        return new Tuple<Ability, double>(ability, chrono - price);
+                    }
+                }
+            }
+            return new Tuple<Ability, double>(ability, -1);
+        }
+
+
+
         // 상점 타입 반환
         public StoreType tp
         {
