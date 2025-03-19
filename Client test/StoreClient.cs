@@ -153,7 +153,7 @@ namespace Client_test
             dataGridView1.ClearSelection(); // 셀 선택 해제
             dataGridView2.ClearSelection();
 
-            showTotalItemPrice(); // 초기 가격 0 표시
+            ShowTotalItemPrice(); // 초기 가격 0 표시
         }
 
         private void StoreClient_FormClosing(object sender, FormClosingEventArgs e)
@@ -172,7 +172,7 @@ namespace Client_test
         }
 
         // 아이템 가격 총합 표시
-        private void showTotalItemPrice()
+        private void ShowTotalItemPrice()
         {
             double totalPrice = 0;
 
@@ -184,7 +184,7 @@ namespace Client_test
             label5.Text = "합계 금액: " + totalPrice + " Cr";
         }
 
-        private void showTotalAbilityPrice()
+        private void ShowTotalAbilityPrice()
         {
             double totalPrice = 0;
 
@@ -224,7 +224,7 @@ namespace Client_test
             }
 
             itemPrice[Item.hydrogen] = mass * 400;
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) // 질소
@@ -242,7 +242,7 @@ namespace Client_test
             }
 
             itemPrice[Item.nitrogen] = mass * 120;
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e) // 산소 
@@ -260,7 +260,7 @@ namespace Client_test
             }
 
             itemPrice[Item.oxygen] = mass * 100;
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e) // 엑실론-크리스탈
@@ -278,7 +278,7 @@ namespace Client_test
             }
 
             itemPrice[Item.epsilonCrystal] = mass * 1000;
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e) // 퍼옥사이드
@@ -296,7 +296,7 @@ namespace Client_test
             }
 
             itemPrice[Item.peroxide] = mass * 0; // TODO: 가격 정하기
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e) // 하이드라진
@@ -314,7 +314,7 @@ namespace Client_test
             }
 
             itemPrice[Item.hydrazine] = mass * 0; // TODO: 가격 정하기
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e) // 엑실론
@@ -332,7 +332,7 @@ namespace Client_test
             }
 
             itemPrice[Item.epsilon] = mass * 0; // TODO: 가격 정하기
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e) // 물
@@ -350,7 +350,7 @@ namespace Client_test
             }
 
             itemPrice[Item.water] = mass * 100;
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e) // 식량
@@ -368,7 +368,7 @@ namespace Client_test
             }
 
             itemPrice[Item.food] = mass * 600;
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e) // 씨앗
@@ -386,7 +386,7 @@ namespace Client_test
             }
 
             itemPrice[Item.seed] = mass * 400;
-            showTotalItemPrice();
+            ShowTotalItemPrice();
         }
         #endregion
 
@@ -420,7 +420,7 @@ namespace Client_test
                 thiefAbilityPrice[ThiefAbility.getFuel] = num * 5000;
             }
 
-            showTotalAbilityPrice();
+            ShowTotalAbilityPrice();
         }
 
         private void textBox19_TextChanged(object sender, EventArgs e)
@@ -448,7 +448,7 @@ namespace Client_test
                 thiefAbilityPrice[ThiefAbility.fuelChanger] = num * 5000;
             }
 
-            showTotalAbilityPrice();
+            ShowTotalAbilityPrice();
         }
 
         private void textBox18_TextChanged(object sender, EventArgs e)
@@ -476,7 +476,7 @@ namespace Client_test
                 thiefAbilityPrice[ThiefAbility.fuelCompressor] = num * 10000;
             }
 
-            showTotalAbilityPrice();
+            ShowTotalAbilityPrice();
         }
 
         private void textBox17_TextChanged(object sender, EventArgs e)
@@ -493,18 +493,18 @@ namespace Client_test
                 textBox17.Text = dataGridView2.Rows[3].Cells[2].Value.ToString();
             }
 
-            if (chatClient.job == Job.Cop)
+            if (chatClient.job == Job.cop)
             {
                 // 수갑
                 copAbilityPrice[CopAbility.handcuff] = num * 2000;
             }
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 // 스턴 제거기
                 thiefAbilityPrice[ThiefAbility.stunRemover] = num * 5000;
             }
 
-            showTotalAbilityPrice();
+            ShowTotalAbilityPrice();
         }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
@@ -532,7 +532,7 @@ namespace Client_test
                 thiefAbilityPrice[ThiefAbility.storageGrowth] = num * 16000;
             }
 
-            showTotalAbilityPrice();
+            ShowTotalAbilityPrice();
         }
 
         private void textBox15_TextChanged(object sender, EventArgs e) // 도둑은 능력이 5개이므로 도둑인 경우 visible = false
@@ -551,7 +551,7 @@ namespace Client_test
             }
 
             copAbilityPrice[CopAbility.storageGrowth] = num * 16000;
-            showTotalAbilityPrice();
+            ShowTotalAbilityPrice();
         }
         #endregion
 
