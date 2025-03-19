@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Server_test
 {
+    /*                     ⚠️ 중 요 ⚠️                     */
+    /* !! 수정 후 Server에 있는 파일도 똑같이 수정해줘야 함 !! */
+
     // 인벤토리 클래스
     public class Inventory
     {
