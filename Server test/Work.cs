@@ -251,7 +251,7 @@ namespace Server_test
         // 연료 압축기
         public int ReturnSaleFuel()
         {
-            return 20;
+            return 40;
         }
     }
 
