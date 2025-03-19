@@ -12,67 +12,67 @@ namespace Server_test
         public Vector2 location;
         public Inventory resources;
         public PlanetType type;
-        static double HydrogenMax = 8;
-        static double NitrogenMax = 28;
-        static double OxygenMax = 32;
-        static double EpsilonCrystalMax = 10;
-        static double WaterMax = 18;
-        static double SeedMax = 5;
+        static double hydrogenMax = 8;
+        static double nitrogenMax = 28;
+        static double oxygenMax = 32;
+        static double epsilonCrystalMax = 10;
+        static double waterMax = 18;
+        static double seedMax = 5;
 
-        public Planet(PlanetType T, double xx,double yy) 
+        public Planet(PlanetType T, double xx, double yy) 
         {
             type = T;
             resources = new Inventory(1800, 0);
             location = new Vector2(xx, yy);
             Random random = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
 
-            int AirCount = (T == PlanetType.Earth) ? random.Next(0, Item.AirCount + 1) : random.Next(Item.AirCount / 2, Item.AirCount + 1);
+            int airCount = (T == PlanetType.earth) ? random.Next(0, Item.airCount + 1) : random.Next(Item.airCount / 2, Item.airCount + 1);
 
-            int MineralCount = (T == PlanetType.Earth) ? random.Next(0, Item.MineralCount + 1) : 0;
+            int mineralCount = (T == PlanetType.earth) ? random.Next(0, Item.mineralCount + 1) : 0;
 
-            int OrganicMatterCount = (T == PlanetType.Earth) ? random.Next(0, Item.OrganicMatterCount + 1) : 0;
+            int organicMatterCount = (T == PlanetType.earth) ? random.Next(0, Item.organicMatterCount + 1) : 0;
 
-            for(int i = 0; i < AirCount; i++)
+            for(int i = 0; i < airCount; i++)
             {
                 Resource resource = new Resource();
-                resource = (Resource)random.Next(0, Item.AirCount);
-                if(resource == Resource.Hydrogen)
+                resource = (Resource)random.Next(0, Item.airCount);
+                if (resource == Resource.hydrogen)
                 {
-                    resources.AddItem(new Item(resource, HydrogenMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, hydrogenMax * random.NextDouble()));
                 }
-                else if (resource == Resource.Nitrogen)
+                else if (resource == Resource.nitrogen)
                 {
-                    resources.AddItem(new Item(resource, NitrogenMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, nitrogenMax * random.NextDouble()));
                 }
-                else if (resource == Resource.Oxygen)
+                else if (resource == Resource.oxygen)
                 {
-                    resources.AddItem(new Item(resource, OxygenMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, oxygenMax * random.NextDouble()));
                 }
             }
 
-            for (int i = 0; i < MineralCount; i++)
+            for (int i = 0; i < mineralCount; i++)
             {
                 Resource resource = new Resource();
-                resource = (Resource)random.Next(Item.AirCount + Item.CompountCount,
-                                                 Item.AirCount + Item.CompountCount + Item.MineralCount);
-                if (resource == Resource.Epsilon_crystal)
+                resource = (Resource)random.Next(Item.airCount + Item.compountCount,
+                                                 Item.airCount + Item.compountCount + Item.mineralCount);
+                if (resource == Resource.epsilonCrystal)
                 {
-                    resources.AddItem(new Item(resource, EpsilonCrystalMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, epsilonCrystalMax * random.NextDouble()));
                 }
-                else if (resource == Resource.Water)
+                else if (resource == Resource.water)
                 {
-                    resources.AddItem(new Item(resource, WaterMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, waterMax * random.NextDouble()));
                 }
             }
 
-            for (int i = 0; i < OrganicMatterCount; i++)
+            for (int i = 0; i < organicMatterCount; i++)
             {
                 Resource resource = new Resource();
-                resource = (Resource)random.Next(Item.AirCount + Item.CompountCount + Item.MineralCount, 
-                                                 Item.AirCount + Item.CompountCount + Item.MineralCount + Item.OrganicMatterCount);
-                if (resource == Resource.Seed)
+                resource = (Resource)random.Next(Item.airCount + Item.compountCount + Item.mineralCount, 
+                                                 Item.airCount + Item.compountCount + Item.mineralCount + Item.organicMatterCount);
+                if (resource == Resource.seed)
                 {
-                    resources.AddItem(new Item(resource, SeedMax * random.NextDouble()));
+                    resources.AddItem(new Item(resource, seedMax * random.NextDouble()));
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace Server_test
     // 행성 타입
     public enum PlanetType
     {
-        Earth,
-        Jupitor
+        earth,
+        jupiter
     }
 }

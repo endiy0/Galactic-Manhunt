@@ -10,45 +10,45 @@ namespace Server_test
     public class Ability
     {
         AbilityType type;
-        string Name;
+        string name;
 
-        public Ability(AbilityType ABILITYTYPE)
+        public Ability(AbilityType abilityType)
         {
-            type = ABILITYTYPE;
+            type = abilityType;
 
-            if (type == AbilityType.dark_under_the_lamp)
-                Name = "등잔 밑이 어둡다";         
+            if (type == AbilityType.darkUnderTheLamp)
+                name = "등잔 밑이 어둡다";         
 
-            else if (type == AbilityType.galaxy_travel)
-                Name = "은하 탐방";         // work.cs 구현
+            else if (type == AbilityType.galaxyTravel)
+                name = "은하 탐방";         // work.cs 구현
 
-            else if (type == AbilityType.planet_travel)
-                Name = "행성 탐방";         // work.cs 구현
+            else if (type == AbilityType.planetTravel)
+                name = "행성 탐방";         // work.cs 구현
 
             else if (type == AbilityType.stun)      
-                Name = "스턴";            // work.cs 구현 - 이건 게임 구현 후 턴 개념 추가되면 재구현
+                name = "스턴";            // work.cs 구현 - 이건 게임 구현 후 턴 개념 추가되면 재구현
 
             else if (type == AbilityType.handcuff)
-                Name = "수갑";        // work.cs 반 정도 구현 - TODO
+                name = "수갑";        // work.cs 반 정도 구현 - TODO
 
-            else if (type == AbilityType.team_identify)
-                Name = "팀 식별";          // work.cs 구현
+            else if (type == AbilityType.teamIdentify)
+                name = "팀 식별";          // work.cs 구현
 
-            else if (type == AbilityType.get_fuel)
-                Name = "겟 퓨얼";          // work.cs 구현
+            else if (type == AbilityType.getFuel)
+                name = "겟 퓨얼";          // work.cs 구현
 
-            else if (type == AbilityType.fuel_changer)
-                Name = "연료 교환권";        // work.cs 구현
+            else if (type == AbilityType.fuelChanger)
+                name = "연료 교환권";        // work.cs 구현
 
-            else if (type == AbilityType.fuel_compressor)
-                Name = "연료 압축기";        // work.cs 일단 구현..?
+            else if (type == AbilityType.fuelCompressor)
+                name = "연료 압축기";        // work.cs 일단 구현..?
 
 
-            else if (type == AbilityType.stun_remover)
-                Name = "스턴 제거기";            // work.cs 구현
+            else if (type == AbilityType.stunRemover)
+                name = "스턴 제거기";            // work.cs 구현
 
-            else if (type == AbilityType.store_growth)
-                Name = "저장량 증가";        // work.cs 구현
+            else if (type == AbilityType.storageGrowth)
+                name = "저장량 증가";        // work.cs 구현
         }
 
         public AbilityType GetAbilityType()
@@ -56,29 +56,29 @@ namespace Server_test
             return type;
         }
 
-        public string GetAbilityName()
+        public string GetAbilityname()
         {
-            return Name;
+            return name;
         }
     }
 
     public enum AbilityType
     {
         // 경찰
-        dark_under_the_lamp,   // 등잔 밑이 어둡다
-        galaxy_travel,         // 은하 탐방
-        planet_travel,         // 행성 탐방
+        darkUnderTheLamp,   // 등잔 밑이 어둡다
+        galaxyTravel,         // 은하 탐방
+        planetTravel,         // 행성 탐방
         stun,                  // 스턴
         handcuff,              // 수갑
-        team_identify,         // 팀 식별
+        teamIdentify,         // 팀 식별
 
         // 도둑
-        get_fuel,              // 겟 퓨얼
-        fuel_changer,          // 연료 교환권
-        fuel_compressor,       // 연료 압축기
-        stun_remover,          // 스턴 제거기
+        getFuel,              // 겟 퓨얼
+        fuelChanger,          // 연료 교환권
+        fuelCompressor,       // 연료 압축기
+        stunRemover,          // 스턴 제거기
                                
         // 공통
-        store_growth           // 저장량 증가
+        storageGrowth           // 저장량 증가
     }
 }

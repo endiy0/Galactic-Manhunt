@@ -15,37 +15,36 @@ namespace Server_test
         public ShipType shipType;    // 함선 타입
         public Inventory inventory;  // 인벤토리
         public List<Sailor> sailors; // 선원들
-        string Name;
-        int galaxy_moving_count = 3;    // 초은하 이동 함선 이동 가능 횟수
+        string name;
+        int galaxyMovingCount = 3;    // 초은하 이동 함선 이동 가능 횟수
         Random rand = new Random(Convert.ToInt16(DateTime.Now.Ticks % 10000));
         Array resources = Enum.GetValues(typeof(Resource));
         
         // 함선 종류별 역할 모음집
-        delegate void Resource_Skill(ShipType type);
-        delegate void Newbie_Skill(ShipType type);
-        delegate void Sailor_Skill(ShipType type);
-        delegate void Galaxy_Moving_Skill(ShipType type);
-        delegate void Thief_Skill(ShipType type);
-
+        delegate void ResourceShipSkill(ShipType type);
+        delegate void NewbieShipSkill(ShipType type);
+        delegate void SailorShipSkill(ShipType type);
+        delegate void GalaxyTravelingShipSkill(ShipType type);
+        delegate void RobberShipSkill(ShipType type);
 
         public Ship(ShipType shipType)
         {
             this.shipType = shipType;
             
-            if (shipType == ShipType.newbie_ship)
-                Name = "초급자 전용 함선";
+            if (shipType == ShipType.newbieShip)
+                name = "초급자 전용 함선";
 
-            else if (shipType == ShipType.Resource_ship)
-                Name = "자원 함선";
+            else if (shipType == ShipType.resourceShip)
+                name = "자원 함선";
 
-            else if (shipType == ShipType.sailor_ship)
-                Name = "선원 함선";
+            else if (shipType == ShipType.sailorShip)
+                name = "선원 함선";
 
-            else if (shipType == ShipType.galaxy_moving_ship)
-                Name = "초은하 이동 함선";
+            else if (shipType == ShipType.galaxyTravelingShip)
+                name = "초은하 이동 함선";
 
-            else if (shipType == ShipType.thief_ship)
-                Name = "도적 함선";
+            else if (shipType == ShipType.robberShip)
+                name = "도적 함선";
         }
 
         public ShipType GetShipType()
@@ -53,20 +52,20 @@ namespace Server_test
             return shipType;
         }
 
-        public string GetShipName()
+        public string GetShipname()
         {
-            return Name;
+            return name;
         }
 
         // 자원 함선 매턴 자원 주는 함수
         // 매개 변수는 함선 종류 분별하기 위해 사용
         // 나중에 delegate 넣으면 필요 없을 수도
-        public Item Resource_Give(ShipType type)
+        public Item ResourceGive(ShipType type)
         {
 
-            Item items = new Item(Resource.Chrono,0);
+            Item items = new Item(Resource.chrono,0);
 
-            if (type != ShipType.Resource_ship)
+            if (type != ShipType.resourceShip)
             {
                 return items;
             }
@@ -80,9 +79,7 @@ namespace Server_test
 
         // 자원 증가율 -> FuelSynthesis.cs 에서
 
-
         // 초보자용 함선 처음에 아이템 주기
-
         public List<Item> Newbie_Resource(ShipType type)
         {
             // 초기에 주는 자원량 상수로 만들어 놓기 -> 불편하면 위로 빼도 되고
@@ -97,80 +94,88 @@ namespace Server_test
             const double hydrogen = 500;
             const double nitrogen = 500;
             const double oxygen = 500;
-            const double epsilon_crystal = 500;
-
+            const double epsilonCrystal = 500;
 
             List<Item> items = new List<Item>();
 
-            if (type != ShipType.newbie_ship) return items;         // 맞는 종류인지 확인
+            if (type != ShipType.newbieShip)
+            {
+                return items; // 맞는 종류인지 확인
+            }
 
-            items.Add(new Item(Resource.Chrono, chrono));
-            items.Add(new Item(Resource.Water, water));
-            items.Add(new Item(Resource.Epsilon, epsilon));
-            items.Add(new Item(Resource.Seed, seed));
-            items.Add(new Item(Resource.Hydrazine, hydrazine));
-            items.Add(new Item(Resource.Hydrogen, hydrogen));
-            items.Add(new Item(Resource.Nitrogen, nitrogen));
-            items.Add(new Item(Resource.Peroxide, peroxide));
-            items.Add(new Item(Resource.Epsilon_crystal, epsilon_crystal));
-            items.Add(new Item(Resource.Oxygen, oxygen));
-            items.Add(new Item(Resource.Food, food));
+            items.Add(new Item(Resource.chrono, chrono));
+            items.Add(new Item(Resource.water, water));
+            items.Add(new Item(Resource.epsilon, epsilon));
+            items.Add(new Item(Resource.seed, seed));
+            items.Add(new Item(Resource.hydrazine, hydrazine));
+            items.Add(new Item(Resource.hydrogen, hydrogen));
+            items.Add(new Item(Resource.nitrogen, nitrogen));
+            items.Add(new Item(Resource.peroxide, peroxide));
+            items.Add(new Item(Resource.epsilonCrystal, epsilonCrystal));
+            items.Add(new Item(Resource.oxygen, oxygen));
+            items.Add(new Item(Resource.food, food));
 
             return items;
         }
 
         // 선원 함선
 
-
         // 매턴 선원 식량 주는거 - 20턴 동안
         public List<Item> Sailor_Resource(ShipType type)
         {
-
             List<Item> items = new List<Item>();
 
-            if (type != ShipType.sailor_ship) return items;     // 맞는 종류인지 확인
+            if (type != ShipType.sailorShip)
+            {
+                return items; // 맞는 종류인지 확인
+            }
 
-            items.Add(new Item(Resource.Food, 3));
-            items.Add(new Item(Resource.Water, 2));
+            items.Add(new Item(Resource.food, 3));
+            items.Add(new Item(Resource.water, 2));
             return items;
         }
 
         // 처음에 선원 3명 주는 함수
-        public List<Sailor> Sailor_Give(ShipType type)
+        public List<Sailor> SailorGive(ShipType type)
         {
-            List<Sailor>sailors = new List<Sailor>();
+            List<Sailor> sailors = new List<Sailor>();
 
             for (int i = 0; i < 3; i++)
             {
-                sailors.Add(new Sailor(SailorType.Normal, 1, 140));
+                sailors.Add(new Sailor(SailorType.normal, 1, 140));
             }
             return sailors;
         }
 
-
         // 초은하 이동 함선
-
-        public bool is_Galaxy_Moving(ShipType type)
+        public bool isGalaxyTravelShip(ShipType type)
         {
-            if (type != ShipType.galaxy_moving_ship) return false;
-            if (galaxy_moving_count > 0)
+            if (type != ShipType.galaxyTravelingShip)
             {
-                galaxy_moving_count--;
+                return false;
+            }
+            if (galaxyMovingCount > 0)
+            {
+                galaxyMovingCount--;
                 return true;
             }
-            else return false;
+            else
+            {
+                return false;
+            }
         }
     }
+
     // TODO : 현재 은하, 현재 행성시스템 추가
 
     // 함선 타입
     enum ShipType
     {
-        none,               // 선택되지 않음
-        newbie_ship,        // 초급자 전용 함선
-        Resource_ship,      // 자원 함선
-        sailor_ship,        // 선원 함선
-        galaxy_moving_ship, // 초은하 이동 함선
-        thief_ship          // 도적 함선
+        none,                // 선택되지 않음
+        newbieShip,          // 초급자 전용 함선
+        resourceShip,        // 자원 함선
+        sailorShip,          // 선원 함선
+        galaxyTravelingShip, // 초은하 이동 함선
+        robberShip            // 도적 함선
     }
 }

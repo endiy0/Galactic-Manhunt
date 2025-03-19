@@ -7,35 +7,35 @@ using System.Threading.Tasks;
 namespace Server_test
 {
 
-    // 잡히 도둑들 가두어놓는 감옥 클래스
-
-    
+    // 잡힌 도둑들 가두어놓는 감옥 클래스
     public class Prison
     {
-        public int max_Count;
-        public int count_robber = 0;
+        public int maxCount;
+        public int robberCount = 0;
         public Galaxy galaxy;
 
         public Prison(Galaxy galaxy)
         {
             this.galaxy = galaxy;
-            max_Count = Server.robbers.Count();
+            maxCount = Server.robbers.Count();
         }
 
-        public void Add_Robber()
+        public void AddRobber()
         {
-            count_robber++;
+            robberCount++;
         }
 
-        public bool Is_Finish()
+        public bool IsFinish()
         {
-            if(count_robber == max_Count) return true;
+            if (robberCount == maxCount)
+            {
+                return true;
+            }
             return false;
         }
-        public void Minus_Robber()
+        public void MinusRobber()
         {
-            count_robber--;
+            robberCount--;
         }
-
     }
 }

@@ -14,12 +14,12 @@ namespace Server_test
         double itemMax;                      // 아이템 최댓값, 단위: kg
         int abilityMax;                      // 능력 최댓값, 단위: 개
 
-        public Inventory(double itemmax, int abilitymax) 
+        public Inventory(double itemMax, int abilityMax) 
         {
             items = new List<Item>();
             abilities = new Dictionary<Ability, int>();
-            itemMax = itemmax;
-            abilityMax = abilitymax;
+            this.itemMax = itemMax;
+            this.abilityMax = abilityMax;
         }
 
         // 아이템 최대량 반환
@@ -47,41 +47,41 @@ namespace Server_test
         }
 
         // 아이템 최대량 설정
-        public void SetItemMax(double itemMAX)
+        public void SetItemMax(double itemMax)
         {
-            itemMax = itemMAX;
+            this.itemMax = itemMax;
         }
 
         // 능력 최대량 설정
-        public void SetAbilityMax(int abilityMAX)
+        public void SetAbilityMax(int abilityMax)
         {
-            abilityMax = abilityMAX;
+            this.abilityMax = abilityMax;
         }
 
         // 아이템 추가
         public void AddItem(Item item)
         {
-            for (int i = 0; i < this.Items.Count; i++)
+            foreach(var i in items)
             {
-                if (this.items[i].GetItemType() == item.GetItemType())
+                if (i.GetItemType() == item.GetItemType())
                 {
-                    this.items[i].mass += item.mass;
+                    i.mass += item.mass;
                     return;
                 }
             }
-            this.items.Add(item);
+            items.Add(item);
         }
 
         // 아이템 삭제
         public bool RemoveItem(Item item) // if문 사용해서 빠졌는지 안빠졌는지 꼭 체크해줘야함
         {
-            for (int i = 0; i < this.Items.Count; i++)
+            foreach (var i in items)
             {
-                if (this.items[i].GetItemType() == item.GetItemType())
+                if (i.GetItemType() == item.GetItemType())
                 {
-                    if (this.items[i].mass - item.mass >= 0)
+                    if (i.mass - item.mass >= 0)
                     {
-                        this.items[i].mass -= item.mass;
+                        i.mass -= item.mass;
                         return true;
                     }
                     else
@@ -101,27 +101,25 @@ namespace Server_test
 
 
         // 능력 추가
-
         public void AddAbility(Ability ability)
         {
-            foreach(var Ab in abilities)
+            foreach (var ab in abilities)
             {
-                if(ability.GetType() == Ab.GetType())
+                if (ability.GetType() == ab.GetType())
                 {
-                    abilities[Ab.Key]++;
+                    abilities[ab.Key]++;
                 }
             }
         }
 
         // 능력 삭제 __ 구현은 RemoveItem과 동일한 방식
-
         public bool RemoveAbility(Ability ability)
         {
-            foreach(var Ab in abilities)
+            foreach (var Ab in abilities)
             {
-                if(ability.GetType() == ability.GetType())
+                if (ability.GetType() == ability.GetType())
                 {
-                    if(abilities[Ab.Key] - 1 >= 0)
+                    if (abilities[Ab.Key] - 1 >= 0)
                     {
                         abilities[Ab.Key]--;
                         return true;
@@ -136,19 +134,19 @@ namespace Server_test
         }
 
         // 능력 초기화
-
         public void AbilityClear()
         {
             abilities.Clear();
         }
+
         // 두 인벤토리 더하기
         public static Inventory operator +(Inventory inv, Item item)
         {
-            for (int i = 0; i < inv.Items.Count; i++)
+            foreach (var i in inv.Items)
             {
-                if (inv.items[i].GetItemType() == item.GetItemType())
+                if (i.GetItemType() == item.GetItemType())
                 {
-                    inv.items[i].mass += item.mass;
+                    i.mass += item.mass;
                     return inv;
                 }
             }

@@ -10,8 +10,8 @@ namespace Server_test
     class Sailor
     {
         SailorType type; // 선원 타입
-        public double EatInDay; // 식사량
-        public bool isDisable; // True: 행동 불능, False: 정상
+        public double eatInDay; // 식사량
+        public bool isDisabled; // True: 행동 불능, False: 정상
         public Inventory inventory;
         // public Work work;
 
@@ -19,17 +19,17 @@ namespace Server_test
         {
             inventory = new Inventory(Maxinventory, 0);
             type = T;
-            EatInDay = EatINDAY;
-            isDisable = false;
+            eatInDay = EatINDAY;
+            isDisabled = false;
             this.work = work;
         }*/
 
-        public Sailor(SailorType T, double EatINDAY, double Maxinventory)
+        public Sailor(SailorType type, double eatInDay, double maxInventory)
         {
-            inventory = new Inventory(Maxinventory, 0);
-            type = T;
-            EatInDay = EatINDAY;
-            isDisable = false;
+            inventory = new Inventory(maxInventory, 0);
+            this.type = type;
+            this.eatInDay = eatInDay;
+            isDisabled = false;
         }
 
         public SailorType sailorType
@@ -41,7 +41,7 @@ namespace Server_test
     // 선원 타입
     enum SailorType
     {
-        Normal,
-        Advanced
+        normal,
+        advanced
     }
 }

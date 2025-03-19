@@ -9,61 +9,61 @@ namespace Server_test
     // 아이템 클래스
     public class Item
     {
-        Resource Itemtype;
-        string Name;
+        Resource itemType;
+        string name;
         public double mass; // 질량, 단위: kg
-        public static int ResourceCount = 10;
-        public static int AirCount = 3;
-        public static int CompountCount = 4;
-        public static int MineralCount = 2;
-        public static int OrganicMatterCount = 1;
+        public static int resourceCount = 10;
+        public static int airCount = 3;
+        public static int compountCount = 4;
+        public static int mineralCount = 2;
+        public static int organicMatterCount = 1;
 
-        public Item(Resource ITEMTYPE, double MASS)
+        public Item(Resource itemType, double mass)
         {
-            Itemtype = ITEMTYPE;
-            mass = MASS;
-            if (Itemtype == Resource.Hydrogen)
-                Name = "수소";
+            this.itemType = itemType;
+            this.mass = mass;
+            if (itemType == Resource.hydrogen)
+                name = "수소";
 
-            else if (Itemtype == Resource.Nitrogen)
-                Name = "질소";
+            else if (itemType == Resource.nitrogen)
+                name = "질소";
 
-            else if (Itemtype == Resource.Oxygen)
-                Name = "산소";
+            else if (itemType == Resource.oxygen)
+                name = "산소";
 
-            else if (Itemtype == Resource.Peroxide)
-                Name = "퍼옥사이드";
+            else if (itemType == Resource.peroxide)
+                name = "퍼옥사이드";
 
-            else if (Itemtype == Resource.Hydrazine)
-                Name = "하이드라진";
+            else if (itemType == Resource.hydrazine)
+                name = "하이드라진";
 
-            else if (Itemtype == Resource.Epsilon)
-                Name = "엑실론";
+            else if (itemType == Resource.epsilon)
+                name = "엑실론";
 
-            else if (Itemtype == Resource.Food)
-                Name = "식량";
+            else if (itemType == Resource.food)
+                name = "식량";
 
-            else if (Itemtype == Resource.Epsilon_crystal)
-                Name = "엑실론 크리스탈";
+            else if (itemType == Resource.epsilonCrystal)
+                name = "엑실론 크리스탈";
 
-            else if (Itemtype == Resource.Water)
-                Name = "물";
+            else if (itemType == Resource.water)
+                name = "물";
 
-            else if (Itemtype == Resource.Seed)
-                Name = "씨앗";
+            else if (itemType == Resource.seed)
+                name = "씨앗";
 
-            else if (Itemtype == Resource.Chrono)
-                Name = "크로노";
+            else if (itemType == Resource.chrono)
+                name = "크로노";
         }
 
         public Resource GetItemType()
         {
-            return Itemtype;
+            return itemType;
         }
 
-        public string GetItemName()
+        public string GetItemname()
         {
-            return Name;
+            return name;
         }
     }
 
@@ -71,20 +71,20 @@ namespace Server_test
     // 자원 추가할때마다 Item의 전역변수 Count 수정하기
     public enum Resource
     {
-        Hydrogen = 1,         // 수소
-        Nitrogen = 2,         // 질소
-        Oxygen = 3,           // 산소
-        Epsilon_crystal = 4,  // 엑실론-크리스탈
+        hydrogen = 1,         // 수소
+        nitrogen = 2,         // 질소
+        oxygen = 3,           // 산소
+        epsilonCrystal = 4,   // 엑실론-크리스탈
 
-        Peroxide = 5,         // 퍼옥사이드
-        Hydrazine = 6,        // 하이드라진
-        Epsilon = 7 ,          // 엑실론
+        peroxide = 5,         // 퍼옥사이드
+        hydrazine = 6,        // 하이드라진
+        epsilon = 7 ,         // 엑실론
 
-        Water = 8,            // 물
-        Food = 9,             // 식량
+        water = 8,            // 물
+        food = 9,             // 식량
 
-        Seed = 10,             // 씨앗
+        seed = 10,            // 씨앗
                              
-        Chrono = 11            // 크로노
+        chrono = 11           // 크로노
     }
 }

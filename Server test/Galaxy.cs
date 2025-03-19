@@ -13,7 +13,7 @@ namespace Server_test
     {
         public List<PlanetSystem> systems;
         public Vector2 location;
-        public Prison prinson;
+        public Prison prison;
 
         public Galaxy(double xx, double yy) // Server 아직 구현 안된 곳에서 받아올것
         {
@@ -28,10 +28,10 @@ namespace Server_test
                     bool cmp = true;
                     double x = location.x + rand.Next(-3, 3) + rand.NextDouble(); // 항성계 x축 위치
                     double y = location.y + rand.Next(-3, 3) + rand.NextDouble(); // 항성계 y축 위치
-                    Vector2 Location = new Vector2(x, y);
+                    Vector2 loc = new Vector2(x, y);
                     foreach (PlanetSystem system in systems) // 좌표 중복 체크
                     {
-                        if (system.Location == Location)
+                        if (system.Location == loc)
                         {
                             cmp = false;
                         }
@@ -42,7 +42,6 @@ namespace Server_test
                     }
                 }
                 systems.Add(new PlanetSystem(Location));
-                
             }
         }
 
@@ -58,14 +57,14 @@ namespace Server_test
             { return location; }
         }
 
-        public void AddSystems(PlanetSystem PS)
+        public void AddSystems(PlanetSystem ps)
         {
-            systems.Add(PS);
+            systems.Add(ps);
         }
 
-        public void RemoveSystems(PlanetSystem PS)
+        public void RemoveSystems(PlanetSystem ps)
         {
-            systems.Remove(PS);
+            systems.Remove(ps);
         }
 
         public void ClearSystems()
@@ -75,7 +74,7 @@ namespace Server_test
         
         public void Making_Prison(Galaxy galaxy)
         {
-            prinson = new Prison(galaxy);
+            prison = new Prison(galaxy);
         }
     }
 }
