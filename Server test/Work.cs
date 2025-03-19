@@ -78,7 +78,7 @@ namespace Server_test
             }
             double distance = Math.Sqrt((location.y - system.Location.y) * (location.y - system.Location.y) 
                 + (location.x - system.Location.y) * (location.x - system.Location.y));
-            double fuels = fuel - distance * (fuelType == Resource.Peroxide ? 10.2 : 8) / (sale > 0 ? 4 : 20) * 4;
+            double fuels = fuel - distance * (fuelType == Resource.peroxide ? 10.2 : 8) / (sale > 0 ? 4 : 20) * 4;
             if (fuels < 0)
             {
                 return -1; // -1 이면 이동 못한다는 의미로 이해하고 못가게 하기
@@ -190,7 +190,7 @@ namespace Server_test
             List<Item> returnItem = new List<Item>();
             foreach(var robber in Server.robbers)
             {
-                if (robber.Help_robber(resource, mass, name))
+                if (robber.HelpRobber(resource, mass, name))
                 {
                     returnItem.Add(new Item(resource, mass));
                     returnItem.Add(new Item(resource2, mass2));
@@ -243,7 +243,7 @@ namespace Server_test
             {
                 if (robber.nickname == nick)
                 {
-                    robber.is_moving = true;
+                    robber.isMoving = true;
                 }
             }
         }

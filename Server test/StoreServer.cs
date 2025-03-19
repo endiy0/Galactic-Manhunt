@@ -77,10 +77,10 @@ namespace Server_test
                 // 나머지 아이템 한 번에 처리
                 items.Add(new Item(Resource.food, maxFood),600 * multiply);   // 음식
                 items.Add(new Item(Resource.water, maxFood), 100 * multiply); // 물
-                items.Add(new Item(Resource.seed, maxSeed), 400 * multiply);   // 씨앗
+                items.Add(new Item(Resource.seed, maxSeed), 400 * multiply);  // 씨앗
 
-                abilities.Add(new Ability(AbilityType.team_identify),teamIdentify * multiply);
-                abilities.Add(new Ability(AbilityType.store_growth), storageCost * multiply); // 저장량 증가
+                abilities.Add(new Ability(AbilityType.teamIdentify),teamIdentify * multiply);
+                abilities.Add(new Ability(AbilityType.storageGrowth), storageCost * multiply); // 저장량 증가
             }
         }
 
