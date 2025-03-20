@@ -42,7 +42,7 @@ namespace Server_test
         {
             Item returnFuel;
             
-            if(type == ShipType.galaxyTravelingShip)
+            if(type == ShipType.galaxyTravelingShip && item.GetItemType() == Resource.epsilonCrystal)
             {
                 returnFuel = new Item(Resource.epsilon, item.mass / 3);
             }
@@ -53,6 +53,8 @@ namespace Server_test
 
             returnList.Add(returnFuel);
         }
+
+        // 얘네 필요 없을거 같은 느낌
 
         public List<Item> ReturnFuel()
         {

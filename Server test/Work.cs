@@ -15,6 +15,8 @@ namespace Server_test
     {
         WorkType type;
         string name;
+
+        FuelSynthesis fuelSynthesis;
         public Work(WorkType workType)
         {
             type = workType;
@@ -281,8 +283,8 @@ namespace Server_test
         public Tuple<List<Item>,List<Ability>> Store(double chrono, Client.PlayerType playerType,Planet planet, List<Item> itemBuyList, List<Ability>abilityBuyList)
         {
             Tuple<List<Item>, List<Ability>> returnTuple;
-            List<Item> itemlist = new List<Item>();
-            List<Ability> abilitylist = new List<Ability>();
+            List<Item> itemList = new List<Item>();
+            List<Ability> abilityList = new List<Ability>();
             if(planet.storeType == StoreType.sailorStore || planet.storeType == StoreType.publicStore)
             {
                 
@@ -300,17 +302,78 @@ namespace Server_test
                     else
                     {
                         chrono = tuple.Item2;
-                        itemlist.Add(tuple.Item1);
+                        itemList.Add(tuple.Item1);
+                    }
+                }
+                foreach(var ab in abilityBuyList)
+                {
+                    Tuple<Ability, double> tuple = planet.store.ReturnAbility(ab, chrono);
+                    if(chrono == -1)
+                    {
+                        // -1이면 돈 부족
+                        break;
+                    }
+                    else
+                    {
+                        chrono = tuple.Item2;
+                        abilityList.Add(tuple.Item1);
                     }
                 }
             }
             else if(planet.storeType == StoreType.blackMarket && playerType == Client.PlayerType.robber)
             {
-
+                foreach (var it in itemBuyList)
+                {
+                    Tuple<Item, double> tuple = planet.store.ReturnItem(it, chrono);
+                    if (chrono == -1)
+                    {
+                        // -1이면 돈이 부족
+                        break;
+                    }
+                    else
+                    {
+                        chrono = tuple.Item2;
+                        itemList.Add(tuple.Item1);
+                    }
+                }
+                foreach (var ab in abilityBuyList)
+                {
+                    Tuple<Ability, double> tuple = planet.store.ReturnAbility(ab, chrono);
+                    if (chrono == -1)
+                    {
+                        // -1이면 돈 부족
+                        break;
+                    }
+                    else
+                    {
+                        chrono = tuple.Item2;
+                        abilityList.Add(tuple.Item1);
+                    }
+                }
             }
-            return null;
+            else
+            {
+                
+            }
+            returnTuple = new Tuple<List<Item>,List<Ability>>(itemList,abilityList);
+            return returnTuple;
         }
 
+
+        // 아이템(연료) 합성
+
+        
+        public List<Item> ItemSynthesis(Dictionary<Resource,double>synthesisItemList, ShipType type)
+        {
+            fuelSynthesis.Remove();
+            foreach (var item in synthesisItemList)
+            {
+                fuelSynthesis = new FuelSynthesis(new Item(item.Key, item.Value), type);
+            }
+            return fuelSynthesis.ReturnFuel();
+        }
+
+        
     }
 
     // 작업 타입
@@ -321,7 +384,7 @@ namespace Server_test
         farming,       // 농사 - complete?
         collection,    // 채집 - complete?
         itemUse,       // 아이템 사용 - complete
-        itemSynthesis, // 아이템 합성
-        store          // 상점
+        itemSynthesis, // 아이템 합성 - complete
+        store          // 상점 - complete
     }
 }
