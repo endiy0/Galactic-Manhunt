@@ -442,15 +442,15 @@ namespace Server_test
             {
                 int x = rand.Next(-1000, 1001);
                 int y = rand.Next(-1000, 1001);
-                while (visited[x, y] || visited[x + 3, y + 3]|| visited[x + 2, y + 2] || 
-                    visited[x + 1+1000, y + 1+1000] || visited[x - 1 + 1000, y - 1 + 1000] || visited[x - 2 + 1000, y - 2 + 1000] || visited[x - 3 + 1000, y - 3 + 1000])
+                while (visited[x + 1000, y + 1000] || visited[x + 3 + 1000, y + 3 + 1000] || visited[x + 2 + 1000, y + 2 + 1000] || 
+                    visited[x + 1 + 1000, y + 1 + 1000] || visited[x - 1 + 1000, y - 1 + 1000] || visited[x - 2 + 1000, y - 2 + 1000] || visited[x - 3 + 1000, y - 3 + 1000])
                 {
                     x = rand.Next(-1000, 1001);
                     y = rand.Next(-1000, 1001);
                 }
                 for (int j = -3; j <= 3; j++)
                 {
-                    visited[x + j, y + j] = true;
+                    visited[x + j + 1000, y + j + 1000] = true;
                 }
                 
                 galaxyList.Add(new Galaxy(x, y));
