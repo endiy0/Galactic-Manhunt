@@ -25,11 +25,11 @@ namespace Client_test
 
         internal Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
         {
-            { ShipType.newbie_ship, "초급자 전용 함선" },
-            { ShipType.resource_ship, "자원 함선" },
-            { ShipType.sailor_ship, "선원 함선" },
-            { ShipType.galaxy_moving_ship, "초은하 이동 함선" },
-            { ShipType.thief_ship, "도적 함선" }
+            { ShipType.newbieShip, "초급자 전용 함선" },
+            { ShipType.resourceShip, "자원 함선" },
+            { ShipType.sailorShip, "선원 함선" },
+            { ShipType.galaxyTravelingShip, "초은하 이동 함선" },
+            { ShipType.robberShip, "도적 함선" }
         };
 
         public ChatClient()
