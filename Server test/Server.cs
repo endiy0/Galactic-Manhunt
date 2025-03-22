@@ -433,7 +433,7 @@ namespace Server_test
             // 랜덤 지도 생성
 
             List<Galaxy> galaxyList = new List<Galaxy>();
-            bool[,] visited = new bool[2001, 2001];
+            bool[,] visited = new bool[2002, 2002];
             int maxGalaxy = (clients.Count() > 40) ? 20 : (clients.Count() < 20 ? 11 : clients.Count() / 2); // 최대는 11 ~ 20인데 20 - > 인원 / 2로
             int galaxySize = rand.Next(10, maxGalaxy);
             int prisonLocationGalaxy = rand.Next(0, galaxySize);
@@ -443,7 +443,7 @@ namespace Server_test
                 int x = rand.Next(-1000, 1001);
                 int y = rand.Next(-1000, 1001);
                 while (visited[x, y] || visited[x + 3, y + 3]|| visited[x + 2, y + 2] || 
-                    visited[x + 1, y + 1] || visited[x - 1, y - 1] || visited[x - 2, y - 2] || visited[x - 3, y - 3])
+                    visited[x + 1+1000, y + 1+1000] || visited[x - 1 + 1000, y - 1 + 1000] || visited[x - 2 + 1000, y - 2 + 1000] || visited[x - 3 + 1000, y - 3 + 1000])
                 {
                     x = rand.Next(-1000, 1001);
                     y = rand.Next(-1000, 1001);
