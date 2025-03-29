@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using System.Security.Claims;
 using System.Text;
 
 namespace Server_test
@@ -456,7 +457,29 @@ namespace Server_test
                 galaxyList.Add(new Galaxy(x, y));
             }
             prison = new Prison(galaxyList[prisonLocationGalaxy]);
-            
+
+
+
+            // 게임 구현 시작
+
+            int turn = 200;
+            byte[] bytes = new byte[102400];
+
+            // bytes 신호
+
+
+
+
+
+            while (turn-- >= 0)
+            {
+
+
+                foreach(var clt in clients)
+                {
+                    
+                }
+            }
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) // 포트 텍스트 박스에서 엔터
