@@ -10,7 +10,7 @@ using System.Xml.Linq;
 namespace Server_test
 {
     /*                     ⚠️ 중 요 ⚠️                     */
-    /* !! 수정 후 Server에 있는 파일도 똑같이 수정해줘야 함 !! */
+    /* !! 수정 후 Client에 있는 파일도 똑같이 수정해줘야 함 !! */
 
     // 함선 클래스
     class Ship

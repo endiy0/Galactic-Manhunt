@@ -21,7 +21,7 @@ namespace Client_test
             this.chatClient = chatClient;
 
             // 경찰 능력 목록
-            if (chatClient.job == Job.Cop)
+            if (chatClient.job == Job.cop)
             {
                 dataGridView2.Rows.Add("등잔 밑이 어둡다", 0);
                 dataGridView2.Rows.Add("은하 탐방", 0);
@@ -33,7 +33,7 @@ namespace Client_test
             }
 
             // 도둑 능력 목록
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 dataGridView2.Rows.Add("겟 퓨얼", 0);
                 dataGridView2.Rows.Add("연료 교환권", 0);

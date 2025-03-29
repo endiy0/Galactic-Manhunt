@@ -38,7 +38,7 @@ namespace Client_test
             // 아이템 목록, 질량비
             dataGridView3.Rows.Add("퍼옥사이드", "수소 : 산소 = 1 : 8");
             dataGridView3.Rows.Add("하이드라진", "수소 : 질소 = 1 : 7");
-            if (chatClient.ship == ShipType.galaxy_moving_ship)
+            if (chatClient.ship == ShipType.galaxyTravelingShip)
             {
                 dataGridView3.Rows.Add("엑실론", "엑실론-크리스탈 3");
             }
@@ -104,7 +104,7 @@ namespace Client_test
                 textBox3.Text = "0";
             }
             double mass = Convert.ToDouble(textBox3.Text);
-            if (chatClient.ship == ShipType.galaxy_moving_ship)
+            if (chatClient.ship == ShipType.galaxyTravelingShip)
             {
                 epsilonCrystal = mass * 3; // 엑실론-크리스탈 3로 엑실론 1 합성
             }

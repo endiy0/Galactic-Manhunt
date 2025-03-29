@@ -113,7 +113,7 @@ namespace Client_test
             dataGridView1.Rows.Add("씨앗", 400, 0);
 
             // 경찰 능력 목록
-            if (chatClient.job == Job.Cop)
+            if (chatClient.job == Job.cop)
             {
                 dataGridView2.Size = new Size(498, 232); // 경찰은 능력 6개
                 button3.Size = new Size(60, 232);
@@ -132,7 +132,7 @@ namespace Client_test
             }
 
             // 도둑 능력 목록
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 dataGridView2.Size = new Size(498, 200); // 도둑은 능력 5개
                 button3.Size = new Size(60, 200);
@@ -188,7 +188,7 @@ namespace Client_test
         {
             double totalPrice = 0;
 
-            if(chatClient.job == Job.Cop)
+            if(chatClient.job == Job.cop)
             {
                 // 경찰 능력 가격 총합
                 foreach (var price in copAbilityPrice)
@@ -196,7 +196,7 @@ namespace Client_test
                     totalPrice += price.Value;
                 }
             }
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 // 도둑 능력 가격 총합
                 foreach (var price in thiefAbilityPrice)
@@ -409,12 +409,12 @@ namespace Client_test
                 textBox20.Text = dataGridView2.Rows[0].Cells[2].Value.ToString();
             }
 
-            if (chatClient.job == Job.Cop)
+            if (chatClient.job == Job.cop)
             {
                 // 등잔 밑이 어둡다
                 copAbilityPrice[CopAbility.darkUnderTheLamp] = num * 10000;
             }
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 // 겟 퓨얼
                 thiefAbilityPrice[ThiefAbility.getFuel] = num * 5000;
@@ -437,12 +437,12 @@ namespace Client_test
                 textBox19.Text = dataGridView2.Rows[1].Cells[2].Value.ToString();
             }
 
-            if (chatClient.job == Job.Cop)
+            if (chatClient.job == Job.cop)
             {
                 // 은하 탐방
                 copAbilityPrice[CopAbility.galaxyTravel] = num * 50000;
             }
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 // 연료 교환권
                 thiefAbilityPrice[ThiefAbility.fuelChanger] = num * 5000;
@@ -465,12 +465,12 @@ namespace Client_test
                 textBox18.Text = dataGridView2.Rows[2].Cells[2].Value.ToString();
             }
 
-            if (chatClient.job == Job.Cop)
+            if (chatClient.job == Job.cop)
             {
                 // 행성 탐방
                 copAbilityPrice[CopAbility.planetTravel] = num * 12000;
             }
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 // 연료 압축기
                 thiefAbilityPrice[ThiefAbility.fuelCompressor] = num * 10000;
@@ -521,12 +521,12 @@ namespace Client_test
                 textBox16.Text = dataGridView2.Rows[4].Cells[2].Value.ToString();
             }
 
-            if (chatClient.job == Job.Cop)
+            if (chatClient.job == Job.cop)
             {
                 // 팀 식별
                 copAbilityPrice[CopAbility.teamIdentify] = num * 2000;
             }
-            else if (chatClient.job == Job.Robber)
+            else if (chatClient.job == Job.robber)
             {
                 // 저장량 증가
                 thiefAbilityPrice[ThiefAbility.storageGrowth] = num * 16000;

@@ -1,4 +1,5 @@
-﻿using System.Net.Sockets;
+﻿using Server_test;
+using System.Net.Sockets;
 using System.Text;
 
 namespace Client_test
@@ -25,11 +26,11 @@ namespace Client_test
 
         internal Dictionary<ShipType, string> shipDisplay = new Dictionary<ShipType, string> // enum ShipType에 따른 한글 표시
         {
-            { ShipType.newbie_ship, "초급자 전용 함선" },
-            { ShipType.resource_ship, "자원 함선" },
-            { ShipType.sailor_ship, "선원 함선" },
-            { ShipType.galaxy_moving_ship, "초은하 이동 함선" },
-            { ShipType.thief_ship, "도적 함선" }
+            { ShipType.newbieShip, "초급자 전용 함선" },
+            { ShipType.resourceShip, "자원 함선" },
+            { ShipType.sailorShip, "선원 함선" },
+            { ShipType.galaxyTravelingShip, "초은하 이동 함선" },
+            { ShipType.robberShip, "도적 함선" }
         };
 
         public ChatClient()
@@ -44,10 +45,16 @@ namespace Client_test
             storage = new Inventory(0, 0); // 아이템 최대량, 능력 최대량
         }
 
+        public void Send(string type, string msg)
+        {
+            stream.Write(Encoding.UTF8.GetBytes(type + "⧫" + msg + "◊"));
+        }
+
         public void GetShip()
         {
             Invoke(new Action(() => label4.Text = "직업: " + jobDisplay[job] + "\n" + "함선: " + shipDisplay[ship]));
-            stream.Write(Encoding.UTF8.GetBytes("9⧫" + (int)ship + '◊'));
+            Send("9", (int)ship + "");
+            //stream.Write(Encoding.UTF8.GetBytes("9⧫" + (int)ship + '◊'));
             // TODO: Server에서 함선 선택 끝나기 전까지 로딩 화면 구현
         }
 
@@ -175,7 +182,8 @@ namespace Client_test
                             nickname = "Client" + mynum.ToString();
                             Invoke(new Action(() => textBox4.Text = nickname));
                         }
-                        stream.Write(Encoding.UTF8.GetBytes("3⧫" + nickname + '◊'));
+                        Send("3", nickname);
+                        //stream.Write(Encoding.UTF8.GetBytes("3⧫" + nickname + '◊'));
                         stream.Flush();
                     }
                     else if (message[0] == "4") // 접속한 클라이언트 이름
@@ -221,7 +229,8 @@ namespace Client_test
 
         private void button2_Click(object sender, EventArgs e) // 연결 해제
         {
-            stream.Write(Encoding.UTF8.GetBytes("1⧫◊"));
+            Send("1", "");
+            //stream.Write(Encoding.UTF8.GetBytes("1⧫◊"));
             stream.Flush();
             stream.Close();
             client.Close();
@@ -240,7 +249,8 @@ namespace Client_test
         {
             if (isConnected)
             {
-                stream.Write(Encoding.UTF8.GetBytes("1⧫◊"));
+                Send("1", "");
+                //stream.Write(Encoding.UTF8.GetBytes("1⧫◊"));
                 stream.Flush();
                 stream.Close();
                 client.Close();
@@ -259,7 +269,8 @@ namespace Client_test
             {
                 if (textBox1.Text != "")
                 {
-                    stream.Write(Encoding.UTF8.GetBytes("0⧫" + $"{nickname}: " + textBox1.Text + '◊'));
+                    Send("0", $"{nickname}: " + textBox1.Text);
+                    //stream.Write(Encoding.UTF8.GetBytes("0⧫" + $"{nickname}: " + textBox1.Text + '◊'));
                     stream.Flush();
                     listBox1.Items.Add($"{nickname}: " + textBox1.Text);
                     textBox1.Text = "";
